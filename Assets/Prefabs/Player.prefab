@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8247923126071222158}
   - component: {fileID: 8247923126071222145}
+  - component: {fileID: 569730636958665666}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -48,6 +49,18 @@ MonoBehaviour:
   movementDistance: 1
   maxInputRegistering: 3
   raycastCenter: {x: 0.5, y: 0.5}
+--- !u!114 &569730636958665666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247923126071222159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007660dd3c5bc401894b200befab6106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8247923127104871230
 GameObject:
   m_ObjectHideFlags: 0
