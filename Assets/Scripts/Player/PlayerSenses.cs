@@ -18,12 +18,12 @@ namespace Player
 
 		private void OnEnable()
 		{
-			InputManager.ActionMaps.Player.Switch.performed += Switch;
+			if (InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed += Switch;
 		}
 
 		private void OnDisable()
 		{
-			InputManager.ActionMaps.Player.Switch.performed -= Switch;
+			if (InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed -= Switch;
 		}
 
 		private void Switch(InputAction.CallbackContext context)
