@@ -65,7 +65,7 @@ MonoBehaviour:
   - {x: -0.04405742, y: -0.071680784, z: 0}
   m_ShapePathHash: -232236496
   m_Mesh: {fileID: 0}
-  m_InstanceId: -93240
+  m_InstanceId: 25598
 --- !u!212 &6106372333009029892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8247923127104871217}
-  - component: {fileID: 8247923127104871216}
+  - component: {fileID: 6198328185657943227}
   m_Layer: 9
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -267,7 +267,7 @@ Transform:
   m_Father: {fileID: 8247923126071222158}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8247923127104871216
+--- !u!212 &6198328185657943227
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,7 +286,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -317,4 +317,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
+  m_SpriteSortPoint: 0
