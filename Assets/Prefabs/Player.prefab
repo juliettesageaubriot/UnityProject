@@ -65,7 +65,7 @@ MonoBehaviour:
   - {x: -0.04405742, y: -0.071680784, z: 0}
   m_ShapePathHash: -232236496
   m_Mesh: {fileID: 0}
-  m_InstanceId: 18266
+  m_InstanceId: 23584
 --- !u!212 &6106372333009029892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -264,6 +264,7 @@ MonoBehaviour:
   raycastCenter: {x: 0.5, y: 0.5}
   obstacleLayer:
     layerIndex: 8
+  animator: {fileID: 876075364453895117}
 --- !u!114 &569730636958665666
 MonoBehaviour:
   m_ObjectHideFlags: 0

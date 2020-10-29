@@ -33,6 +33,7 @@ namespace Player
 		private bool _isMoving = false;
 		private readonly Queue<Vector2> _inputsToProcess = new Queue<Vector2>();
 
+		public Animator animator;
 		private void Start()
 		{
 			if (onMove == null)
@@ -64,6 +65,8 @@ namespace Player
 
 		private void Update()
 		{
+			animator.SetBool("IsMoving", _isMoving);
+			Debug.Log(_isMoving);
 			if (_isMoving || _inputsToProcess.Count == 0) return;
 			Move(_inputsToProcess.Dequeue());
 		}
@@ -85,6 +88,9 @@ namespace Player
 
 			var tween = transform.DOMove(newPosition, movementDuration);
 			tween.OnComplete(() => { _isMoving = false; });
+			
+			animator.SetFloat("Horizontal", direction.x);
+			animator.SetFloat("Vertical", direction.y);
 		}
 
 		private bool CanMove(Vector2 direction)
