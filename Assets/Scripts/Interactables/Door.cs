@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Experimental.Rendering.Universal;
 
 namespace Interactables
@@ -18,6 +19,9 @@ namespace Interactables
 		protected Collider2D colliderComponent;
 		protected SpriteRenderer spriteRenderer;
 		protected ShadowCaster2D shadowCaster2D;
+		
+		[SerializeField] public UnityEvent onOpenEvent;
+		[SerializeField] public UnityEvent onCloseEvent;
 
 		[SerializeField] protected DoorState closedState;
 		[SerializeField] protected DoorState openState;
@@ -28,6 +32,13 @@ namespace Interactables
 			colliderComponent = GetComponent<Collider2D>();
 			spriteRenderer = GetComponent<SpriteRenderer>();
 			shadowCaster2D = GetComponent<ShadowCaster2D>();
+			
+			if (onOpenEvent == null)
+				onOpenEvent = new UnityEvent();
+			
+			if (onCloseEvent == null)
+				onCloseEvent = new UnityEvent();
+			
 			if (startOpen)
 				Open();
 			else
@@ -36,11 +47,13 @@ namespace Interactables
 
 		public void Open()
 		{
+			onOpenEvent.Invoke();
 			ChangeState(openState);
 		}
 
 		public void Close()
 		{
+			onCloseEvent.Invoke();
 			ChangeState(closedState);
 		}
 
