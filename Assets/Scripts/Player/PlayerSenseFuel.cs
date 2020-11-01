@@ -1,15 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Player
 {
+    [Serializable]
     public class FuelNumberChangeEvent : UnityEvent<int> {}
     public class PlayerSenseFuel : MonoBehaviour
     {
         private int _fuelNumber = 0;
-        [SerializeField] private int startFuelNumber = 3;
+        [SerializeField] public int startFuelNumber = 3;
         [SerializeField][TagSelector] private string fuelTag = "SenseFuel";
-        [SerializeField] private FuelNumberChangeEvent onFuelNumberChange;
+        [SerializeField] public FuelNumberChangeEvent onFuelNumberChange;
 
         private void Start()
         {
