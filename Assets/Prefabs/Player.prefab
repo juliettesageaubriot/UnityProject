@@ -65,7 +65,7 @@ MonoBehaviour:
   - {x: -0.04405742, y: -0.071680784, z: 0}
   m_ShapePathHash: -232236496
   m_Mesh: {fileID: 0}
-  m_InstanceId: 23584
+  m_InstanceId: 21456
 --- !u!212 &6106372333009029892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 8247923126071222158}
   - component: {fileID: 960732535568902465}
   - component: {fileID: 6905506716540981576}
+  - component: {fileID: 4843041177288421016}
   - component: {fileID: 8247923126071222145}
   - component: {fileID: 569730636958665666}
   - component: {fileID: 8372280435161012450}
@@ -241,6 +242,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
+--- !u!114 &4843041177288421016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247923126071222159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773e9bcdf4b00184bb691f6168a3fe11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8247923126071222145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +312,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startFuelNumber: 0
   fuelTag: SenseFuel
+  onFuelNumberChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8247923127104871230
 GameObject:
   m_ObjectHideFlags: 0
