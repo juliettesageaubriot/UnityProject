@@ -14,18 +14,17 @@ namespace Player
 	}
 
 	[Serializable]
-	public class SensesSwitchEvent : UnityEvent<int, SensesState> {}
+	public class SenseChangeEvent : UnityEvent<SensesState> {}
 
 	public class PlayerSenses : MonoBehaviour
 	{
 		[SerializeField] private SensesState defaultState;
-		[SerializeField] private int maxSwitchCount = 3;
 		[SerializeField] private Camera mainCamera;
 		[SerializeField] private Camera blindCamera;
 		[SerializeField] private AudioListener audioListener;
-		[SerializeField] private SensesSwitchEvent onSensesSwitch;
+		[SerializeField] private SenseChangeEvent onSenseChange;
 
-		private int _switchCount = 0;
+		private PlayerSenseFuel _fuel;
 
 		private SensesState _state;
 		private SensesState State {
@@ -50,10 +49,11 @@ namespace Player
 
 		private void Start()
 		{
-			if (onSensesSwitch == null)
-				onSensesSwitch = new SensesSwitchEvent();
+			if (onSenseChange == null)
+				onSenseChange = new SenseChangeEvent();
 
 			State = defaultState;
+			_fuel = GetComponent<PlayerSenseFuel>();
 		}
 
 		private void OnEnable()
@@ -68,7 +68,7 @@ namespace Player
 
 		private void Switch(InputAction.CallbackContext context)
 		{
-			if(_switchCount >= maxSwitchCount) return;
+			if(!_fuel.UseFuel()) return;
 			SensesState newState = SensesState.AllSenses;
 			switch (State)
 			{
@@ -82,9 +82,8 @@ namespace Player
 					return;
 			}
 
-			_switchCount++;
 			State = newState;
-			onSensesSwitch.Invoke(_switchCount, State);
+			onSenseChange.Invoke(State);
 		}
 
 		private void ToBlind(SensesState oldValue)

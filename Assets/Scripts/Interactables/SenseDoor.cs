@@ -13,7 +13,7 @@ namespace Interactables
 	{
 		[SerializeField] protected DoorSenseEnum openSenseState;
 
-		public void OnSenseChange(int _, SensesState newSense)
+		public void OnSenseChange(SensesState newSense)
 		{
 			if ((SensesState)openSenseState == newSense)
 				Open();
