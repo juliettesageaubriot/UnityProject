@@ -281,6 +281,7 @@ MonoBehaviour:
   maxSwitchCount: 3
   mainCamera: {fileID: 0}
   blindCamera: {fileID: 0}
+  audioListener: {fileID: 4304811161324583885}
   onSensesSwitch:
     m_PersistentCalls:
       m_Calls: []
