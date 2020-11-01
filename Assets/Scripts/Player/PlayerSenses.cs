@@ -18,11 +18,11 @@ namespace Player
 
 	public class PlayerSenses : MonoBehaviour
 	{
-		[SerializeField] private SensesState defaultState;
+		[SerializeField] public SensesState defaultState;
 		[SerializeField] private Camera mainCamera;
 		[SerializeField] private Camera blindCamera;
 		[SerializeField] private AudioListener audioListener;
-		[SerializeField] private SenseChangeEvent onSenseChange;
+		[SerializeField] public SenseChangeEvent onSenseChange;
 
 		private PlayerSenseFuel _fuel;
 
