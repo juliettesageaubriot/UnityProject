@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Interactable
+namespace Interactables
 {
 	public class PressurePlate : MonoBehaviour
 	{
