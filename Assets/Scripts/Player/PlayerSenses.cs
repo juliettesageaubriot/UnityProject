@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 using Global.Input;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,9 +22,9 @@ namespace Player
 		[SerializeField] private SensesState defaultState;
 		[SerializeField] private Camera mainCamera;
 		[SerializeField] private Camera blindCamera;
-		[SerializeField] private AudioListener audioListener;
+		[SerializeField] private SnapshotManager snapshotManager;
 		[SerializeField] private SenseChangeEvent onSenseChange;
-
+		
 		private PlayerSenseFuel _fuel;
 
 		private SensesState _state;
@@ -90,22 +91,22 @@ namespace Player
 		{
 			mainCamera.enabled = false;
 			blindCamera.enabled = true;
-			audioListener.enabled = false;
+			snapshotManager.Play();
 		}
 
 		private void ToDeaf(SensesState oldValue)
 		{
 			mainCamera.enabled = true;
 			blindCamera.enabled = false;
-			audioListener.enabled = true;
+			snapshotManager.Stop();
+
 		}
 
 		private void ToAllSenses(SensesState oldValue)
 		{
 			mainCamera.enabled = true;
 			blindCamera.enabled = false;
-			audioListener.enabled = true;
+			snapshotManager.Play();
 		}
-
 	}
 }
