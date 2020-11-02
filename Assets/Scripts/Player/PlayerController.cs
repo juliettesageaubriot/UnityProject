@@ -23,6 +23,7 @@ namespace Player
 		private int maxInputRegistering = 3;
 
 		[SerializeField] private MoveEvent onMove;
+		[SerializeField] private UnityEvent onStopMove;
 		[SerializeField] private MoveEvent onCantMove;
 
 		[SerializeField]
@@ -31,20 +32,17 @@ namespace Player
 		[SerializeField] private SingleUnityLayer obstacleLayer;
 
 		private bool _isMoving = false;
-		private bool _isHorizontal = false;
-		private bool _isVertical = false;
-		private bool _isRightLeg = false;
-		private bool _LastRightLegValue = false;
 		
 		private readonly Queue<Vector2> _inputsToProcess = new Queue<Vector2>();
 
-		public Animator animator;
 		private void Start()
 		{
 			if (onMove == null)
 				onMove = new MoveEvent();
 			if (onCantMove == null)
 				onCantMove = new MoveEvent();
+			if (onStopMove == null)
+				onStopMove = new UnityEvent();
 		}
 
 		private void OnEnable()
@@ -70,10 +68,6 @@ namespace Player
 
 		private void Update()
 		{
-			animator.SetBool("IsMoving", _isMoving);
-			animator.SetBool("IsHorizontal", _isHorizontal);
-			animator.SetBool("IsVertical", _isVertical);
-			animator.SetBool("IsRightLeg", _isRightLeg);
 
 			if (_isMoving || _inputsToProcess.Count == 0) return;
 			Move(_inputsToProcess.Dequeue());
@@ -90,14 +84,7 @@ namespace Player
 			onMove.Invoke(direction);
 
 			_isMoving = true;
-			
-			_isRightLeg = !_isRightLeg;
-			if (_LastRightLegValue == _isRightLeg ) _isRightLeg = false;
-			_LastRightLegValue = _isRightLeg;
 
-			if (direction.x == 1 || direction.x == -1) _isHorizontal = true;
-			if (direction.y == 1 || direction.y == -1) _isVertical = true;
-			
 			var move = direction * movementDistance;
 			var lastPosition = transform.position;
 			var newPosition = new Vector2(lastPosition.x, lastPosition.y) + move;
@@ -105,14 +92,9 @@ namespace Player
 			var tween = transform.DOMove(newPosition, movementDuration);
 			tween.OnComplete(() =>
 			{
+				onStopMove.Invoke();
 				_isMoving = false; 
-				_isHorizontal = false;
-				_isVertical = false;
-				_isRightLeg = false;
 			});
-			
-			animator.SetFloat("Horizontal", direction.x);
-			animator.SetFloat("Vertical", direction.y);
 		}
 
 		private bool CanMove(Vector2 direction)
