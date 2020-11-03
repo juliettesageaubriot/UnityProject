@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml.Serialization;
+using Audio;
 using Global.Input;
 using UnityEngine;
 using UnityEngine.Events;
@@ -91,14 +92,14 @@ namespace Player
 		{
 			mainCamera.enabled = false;
 			blindCamera.enabled = true;
-			snapshotManager.Play();
+			snapshotManager.UnmuffleSound();
 		}
 
 		private void ToDeaf(SensesState oldValue)
 		{
 			mainCamera.enabled = true;
 			blindCamera.enabled = false;
-			snapshotManager.Stop();
+			snapshotManager.MuffleSound();
 
 		}
 
@@ -106,7 +107,7 @@ namespace Player
 		{
 			mainCamera.enabled = true;
 			blindCamera.enabled = false;
-			snapshotManager.Play();
+			snapshotManager.UnmuffleSound();
 		}
 	}
 }

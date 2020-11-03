@@ -1,47 +1,33 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Events;
 
-public class SnapshotManager : MonoBehaviour
-
+namespace Audio
 {
-    [SerializeField] private AudioMixer mixer;
-    [SerializeField] private AudioMixerSnapshot[] snapshots;
-    
-    [SerializeField] public UnityEvent onPlaySound;
-    [SerializeField] public UnityEvent onStopSound;
+    public class SnapshotManager : MonoBehaviour
 
-    public float[] weights;
-    
-    private void Start()
     {
-        if (onPlaySound == null)
-            onPlaySound = new UnityEvent();
-			
-        if (onStopSound == null)
-            onStopSound = new UnityEvent();
-    }
+        [SerializeField] private AudioMixer mixer;
+        [SerializeField] private AudioMixerSnapshot muffleSnapshot;
+        [SerializeField] private AudioMixerSnapshot clearSnapshot;
+        
+        [Range(0f, 2f)]
+        [SerializeField] private float transitionDuration = .8f;
 
-    public void Play()
-    {
-        Debug.Log("play");
-        weights[0] = 1f;
-        weights[1] = 0f;
-        mixer.TransitionToSnapshots(snapshots, weights, .2f);
-        onPlaySound.Invoke();
-    }
+        public void UnmuffleSound()
+        {
+            var snapshots = new []{muffleSnapshot, clearSnapshot};
+            var weight = new[] {0f, 1f};
+        
+            mixer.TransitionToSnapshots(snapshots, weight, transitionDuration);
+        }
     
-    public void Stop()
-    {
-        Debug.Log("stop");
-        weights[0] = 0f;
-        weights[1] = 1f;
-        mixer.TransitionToSnapshots(snapshots, weights, .2f);
-        onStopSound.Invoke();
-
+        public void MuffleSound()
+        {
+            var snapshots = new []{muffleSnapshot, clearSnapshot};
+            var weight = new[] {1f, 0f};
+        
+            mixer.TransitionToSnapshots(snapshots, weight, transitionDuration);
+        }
     }
 }
 
