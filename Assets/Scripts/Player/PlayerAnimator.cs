@@ -22,5 +22,11 @@ namespace Player
         {
             animator.SetBool(IsMoving, false);
         }
+
+        public void OnCantMove(Vector2 direction)
+        {
+            animator.SetFloat(Horizontal, direction.x);
+            animator.SetFloat(Vertical, direction.y);
+        }
     }
 }
