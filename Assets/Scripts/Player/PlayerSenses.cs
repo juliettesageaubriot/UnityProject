@@ -23,9 +23,9 @@ namespace Player
 		[SerializeField] private SensesState defaultState;
 		[SerializeField] private Camera mainCamera;
 		[SerializeField] private Camera blindCamera;
-		[SerializeField] private SnapshotManager snapshotManager;
 		[SerializeField] private SenseChangeEvent onSenseChange;
 		
+		private SnapshotManager _snapshotManager;
 		private PlayerSenseFuel _fuel;
 
 		private SensesState _state;
@@ -53,7 +53,8 @@ namespace Player
 		{
 			if (onSenseChange == null)
 				onSenseChange = new SenseChangeEvent();
-
+			
+			if(SnapshotManager.IsReady) _snapshotManager = SnapshotManager.Instance;
 			State = defaultState;
 			_fuel = GetComponent<PlayerSenseFuel>();
 		}
@@ -92,22 +93,21 @@ namespace Player
 		{
 			mainCamera.enabled = false;
 			blindCamera.enabled = true;
-			snapshotManager.UnmuffleSound();
+			_snapshotManager.UnmuffleSound();
 		}
 
 		private void ToDeaf(SensesState oldValue)
 		{
 			mainCamera.enabled = true;
 			blindCamera.enabled = false;
-			snapshotManager.MuffleSound();
-
+			_snapshotManager.MuffleSound();
 		}
 
 		private void ToAllSenses(SensesState oldValue)
 		{
 			mainCamera.enabled = true;
 			blindCamera.enabled = false;
-			snapshotManager.UnmuffleSound();
+			_snapshotManager.UnmuffleSound();
 		}
 	}
 }
