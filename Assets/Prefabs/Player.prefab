@@ -65,7 +65,7 @@ MonoBehaviour:
   - {x: -0.04405742, y: -0.071680784, z: 0}
   m_ShapePathHash: -232236496
   m_Mesh: {fileID: 0}
-  m_InstanceId: 21456
+  m_InstanceId: 20138
 --- !u!212 &6106372333009029892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -302,7 +302,19 @@ MonoBehaviour:
         m_CallState: 2
   onCantMove:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6976735044435094177}
+        m_TargetAssemblyTypeName: Player.PlayerAnimator, Assembly-CSharp
+        m_MethodName: OnCantMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   raycastCenter: {x: 0.5, y: 0.5}
   obstacleLayer:
     layerIndex: 8
