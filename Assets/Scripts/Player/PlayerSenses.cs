@@ -23,7 +23,7 @@ namespace Player
 		[SerializeField] public SensesState defaultState;
 		[SerializeField] private Camera mainCamera;
 		[SerializeField] private Camera blindCamera;
-		[SerializeField] private SenseChangeEvent onSenseChange;
+		[SerializeField] public SenseChangeEvent onSenseChange;
 		
 		private SnapshotManager _snapshotManager;
 		private PlayerSenseFuel _fuel;
