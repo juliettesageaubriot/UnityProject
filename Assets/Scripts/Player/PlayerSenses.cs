@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Xml.Serialization;
+using Audio;
 using Global.Input;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,9 +23,9 @@ namespace Player
 		[SerializeField] public SensesState defaultState;
 		[SerializeField] private Camera mainCamera;
 		[SerializeField] private Camera blindCamera;
-		[SerializeField] private AudioListener audioListener;
 		[SerializeField] public SenseChangeEvent onSenseChange;
-
+		
+		private SnapshotManager _snapshotManager;
 		private PlayerSenseFuel _fuel;
 
 		private SensesState _state;
@@ -51,7 +53,8 @@ namespace Player
 		{
 			if (onSenseChange == null)
 				onSenseChange = new SenseChangeEvent();
-
+			
+			if(SnapshotManager.IsReady) _snapshotManager = SnapshotManager.Instance;
 			State = defaultState;
 			_fuel = GetComponent<PlayerSenseFuel>();
 		}
@@ -90,22 +93,21 @@ namespace Player
 		{
 			mainCamera.enabled = false;
 			blindCamera.enabled = true;
-			audioListener.enabled = false;
+			_snapshotManager.UnmuffleSound();
 		}
 
 		private void ToDeaf(SensesState oldValue)
 		{
 			mainCamera.enabled = true;
 			blindCamera.enabled = false;
-			audioListener.enabled = true;
+			_snapshotManager.MuffleSound();
 		}
 
 		private void ToAllSenses(SensesState oldValue)
 		{
 			mainCamera.enabled = true;
 			blindCamera.enabled = false;
-			audioListener.enabled = true;
+			_snapshotManager.UnmuffleSound();
 		}
-
 	}
 }
