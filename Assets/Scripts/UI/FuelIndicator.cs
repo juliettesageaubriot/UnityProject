@@ -12,6 +12,11 @@ namespace UI
         [SerializeField] private GameObject fuelIconPrefab;
         private readonly Stack<GameObject> _fuelIcons = new Stack<GameObject>();
 
+        private void Start()
+        {
+            UpdateIcons(playerData.FuelAmount);
+        }
+
         private void OnEnable() { playerData.FuelChangeEvent += UpdateIcons; }
         private void OnDisable() { playerData.FuelChangeEvent -= UpdateIcons; }
 
