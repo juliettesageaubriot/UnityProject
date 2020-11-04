@@ -1,23 +1,36 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using Audio;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class RandomSoundPlayer : MonoBehaviour
+namespace Audio
 {
-    [SerializeField] private SoundData sounds;
-    private AudioSource _audioSource;
-
-    private void Start()
+    public class RandomSoundPlayer : MonoBehaviour
     {
-        _audioSource = GetComponent<AudioSource>();
-    }
+        [SerializeField] private SoundData sounds;
+        private AudioSource _audioSource;
 
-    public void PlayRandomSound()
-    {
-        var randomIndex = Mathf.FloorToInt(Random.Range(0f, sounds.array.Length));
-        _audioSource.PlayOneShot(sounds.array[randomIndex]);
+        private void Start()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
+
+        public void PlayRandomSound()
+        {
+            _audioSource.PlayOneShot(sounds.GetRandomAudio());
+        }
+
+        public void PlayRandomSound(Action callback)
+        {
+            var clip = sounds.GetRandomAudio();
+            _audioSource.PlayOneShot(clip);
+            StartCoroutine(WaitForClipToEnd(clip.length, callback));
+        }
+
+        private static IEnumerator WaitForClipToEnd(float clipLength, Action callback)
+        {
+            yield return new WaitForSeconds(clipLength);
+            callback();
+        }
     }
 }
