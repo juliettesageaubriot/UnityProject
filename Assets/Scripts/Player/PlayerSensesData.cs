@@ -56,7 +56,7 @@ namespace Player
 
         public void InitFuel(int fuelAmount)
         {
-            FuelAmount = fuelAmount;
+            _fuelAmount = fuelAmount;
         }
         
         
@@ -81,7 +81,7 @@ namespace Player
         
         public void InitState(SensesState state)
         {
-            State = state;
+            _state = state;
         }
     }
 }
