@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612922cd526ee49e99d02c5bea2afbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   mixer: {fileID: 24100000, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   muffleSnapshot: {fileID: 24500006, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   clearSnapshot: {fileID: -7443884203738373294, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,15 +8,12 @@ namespace UI
 {
     public class FuelIndicator : MonoBehaviour
     {
+        [SerializeField] private PlayerSensesData playerData;
         [SerializeField] private GameObject fuelIconPrefab;
         private readonly Stack<GameObject> _fuelIcons = new Stack<GameObject>();
-    
-        void Start()
-        {
-            var playerSenseFuel = PlayerAccess.currentPlayer.GetComponent<PlayerSenseFuel>();
-            UpdateIcons(playerSenseFuel.startFuelNumber);
-            playerSenseFuel.onFuelNumberChange.AddListener(UpdateIcons);
-        }
+
+        private void OnEnable() { playerData.FuelChangeEvent += UpdateIcons; }
+        private void OnDisable() { playerData.FuelChangeEvent -= UpdateIcons; }
 
         private void UpdateIcons(int newAmount)
         {

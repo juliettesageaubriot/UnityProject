@@ -12,16 +12,18 @@ namespace Interactables
 
 	public class SenseDoor : Door
 	{
+		[SerializeField] protected PlayerSensesData data;
 		[SerializeField] protected DoorSenseEnum openSenseState;
+
+		private void OnEnable() { data.SenseChangeEvent += OnSenseChange; }
+		private void OnDisable() { data.SenseChangeEvent -= OnSenseChange; }
 
 		protected override void Start()
 		{
-			var playerSense = PlayerAccess.currentPlayer.GetComponent<PlayerSenses>();
-			startOpen = (SensesState) openSenseState == playerSense.defaultState;
-			playerSense.onSenseChange.AddListener(OnSenseChange);
+			startOpen = (SensesState) openSenseState == data.State;
 			base.Start();
 		}
-
+		
 		public void OnSenseChange(SensesState newSense)
 		{
 			if ((SensesState)openSenseState == newSense)

@@ -318,4 +318,5 @@ MonoBehaviour:
     castShadow: 0
     collide: 0
   startOpen: 1
+  data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   openSenseState: 2
