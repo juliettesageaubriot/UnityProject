@@ -33,6 +33,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Resume"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6d79d52-27f0-4945-a1d6-fa7d2d0dff72"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -156,6 +164,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Switch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1920fd07-146c-4406-9046-14d875f110b5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Resume"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -166,6 +185,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Switch = m_Player.FindAction("Switch", throwIfNotFound: true);
+        m_Player_Resume = m_Player.FindAction("Resume", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -217,12 +237,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Switch;
+    private readonly InputAction m_Player_Resume;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Switch => m_Wrapper.m_Player_Switch;
+        public InputAction @Resume => m_Wrapper.m_Player_Resume;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -238,6 +260,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Switch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitch;
                 @Switch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitch;
                 @Switch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitch;
+                @Resume.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnResume;
+                @Resume.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnResume;
+                @Resume.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnResume;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -248,6 +273,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Switch.started += instance.OnSwitch;
                 @Switch.performed += instance.OnSwitch;
                 @Switch.canceled += instance.OnSwitch;
+                @Resume.started += instance.OnResume;
+                @Resume.performed += instance.OnResume;
+                @Resume.canceled += instance.OnResume;
             }
         }
     }
@@ -256,5 +284,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnSwitch(InputAction.CallbackContext context);
+        void OnResume(InputAction.CallbackContext context);
     }
 }
