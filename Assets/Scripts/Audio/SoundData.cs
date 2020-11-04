@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Audio
 {
@@ -7,5 +8,11 @@ namespace Audio
     public class SoundData : ScriptableObject
     {
         public AudioClip[] array;
+
+        public AudioClip GetRandomAudio()
+        {
+            var randomIndex = Mathf.FloorToInt(Random.Range(0f, array.Length));
+            return  array[randomIndex];
+        }
     }
 }
