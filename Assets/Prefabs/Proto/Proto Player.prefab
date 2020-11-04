@@ -29,11 +29,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
       propertyPath: onMove.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
       propertyPath: onMove.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 8107134488809756259}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onMove.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RandomSoundPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onMove.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayRandomSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onMove.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onMove.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8247923126071222158, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -87,3 +103,14 @@ PrefabInstance:
     - {fileID: 876075364453895117, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
     - {fileID: 6976735044435094177, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+--- !u!114 &8107134488809756259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9047671566951230484, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+  m_PrefabInstance: {fileID: 940577804877396599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853c97f86c6cac045abd3766e26a8d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
