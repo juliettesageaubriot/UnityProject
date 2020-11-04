@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6582755270915525683, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7752550587065938232, guid: 84da0f66df17341438977d7495a128f5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
@@ -93,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7752550587065938239, guid: 84da0f66df17341438977d7495a128f5, type: 3}
       propertyPath: m_InstanceId
-      value: -196410
+      value: -124542
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84da0f66df17341438977d7495a128f5, type: 3}
