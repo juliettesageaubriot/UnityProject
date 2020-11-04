@@ -9,10 +9,8 @@ namespace Global
 
         public void OnNextLevel()
         {
-            var name = ScenesEnum.LevelsNames(nextLevel);
-            var test = SceneManager.GetSceneByName(name);
-            
-            Debug.Log(test);
+            var level = ScenesEnum.LevelsNames(nextLevel); 
+            SceneManager.LoadScene(level);
         }
     }
 }
