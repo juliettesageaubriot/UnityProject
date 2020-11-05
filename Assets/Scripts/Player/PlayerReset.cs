@@ -1,7 +1,9 @@
-﻿using Global.Input;
+﻿using System;
+using Global.Input;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -9,7 +11,7 @@ namespace Player
     {
         [SerializeField]
         public class MoveEvent : UnityEvent {}
-        
+
         private void OnEnable()
         {
             if (InputManager.IsReady) InputManager.ActionMaps.Player.Reset.performed += Reset;
@@ -22,8 +24,9 @@ namespace Player
         
         private void Reset(InputAction.CallbackContext context)
         {
-            
-            Debug.Log("Performed");
+            var activeScene = SceneManager.GetActiveScene();
+            var sceneActiveName = activeScene.name;
+            SceneManager.LoadScene(sceneActiveName);
         }
     }
 }
