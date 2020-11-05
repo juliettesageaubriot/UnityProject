@@ -40,9 +40,9 @@ namespace Interactables
 				onCloseEvent = new UnityEvent();
 			
 			if (startOpen)
-				Open();
+				ChangeState(openState);
 			else
-				Close();
+				ChangeState(closedState);
 		}
 
 		public void Open()

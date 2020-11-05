@@ -8,55 +8,22 @@ using UnityEngine.InputSystem;
 
 namespace Player
 {
-	public enum SensesState
-	{
-		AllSenses,
-		Blind,
-		Deaf
-	}
-
 	[Serializable]
 	public class SenseChangeEvent : UnityEvent<SensesState> {}
 
 	public class PlayerSenses : MonoBehaviour
 	{
-		[SerializeField] public SensesState defaultState;
-		[SerializeField] private Camera mainCamera;
-		[SerializeField] private Camera blindCamera;
-		[SerializeField] public SenseChangeEvent onSenseChange;
+		[SerializeField][TagSelector] private string fuelTag = "SenseFuel";
+		[SerializeField] private PlayerSensesData data;
 		
-		private SnapshotManager _snapshotManager;
-		private PlayerSenseFuel _fuel;
-
-		private SensesState _state;
-		private SensesState State {
-			get => _state;
-			set
-			{
-				switch (value)
-				{
-					case SensesState.Blind:
-						ToBlind(_state);
-						break;
-					case SensesState.Deaf:
-						ToDeaf(_state);
-						break;
-					case SensesState.AllSenses:
-						ToAllSenses(_state);
-						break;
-				}
-				_state = value;
-			}
-		}
-
-		private void Start()
+		[SerializeField] private SensesState defaultState;
+		[SerializeField] private int defaultFuelAmount;
+		
+		
+		private void Awake()
 		{
-			if (onSenseChange == null)
-				onSenseChange = new SenseChangeEvent();
-			
-			if(SnapshotManager.IsReady) _snapshotManager = SnapshotManager.Instance;
-			State = defaultState;
-			_fuel = GetComponent<PlayerSenseFuel>();
+			data.InitFuel(defaultFuelAmount);
+			data.InitState(defaultState);
 		}
 
 		private void OnEnable()
@@ -68,46 +35,15 @@ namespace Player
 		{
 			if (InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed -= Switch;
 		}
-
-		private void Switch(InputAction.CallbackContext context)
+		
+		private void OnTriggerEnter2D(Collider2D other)
 		{
-			if(!_fuel.UseFuel()) return;
-			SensesState newState = SensesState.AllSenses;
-			switch (State)
-			{
-				case SensesState.Deaf:
-					newState = SensesState.Blind;
-					break;
-				case SensesState.Blind:
-					newState = SensesState.Deaf;
-					break;
-				case SensesState.AllSenses:
-					return;
-			}
-
-			State = newState;
-			onSenseChange.Invoke(State);
+			if (other.CompareTag(fuelTag)) data.AddFuel();
 		}
 
-		private void ToBlind(SensesState oldValue)
+		private void Switch(InputAction.CallbackContext obj)
 		{
-			mainCamera.enabled = false;
-			blindCamera.enabled = true;
-			_snapshotManager.UnmuffleSound();
-		}
-
-		private void ToDeaf(SensesState oldValue)
-		{
-			mainCamera.enabled = true;
-			blindCamera.enabled = false;
-			_snapshotManager.MuffleSound();
-		}
-
-		private void ToAllSenses(SensesState oldValue)
-		{
-			mainCamera.enabled = true;
-			blindCamera.enabled = false;
-			_snapshotManager.UnmuffleSound();
+			data.Switch();
 		}
 	}
 }
