@@ -28,12 +28,11 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
-                }
                 },
                 {
-                    "name": "Resume",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "b6d79d52-27f0-4945-a1d6-fa7d2d0dff72",
+                    "id": "6ccc4c89-1c73-4adf-97b4-f82b2699de8d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -171,16 +170,15 @@
                     "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
                 },
                 {
                     "name": "",
-                    "id": "1920fd07-146c-4406-9046-14d875f110b5",
+                    "id": "ff999226-8946-4fb0-935c-4ffd59e3eaa4",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Resume",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

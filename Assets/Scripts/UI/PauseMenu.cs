@@ -1,4 +1,5 @@
-﻿using Global.Input;
+﻿using System;
+using Global.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,50 +10,50 @@ namespace UI
     {
         public static bool gameIsPaused = false;
 
-        public GameObject pauseMenuUI;
+        [SerializeField] private GameObject pauseMenuUI;
         
         private void OnEnable()
         {
-            if(InputManager.IsReady) InputManager.ActionMaps.Player.Resume.performed += RegisterInput;
+            if(InputManager.IsReady) InputManager.ActionMaps.Player.Pause.performed += RegisterInput;
         }
 
         private void OnDisable()
         {
-            if(InputManager.IsReady) InputManager.ActionMaps.Player.Resume.performed -= RegisterInput;
-        }
-        private void RegisterInput(InputAction.CallbackContext context)
-        {
-            if (gameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            if(InputManager.IsReady) InputManager.ActionMaps.Player.Pause.performed -= RegisterInput;
         }
 
-        public void Resume()
+        private void Start()
+        {
+            pauseMenuUI.SetActive(false);
+        }
+
+        private void RegisterInput(InputAction.CallbackContext context)
+        {
+            if (gameIsPaused) Resume();
+            else Pause();
+        }
+
+        private void Resume()
         {
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             gameIsPaused = false;
         }
 
-        void Pause()
+        private void Pause()
         {
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             gameIsPaused = true;
         }
         
-        public void MainMenu ()
+        public void MainMenu()
         {
             Time.timeScale = 1f;
             SceneManager.LoadScene("Scenes/Proto/Main Menu");
         }
         
-        public void Quit ()
+        public void Quit()
         {
             Application.Quit();
         }
