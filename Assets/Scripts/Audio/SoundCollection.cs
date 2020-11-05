@@ -4,8 +4,8 @@ using Random = UnityEngine.Random;
 
 namespace Audio
 {
-    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SoundData", order = 1)]
-    public class SoundData : ScriptableObject
+    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SoundCollection", order = 1)]
+    public class SoundCollection : ScriptableObject
     {
         public AudioClip[] array;
 
