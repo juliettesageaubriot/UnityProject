@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Utils;
 
 namespace Audio
@@ -6,6 +7,8 @@ namespace Audio
     public class StepSoundPlayer : RandomSoundPlayer
     {
         [SerializeField] private SingleUnityLayer floorLayer;
+        [SerializeField] private float circleCastRadius = 0.1f;
+        private int _currentColliderId;
         private SoundCollection _defaultSounds;
     
         protected override void Start()
@@ -22,15 +25,27 @@ namespace Audio
 
         private void CheckNextStepSound(Vector2 direction)
         {
-            var hit = Physics2D.Raycast(transform.position, direction, 1f, floorLayer.Mask);
-            if (hit.collider == null)
-            {
-                sounds = _defaultSounds;
-                return;
-            }
+            var hits = Physics2D.CircleCastAll(
+                (Vector2) transform.position + direction,
+                circleCastRadius,
+                direction,
+                0f,
+                floorLayer.Mask
+            );
+            Collider2D hit = null;
 
-            var floorSound = hit.collider.GetComponent<FloorSoundMaterial>();
-            sounds = floorSound.SoundCollection;
+            if (hits.Length == 1)
+                hit = hits[0].collider;
+            else if (hits.Length > 1)
+                hit = Array.Find(hits, 
+                    rHit => rHit.collider.gameObject.GetInstanceID() != _currentColliderId
+                ).collider;
+            
+            sounds = hit == null
+                ? _defaultSounds
+                : hit.GetComponent<FloorSoundMaterial>().SoundCollection;
+
+            _currentColliderId = hit == null ? 0 : hit.gameObject.GetInstanceID();
         }
     }
 }
