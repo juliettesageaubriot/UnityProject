@@ -65,7 +65,7 @@ MonoBehaviour:
   - {x: -0.04405742, y: -0.071680784, z: 0}
   m_ShapePathHash: -232236496
   m_Mesh: {fileID: 0}
-  m_InstanceId: 61186
+  m_InstanceId: 28178
 --- !u!212 &6106372333009029892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -126,8 +126,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8536342370579015568}
-  - component: {fileID: 7857194156728230417}
   - component: {fileID: 2037544815406899913}
+  - component: {fileID: 1335969555955761642}
   m_Layer: 9
   m_Name: PlayerStepSound
   m_TagString: Untagged
@@ -149,19 +149,6 @@ Transform:
   m_Father: {fileID: 8247923126071222158}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7857194156728230417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6995043673578354716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 853c97f86c6cac045abd3766e26a8d08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds: {fileID: 11400000, guid: a202ed782b9834241bc83d13bfd5d033, type: 2}
 --- !u!82 &2037544815406899913
 AudioSource:
   m_ObjectHideFlags: 0
@@ -258,6 +245,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1335969555955761642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6995043673578354716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1eab5ac1e06b3645a7b1a1c07d5e2e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds: {fileID: 11400000, guid: a202ed782b9834241bc83d13bfd5d033, type: 2}
+  floorLayer:
+    layerIndex: 12
 --- !u!1 &8212971821963076376
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,10 +404,10 @@ MonoBehaviour:
   onMove:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7857194156728230417}
-        m_TargetAssemblyTypeName: RandomSoundPlayer, Assembly-CSharp
-        m_MethodName: PlayRandomSound
-        m_Mode: 1
+      - m_Target: {fileID: 1335969555955761642}
+        m_TargetAssemblyTypeName: StepSoundPlayer, Assembly-CSharp
+        m_MethodName: PlayStepSound
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -7,10 +7,10 @@ namespace Audio
 {
     public class RandomSoundPlayer : MonoBehaviour
     {
-        [SerializeField] private SoundData sounds;
+        [SerializeField] protected SoundCollection sounds;
         private AudioSource _audioSource;
 
-        private void Start()
+        protected virtual void Start()
         {
             _audioSource = GetComponent<AudioSource>();
         }
