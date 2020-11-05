@@ -14,15 +14,20 @@ namespace Player
 
         private void OnEnable()
         {
-            if (InputManager.IsReady) InputManager.ActionMaps.Player.Reset.performed += Reset;
+            if (InputManager.IsReady) InputManager.ActionMaps.Player.Reset.performed += HandleResetInput;
         }
 
         private void OnDisable()
         {
-            if (InputManager.IsReady) InputManager.ActionMaps.Player.Reset.performed -= Reset;
+            if (InputManager.IsReady) InputManager.ActionMaps.Player.Reset.performed -= HandleResetInput;
         }
         
-        private void Reset(InputAction.CallbackContext context)
+        private void HandleResetInput(InputAction.CallbackContext context)
+        {
+            Reset();
+        }
+
+        public void Reset()
         {
             var activeScene = SceneManager.GetActiveScene();
             var sceneActiveName = activeScene.name;
