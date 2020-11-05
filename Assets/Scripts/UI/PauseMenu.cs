@@ -1,6 +1,7 @@
 ﻿using Global.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -31,7 +32,7 @@ namespace UI
             }
         }
 
-        void Resume()
+        public void Resume()
         {
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
@@ -43,6 +44,17 @@ namespace UI
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             gameIsPaused = true;
+        }
+        
+        public void MainMenu ()
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Scenes/Proto/Main Menu");
+        }
+        
+        public void Quit ()
+        {
+            Application.Quit();
         }
     }
 }
