@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using Global;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Proto
 {
     public class ProtoVictoryDoor : MonoBehaviour
-    {
+    { 
+        [SerializeField] private LevelManager levelManager;
         [SerializeField] private UnityEvent onTriggerEnter;
 
         private void Start()
@@ -15,6 +17,7 @@ namespace Proto
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            levelManager.OnNextLevel();
             onTriggerEnter.Invoke();
         }
     }

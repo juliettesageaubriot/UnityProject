@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/_preload.unity
     guid: 9538cc62737594b85ba806e2ef73975e
   - enabled: 1
-    path: Assets/Scenes/POC.unity
-    guid: b31a2ef95459b495ea856e47e7881558
+    path: Assets/Scenes/TestScenes/Level 1.unity
+    guid: 4a0ae86d8c0984e48a9eb85828a684fb
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Level 2.unity
+    guid: 3e0b7cf3204aa428e9baf1cf59a74e10
   - enabled: 1
     path: Assets/Scenes/Proto/Main Menu.unity
     guid: 31dc46c6e3b1730428e7a0a1549dd5a0
