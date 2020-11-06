@@ -1,4 +1,5 @@
 ﻿using System;
+using Global;
 using Global.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,14 +12,17 @@ namespace UI
         public static bool gameIsPaused = false;
 
         [SerializeField] private GameObject pauseMenuUI;
+        [SerializeField] private ScriptableSceneManager sceneManager;
         
         private void OnEnable()
         {
+            sceneManager.BeforeSceneChangeEvent += Resume;
             if(InputManager.IsReady) InputManager.ActionMaps.Player.Pause.performed += RegisterInput;
         }
 
         private void OnDisable()
         {
+            sceneManager.BeforeSceneChangeEvent -= Resume;
             if(InputManager.IsReady) InputManager.ActionMaps.Player.Pause.performed -= RegisterInput;
         }
 
@@ -45,17 +49,6 @@ namespace UI
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             gameIsPaused = true;
-        }
-        
-        public void MainMenu()
-        {
-            Time.timeScale = 1f;
-            SceneManager.LoadScene("Scenes/Proto/Main Menu");
-        }
-        
-        public void Quit()
-        {
-            Application.Quit();
         }
     }
 }
