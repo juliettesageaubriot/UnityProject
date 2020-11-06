@@ -88,7 +88,8 @@ namespace Interactables
         ) {
             for (var x = 0; x < Width; x++)
             for (var y = 0; y < Height; y++)
-                slabArray[x, y] = Instantiate(
+            {
+                var slab = Instantiate(
                     _layoutArray[x, y] ? solidSlab : hollowSlab,
                     groupTransform.TransformPoint(
                         new Vector3(x * gridSize, y * gridSize)
@@ -96,6 +97,9 @@ namespace Interactables
                     Quaternion.identity,
                     groupTransform
                 );
+                slab.AddComponent(typeof(ScaleOnAwake));
+                slabArray[x, y] = slab;
+            }
         }
     }
 }
