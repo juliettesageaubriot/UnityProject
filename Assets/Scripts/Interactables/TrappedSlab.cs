@@ -36,6 +36,7 @@ namespace Interactables
             _collider2D.isTrigger = false;
             
             other.GetComponent<PlayerController>().enabled = false;
+            other.GetComponent<PlayerDeath>().Kill();
         }
     }
 }
