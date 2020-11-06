@@ -30,13 +30,6 @@ namespace Interactables
             _collider2D.isTrigger = false;
             
             other.GetComponent<PlayerController>().enabled = false;
-            StartCoroutine(WaitBeforeReset(other.GetComponent<PlayerReset>()));
-        }
-
-        private IEnumerator WaitBeforeReset(PlayerReset reset)
-        {
-            yield return new WaitForSeconds(1);
-            reset.Reset();
         }
     }
 }

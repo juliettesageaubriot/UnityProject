@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using Global;
 using Global.Input;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,10 +9,10 @@ using UnityEngine.SceneManagement;
 
 namespace Player
 {
-    public class PlayerReset : MonoBehaviour
+    public class PlayerDeath : MonoBehaviour
     {
-        [SerializeField]
-        public class MoveEvent : UnityEvent {}
+
+        [SerializeField] private ScriptableSceneManager sceneManager;
 
         private void OnEnable()
         {
@@ -24,14 +26,18 @@ namespace Player
         
         private void HandleResetInput(InputAction.CallbackContext context)
         {
-            Reset();
+            sceneManager.ResetCurrentLevel();
         }
 
-        public void Reset()
+        public void Kill()
         {
-            var activeScene = SceneManager.GetActiveScene();
-            var sceneActiveName = activeScene.name;
-            SceneManager.LoadScene(sceneActiveName);
+            StartCoroutine(WaitBeforeReset());
+        }
+
+        private IEnumerator WaitBeforeReset()
+        {
+            yield return new WaitForSeconds(1);
+            sceneManager.ResetCurrentLevel();
         }
     }
 }
