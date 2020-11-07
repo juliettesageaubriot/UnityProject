@@ -62,7 +62,7 @@ namespace Player
         
         public void Switch()
         {
-            if(!UseFuel()) return;
+            if(SensesState.AllSenses == State || !UseFuel()) return;
             SensesState newState = SensesState.AllSenses;
             switch (State)
             {

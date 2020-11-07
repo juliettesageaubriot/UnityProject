@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 7752550587065938237}
   m_Layer: 8
   m_Name: Sense Door
-  m_TagString: Untagged
+  m_TagString: SenseDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
   - {x: 0, y: 0.2, z: 0}
   m_ShapePathHash: -530749171
   m_Mesh: {fileID: 0}
-  m_InstanceId: 31272
+  m_InstanceId: 37050
 --- !u!114 &7752550587065938237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,13 +310,18 @@ MonoBehaviour:
   closedState:
     sprite: {fileID: 21300000, guid: af02b2c530e764a219d88139033585e5, type: 3}
     sortingLayerName: Default
+    layer:
+      layerIndex: 8
     castShadow: 1
     collide: 1
   openState:
     sprite: {fileID: 21300000, guid: 9a7c8fe04a2e645f4b1a1abcd374947d, type: 3}
     sortingLayerName: Floor Decoration
+    layer:
+      layerIndex: 0
     castShadow: 0
     collide: 0
   startOpen: 1
   data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   openSenseState: 2
+  playerTag: Player

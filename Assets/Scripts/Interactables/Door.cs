@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Experimental.Rendering.Universal;
+using Utils;
 
 namespace Interactables
 {
@@ -10,6 +11,7 @@ namespace Interactables
 	{
 		public Sprite sprite;
 		public string sortingLayerName;
+		public SingleUnityLayer layer;
 		public bool castShadow;
 		public bool collide;
 	}
@@ -59,7 +61,8 @@ namespace Interactables
 
 		protected void ChangeState(DoorState state)
 		{
-			colliderComponent.enabled = state.collide;
+			gameObject.layer = state.layer.LayerIndex;
+			colliderComponent.isTrigger = !state.collide;
 			spriteRenderer.sprite = state.sprite;
 			spriteRenderer.sortingLayerName = state.sortingLayerName;
 			shadowCaster2D.castsShadows = state.castShadow;

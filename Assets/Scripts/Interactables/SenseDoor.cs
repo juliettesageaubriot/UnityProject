@@ -14,6 +14,10 @@ namespace Interactables
 	{
 		[SerializeField] protected PlayerSensesData data;
 		[SerializeField] protected DoorSenseEnum openSenseState;
+		[SerializeField] protected string playerTag;
+
+		private bool _isPlayerOnDoor;
+		private GameObject _playerGameObject;
 
 		private void OnEnable() { data.SenseChangeEvent += OnSenseChange; }
 		private void OnDisable() { data.SenseChangeEvent -= OnSenseChange; }
@@ -26,10 +30,25 @@ namespace Interactables
 		
 		public void OnSenseChange(SensesState newSense)
 		{
+			
 			if ((SensesState)openSenseState == newSense)
 				Open();
 			else
+			{
 				Close();
+				if (_isPlayerOnDoor)
+					_playerGameObject.GetComponent<PlayerDeath>().Kill();
+			}
 		}
+
+		private void OnTriggerEnter2D(Collider2D other)
+		{
+			if (other.CompareTag(playerTag))
+			{
+				_isPlayerOnDoor = true;
+				_playerGameObject = other.gameObject;
+			}
+		}
+		private void OnTriggerExit2D(Collider2D other) { if (other.CompareTag(playerTag)) _isPlayerOnDoor = false; }
 	}
 }
