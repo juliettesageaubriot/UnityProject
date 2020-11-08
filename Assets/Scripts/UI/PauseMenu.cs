@@ -1,6 +1,7 @@
 ﻿using System;
 using Global;
 using Global.Input;
+using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,7 @@ namespace UI
 
         [SerializeField] private GameObject pauseMenuUI;
         [SerializeField] private ScriptableSceneManager sceneManager;
+        [SerializeField] private PlayerInputData playerInputData;
         
         private void OnEnable()
         {
@@ -39,6 +41,8 @@ namespace UI
 
         public void Resume()
         {
+            playerInputData.SetMoveEnable(true);
+            playerInputData.SetSwitchEnable(true);
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             gameIsPaused = false;
@@ -46,6 +50,8 @@ namespace UI
 
         public void Pause()
         {
+            playerInputData.SetMoveEnable(false);
+            playerInputData.SetSwitchEnable(false);
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             gameIsPaused = true;

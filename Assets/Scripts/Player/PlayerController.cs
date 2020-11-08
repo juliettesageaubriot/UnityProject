@@ -15,6 +15,9 @@ namespace Player
 
 	public class PlayerController : MonoBehaviour
 	{
+		[SerializeField]
+		private PlayerInputData playerInputData;
+		
 		[SerializeField][Range(0f, 1f)]
 		private float movementDuration = 0.3f;
 		[SerializeField]
@@ -57,7 +60,8 @@ namespace Player
 
 		private void RegisterInput(InputAction.CallbackContext context)
 		{
-			if (_inputsToProcess.Count >= maxInputRegistering) return;
+			if (!playerInputData.Can.move
+			 || _inputsToProcess.Count >= maxInputRegistering) return;
 
 			var direction = context.ReadValue<Vector2>();
 			// Discard diagonals inputs

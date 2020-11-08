@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1136629702704250533}
   sceneManager: {fileID: 11400000, guid: 7e61bc17c617fbd498b3a0eed5ef4d15, type: 2}
+  playerInputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
 --- !u!1001 &3689710873557971408
 PrefabInstance:
   m_ObjectHideFlags: 0

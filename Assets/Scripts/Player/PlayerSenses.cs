@@ -15,6 +15,7 @@ namespace Player
 	{
 		[SerializeField][TagSelector] private string fuelTag = "SenseFuel";
 		[SerializeField] private PlayerSensesData data;
+		[SerializeField] private PlayerInputData inputData;
 		
 		[SerializeField] private SensesState defaultState;
 		[SerializeField] private int defaultFuelAmount;
@@ -43,6 +44,7 @@ namespace Player
 
 		private void Switch(InputAction.CallbackContext obj)
 		{
+			if (!inputData.Can.senseSwitch) return;
 			data.Switch();
 		}
 	}

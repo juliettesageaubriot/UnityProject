@@ -65,7 +65,7 @@ MonoBehaviour:
   - {x: -0.04405742, y: -0.071680784, z: 0}
   m_ShapePathHash: -232236496
   m_Mesh: {fileID: 0}
-  m_InstanceId: 38218
+  m_InstanceId: 23016
 --- !u!212 &6106372333009029892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced8f7373af134082a736b99274e9a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
   movementDuration: 0.2
   movementDistance: 1
   maxInputRegistering: 3
@@ -476,6 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuelTag: SenseFuel
   data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
+  inputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
   defaultState: 0
   defaultFuelAmount: 0
 --- !u!114 &6976735044435094177
