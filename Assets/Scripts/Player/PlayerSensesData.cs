@@ -11,7 +11,7 @@ namespace Player
         Deaf
     }
     
-    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/PlayerSensesData", order = 1)]
+    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/PlayerSensesData", order = 11)]
     public class PlayerSensesData : ScriptableObject
     {
         public delegate void FuelChangeHandler(int fuelAmount);
