@@ -13,6 +13,7 @@ namespace Player
     {
 
         [SerializeField] private ScriptableSceneManager sceneManager;
+        [SerializeField] private PlayerInputData playerInput;
 
         private void OnEnable()
         {
@@ -26,6 +27,7 @@ namespace Player
         
         private void HandleResetInput(InputAction.CallbackContext context)
         {
+            if (!playerInput.Can.reset) return;
             sceneManager.ResetCurrentLevel();
         }
 

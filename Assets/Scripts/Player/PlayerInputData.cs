@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using Global;
+using UnityEngine;
 
 namespace Player
 {
+    [Serializable]
     public struct InputTypes
     {
         public bool move;
@@ -12,33 +15,41 @@ namespace Player
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/PlayerInputData", order = 10)]
     public class PlayerInputData : ScriptableObject
     {
-        public InputTypes Can { get; private set; }
-        
-        public void Awake()
-        {
-            Can = new InputTypes {move = true, senseSwitch = true, reset = true};;
-        }
+        [SerializeField] private InputTypes inputEnable;
+        [SerializeField] private ScriptableSceneManager sceneManager;
+
+        public InputTypes Can => inputEnable;
 
         public void SetMoveEnable(bool newVal)
         {
-            var state = Can;
+            var state = inputEnable;
             state.move = newVal;
-            Can = state;
+            inputEnable = state;
         }
         
         public void SetSwitchEnable(bool newVal)
         {
-            var state = Can;
+            var state = inputEnable;
             state.senseSwitch = newVal;
-            Can = state;
+            inputEnable = state;
         }
         
         public void SetResetEnable(bool newVal)
         {
-            var state = Can;
+            var state = inputEnable;
             state.reset = newVal;
-            Can = state;
+            inputEnable = state;
         }
-        
+
+        private void OnEnable()
+        { sceneManager.BeforeSceneChangeEvent += EnableAll; }
+
+        private void OnDisable()
+        { sceneManager.BeforeSceneChangeEvent -= EnableAll; }
+
+        private void EnableAll()
+        {
+            inputEnable = new InputTypes { move = true, reset = true, senseSwitch = true };
+        }
     }
 }

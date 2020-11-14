@@ -16,9 +16,7 @@ namespace Global
 
         public void StartGame()
         {
-            Debug.Log("Start Game");
             LoadScene(levelNameList[0]);
-            SceneManager.LoadScene(levelNameList[0]);
         }
 
         public void GoToMainMenu()

@@ -506,6 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneManager: {fileID: 11400000, guid: 7e61bc17c617fbd498b3a0eed5ef4d15, type: 2}
+  playerInput: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
 --- !u!1 &8247923127104871230
 GameObject:
   m_ObjectHideFlags: 0

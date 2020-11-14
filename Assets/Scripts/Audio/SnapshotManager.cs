@@ -1,4 +1,5 @@
 ﻿using System;
+using Global;
 using Player;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -26,25 +27,24 @@ namespace Audio
             IsReady = true;
         }
 
-        private void Start()
-        {
-            if (data.State == SensesState.Deaf) MuffleSound(0f);
-            else UnmuffleSound(0f);
-        }
-
-        private void OnDestroy()
-        {
-            IsReady = false;
-        }
+        private void OnDestroy() { IsReady = false; }
 
         private void OnEnable()
         {
+            data.SenseInitEvent += OnInitSenses;
             data.SenseChangeEvent += OnChangeSense;
         }
 
         private void OnDisable()
         {
-            data.SenseChangeEvent += OnChangeSense;
+            data.SenseInitEvent -= OnInitSenses;
+            data.SenseChangeEvent -= OnChangeSense;
+        }
+
+        private void OnInitSenses(SensesState state)
+        {
+            if (data.State == SensesState.Deaf) MuffleSound(0f);
+            else UnmuffleSound(0f);
         }
 
         private void OnChangeSense(SensesState state)
@@ -54,24 +54,14 @@ namespace Audio
         }
 
         private void UnmuffleSound()
-        {
-            TransitionSnapshot(new[] {0f, 1f}, transitionDuration);
-        }
-
+        { TransitionSnapshot(new[] {0f, 1f}, transitionDuration); }
         private void UnmuffleSound(float duration)
-        {
-            TransitionSnapshot(new[] {0f, 1f}, duration);
-        }
+        { TransitionSnapshot(new[] {0f, 1f}, duration); }
 
         private void MuffleSound()
-        {
-            TransitionSnapshot(new[] {1f, 0f}, transitionDuration);
-        }
-
+        { TransitionSnapshot(new[] {1f, 0f}, transitionDuration); }
         private void MuffleSound(float duration)
-        {
-            TransitionSnapshot(new[] {1f, 0f}, duration);
-        }
+        { TransitionSnapshot(new[] {1f, 0f}, duration); }
 
         private void TransitionSnapshot(float[] weight, float duration)
         {

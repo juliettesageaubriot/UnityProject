@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d566142197773374499a4994353f9190, type: 3}
   m_Name: PlayerInputData
   m_EditorClassIdentifier: 
+  inputEnable:
+    move: 1
+    senseSwitch: 1
+    reset: 1
+  sceneManager: {fileID: 11400000, guid: 7e61bc17c617fbd498b3a0eed5ef4d15, type: 2}

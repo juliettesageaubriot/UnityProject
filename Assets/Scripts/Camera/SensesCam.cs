@@ -10,13 +10,14 @@ public class SensesCam : MonoBehaviour
     [SerializeField] private Camera blindCamera;
     [SerializeField] private Camera normalCamera;
 
-    private void Start()
-    {
-        UpdateCams(data.State);
+    private void OnEnable() { 
+        data.SenseInitEvent += UpdateCams;
+        data.SenseChangeEvent += UpdateCams;
     }
-
-    private void OnEnable() { data.SenseChangeEvent += UpdateCams; }
-    private void OnDisable() { data.SenseChangeEvent -= UpdateCams; }
+    private void OnDisable() { 
+        data.SenseInitEvent -= UpdateCams;
+        data.SenseChangeEvent -= UpdateCams;
+    }
 
     private void UpdateCams(SensesState state)
     {

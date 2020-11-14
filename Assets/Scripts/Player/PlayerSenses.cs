@@ -21,7 +21,7 @@ namespace Player
 		[SerializeField] private int defaultFuelAmount;
 		
 		
-		private void Awake()
+		private void Start()
 		{
 			data.InitFuel(defaultFuelAmount);
 			data.InitState(defaultState);

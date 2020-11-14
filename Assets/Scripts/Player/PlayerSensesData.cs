@@ -16,9 +16,11 @@ namespace Player
     {
         public delegate void FuelChangeHandler(int fuelAmount);
         public event FuelChangeHandler FuelChangeEvent;
+        public event FuelChangeHandler FuelInitEvent;
         
         public delegate void SenseChangeHandler(SensesState state);
         public event SenseChangeHandler SenseChangeEvent;
+        public event SenseChangeHandler SenseInitEvent;
         
         private int _fuelAmount = 0;
         public int FuelAmount {
@@ -54,12 +56,6 @@ namespace Player
             FuelAmount++;
         }
 
-        public void InitFuel(int fuelAmount)
-        {
-            _fuelAmount = fuelAmount;
-        }
-        
-        
         public void Switch()
         {
             if(SensesState.AllSenses == State || !UseFuel()) return;
@@ -82,6 +78,14 @@ namespace Player
         public void InitState(SensesState state)
         {
             _state = state;
+            SenseInitEvent?.Invoke(state);
         }
+        
+        public void InitFuel(int fuelAmount)
+        {
+            _fuelAmount = fuelAmount;
+            FuelInitEvent?.Invoke(fuelAmount);
+        }
+
     }
 }
