@@ -26,19 +26,19 @@ namespace Global
 
         public void LoadNextLevel()
         {
-            Scene currentScene = SceneManager.GetActiveScene();
+            var currentScene = SceneManager.GetActiveScene();
             
             var currentLevelIndex = Array.FindIndex(levelNameList, sceneName => currentScene.name == sceneName);
             if (currentLevelIndex == -1) throw new Exception("Cannot go to next level, the current scene isn't a level.");
             
-            var nextLevelName = levelNameList[(currentLevelIndex + 1) % levelNameList.Length];
-            
-            LoadScene(nextLevelName);
+            LoadScene(currentLevelIndex < levelNameList.Length - 1
+                ? levelNameList[currentLevelIndex + 1]
+                : mainMenuSceneName);
         }
 
         public void ResetCurrentLevel()
         {
-            Scene currentScene = SceneManager.GetActiveScene();
+            var currentScene = SceneManager.GetActiveScene();
             LoadScene(currentScene.name);
         }
 
