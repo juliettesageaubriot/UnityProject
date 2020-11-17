@@ -28,9 +28,11 @@ MonoBehaviour:
   hideState:
     opacity: 0
     interactable: 0
+    blocksRaycasts: 0
   visibleState:
     opacity: 1
     interactable: 1
+    blocksRaycasts: 1
   startVisible: 1
 --- !u!1 &6115760242268991878
 GameObject:
@@ -770,9 +772,11 @@ MonoBehaviour:
   hideState:
     opacity: 0
     interactable: 0
+    blocksRaycasts: 0
   visibleState:
     opacity: 1
     interactable: 1
+    blocksRaycasts: 1
   startVisible: 1
 --- !u!1 &9091717163507619160
 GameObject:
@@ -937,9 +941,11 @@ MonoBehaviour:
   hideState:
     opacity: 0
     interactable: 0
+    blocksRaycasts: 0
   visibleState:
     opacity: 1
     interactable: 1
+    blocksRaycasts: 1
   startVisible: 1
 --- !u!1 &9176407230502925067
 GameObject:
@@ -1103,10 +1109,12 @@ MonoBehaviour:
   hideState:
     opacity: 0
     interactable: 0
+    blocksRaycasts: 0
   visibleState:
     opacity: 1
     interactable: 1
-  startVisible: 0
+    blocksRaycasts: 1
+  startVisible: 1
 --- !u!1001 &2275399646035990934
 PrefabInstance:
   m_ObjectHideFlags: 0

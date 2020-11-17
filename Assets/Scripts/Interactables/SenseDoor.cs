@@ -19,16 +19,26 @@ namespace Interactables
 		private bool _isPlayerOnDoor;
 		private GameObject _playerGameObject;
 
-		private void OnEnable() { data.SenseChangeEvent += OnSenseChange; }
-		private void OnDisable() { data.SenseChangeEvent -= OnSenseChange; }
-
-		protected override void Start()
+		private void OnEnable()
 		{
-			startOpen = (SensesState) openSenseState == data.State;
+			data.SenseChangeEvent += OnSenseChange;
+			data.SenseInitEvent += InitDoor;
+		}
+		private void OnDisable()
+		{
+			data.SenseChangeEvent -= OnSenseChange;
+			data.SenseInitEvent -= InitDoor;
+		}
+
+		protected override void Start() {}
+
+		private void InitDoor(SensesState sensesState)
+		{
+			startOpen = (SensesState) openSenseState == sensesState;
 			base.Start();
 		}
 		
-		public void OnSenseChange(SensesState newSense)
+		private void OnSenseChange(SensesState newSense)
 		{
 			
 			if ((SensesState)openSenseState == newSense)

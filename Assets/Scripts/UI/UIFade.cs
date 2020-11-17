@@ -11,6 +11,7 @@ namespace UI
     {
         public float opacity;
         public bool interactable;
+        public bool blocksRaycasts;
     }
 
     [RequireComponent(typeof(CanvasGroup))]
@@ -19,9 +20,9 @@ namespace UI
         [SerializeField] private float fadeDuration;
 
         [SerializeField]
-        private FadeState hideState = new FadeState() {interactable = false, opacity = 0f};
+        private FadeState hideState = new FadeState() {interactable = false, opacity = 0f, blocksRaycasts = false};
         [SerializeField]
-        private FadeState visibleState = new FadeState() {interactable = true, opacity = 1f};
+        private FadeState visibleState = new FadeState() {interactable = true, opacity = 1f, blocksRaycasts = true};
 
         [SerializeField] private bool startVisible = true;
     
@@ -42,11 +43,13 @@ namespace UI
         {
             _canvasGroup.DOFade(state.opacity, fadeDuration);
             _canvasGroup.interactable = state.interactable;
+            _canvasGroup.blocksRaycasts = state.blocksRaycasts;
         }
         private void Fade(FadeState state, float duration)
         {
             _canvasGroup.DOFade(state.opacity, duration);
             _canvasGroup.interactable = state.interactable;
+            _canvasGroup.blocksRaycasts = state.blocksRaycasts;
         }
     }
 }

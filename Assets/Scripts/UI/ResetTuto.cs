@@ -28,9 +28,9 @@ namespace UI
         private IEnumerator ShowHint()
         {
             yield return new WaitForSeconds(timeBeforeHint);
+            inputData.SetResetEnable(true);
             hint.FadeIn();
             yield return new WaitForSeconds(timeBeforeButton);
-            inputData.SetResetEnable(true);
             button.FadeIn();
             yield return new WaitForSeconds(Mathf.Abs(timeShowHint - timeBeforeButton));
             hint.FadeOut();

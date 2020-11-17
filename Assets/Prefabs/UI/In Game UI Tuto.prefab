@@ -164,9 +164,11 @@ MonoBehaviour:
   hideState:
     opacity: 0
     interactable: 0
+    blocksRaycasts: 0
   visibleState:
     opacity: 1
     interactable: 1
+    blocksRaycasts: 1
   startVisible: 0
 --- !u!1 &2585348138467873759
 GameObject:
@@ -181,6 +183,8 @@ GameObject:
   - component: {fileID: 2222365450624921684}
   - component: {fileID: 338140622341544538}
   - component: {fileID: 1817448196957149501}
+  - component: {fileID: 4434022254685844980}
+  - component: {fileID: 3009074788711089020}
   m_Layer: 5
   m_Name: Fuel Tuto
   m_TagString: Untagged
@@ -276,10 +280,235 @@ MonoBehaviour:
   hideState:
     opacity: 0
     interactable: 0
+    blocksRaycasts: 0
   visibleState:
     opacity: 1
     interactable: 1
+    blocksRaycasts: 1
   startVisible: 0
+--- !u!114 &4434022254685844980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585348138467873759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544848c39b609534a84fb7cb13c8d0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 0
+  relativeToPrevious: 1
+  sequence:
+  - interval: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1817448196957149501}
+          m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+          m_MethodName: FadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
+          m_TargetAssemblyTypeName: Player.PlayerInputData, Assembly-CSharp
+          m_MethodName: SetMoveEnable
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
+          m_TargetAssemblyTypeName: Player.PlayerInputData, Assembly-CSharp
+          m_MethodName: SetSwitchEnable
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 139513017666636855}
+          m_TargetAssemblyTypeName: UI.PauseMenu, Assembly-CSharp
+          m_MethodName: EnablePause
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - interval: 3
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 954325025171179883}
+          m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+          m_MethodName: FadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - interval: 0.5
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
+          m_TargetAssemblyTypeName: Player.PlayerInputData, Assembly-CSharp
+          m_MethodName: SetSwitchEnable
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 3009074788711089020}
+          m_TargetAssemblyTypeName: UI.FuelTuto, Assembly-CSharp
+          m_MethodName: WaitForSwitch
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 3041498663532343073}
+          m_TargetAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+          m_MethodName: set_overrideSorting
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 345555532583994525}
+          m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+          m_MethodName: FadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 5020130602880642670}
+          m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+          m_MethodName: FadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+--- !u!114 &3009074788711089020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585348138467873759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1482b85c1d8fa143b41515ebeabb9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSenses: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
+  onTutoSwitch:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1817448196957149501}
+        m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3041498663532343073}
+        m_TargetAssemblyTypeName: UnityEngine.Canvas, UnityEngine
+        m_MethodName: set_overrideSorting
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
+        m_TargetAssemblyTypeName: Player.PlayerInputData, Assembly-CSharp
+        m_MethodName: SetMoveEnable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 139513017666636855}
+        m_TargetAssemblyTypeName: UI.PauseMenu, Assembly-CSharp
+        m_MethodName: EnablePause
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7802679649387390538}
+        m_TargetAssemblyTypeName: Utils.EventSequence, Assembly-CSharp
+        m_MethodName: StartSequence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &3474497211912210727
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,57 +778,44 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6328949989676520725
+--- !u!223 &3041498663532343073
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132072009793132133}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
+--- !u!114 &5216858226234463467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5715897524015537419}
+  m_GameObject: {fileID: 9132072009793132133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb4f2a75bbe2f4e4f93b446daa9cc89b, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
-  timeBeforeHint: 5
-  timeShowHint: 10
-  timeBeforeButton: 2
-  hint: {fileID: 7905302327242368464}
-  button: {fileID: 8211668669882782093}
---- !u!114 &8506984802875271417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5715897524015537419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1482b85c1d8fa143b41515ebeabb9e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuelTutoPanel: {fileID: 1817448196957149501}
-  switchButton: {fileID: 345555532583994525}
-  fuelIndicator: {fileID: 5020130602880642670}
-  ctaSwitch: {fileID: 954325025171179883}
-  inputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
-  timeBeforeSwitchEnable: 2.5
-  onTutoEndEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6328949989676520725}
-        m_TargetAssemblyTypeName: ResetTuto, Assembly-CSharp
-        m_MethodName: StartResetTuto
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &8779747483576214919
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +962,7 @@ GameObject:
   - component: {fileID: 5069640144281593198}
   - component: {fileID: 8845967518635092766}
   - component: {fileID: 7905302327242368464}
+  - component: {fileID: 7802679649387390538}
   m_Layer: 5
   m_Name: Reset tuto
   m_TagString: Untagged
@@ -809,10 +1026,75 @@ MonoBehaviour:
   hideState:
     opacity: 0
     interactable: 0
+    blocksRaycasts: 0
   visibleState:
     opacity: 1
     interactable: 1
+    blocksRaycasts: 1
   startVisible: 0
+--- !u!114 &7802679649387390538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028003755210245987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544848c39b609534a84fb7cb13c8d0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 0
+  relativeToPrevious: 1
+  sequence:
+  - interval: 5
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7905302327242368464}
+          m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+          m_MethodName: FadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - interval: 0.5
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8211668669882782093}
+          m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+          m_MethodName: FadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - interval: 8
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7905302327242368464}
+          m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+          m_MethodName: FadeOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &6468239925896715508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -912,23 +1194,16 @@ PrefabInstance:
       propertyPath: startVisible
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2897636264880885113, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
+      propertyPath: startVisible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6703719217629599849, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
       propertyPath: startVisible
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
---- !u!114 &345555532583994525 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6703719217629599849, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
-  m_PrefabInstance: {fileID: 6468239925896715508}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5020130602880642670 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2047127778240115354, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
@@ -940,11 +1215,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &5715897524015537423 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1626150702846411259, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
+--- !u!114 &139513017666636855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6353571547680248003, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
   m_PrefabInstance: {fileID: 6468239925896715508}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6c74a5c2597ba4f9ebed6283ef8c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8211668669882782093 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2897636264880885113, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
@@ -956,8 +1237,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &5715897524015537419 stripped
+--- !u!114 &345555532583994525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6703719217629599849, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
+  m_PrefabInstance: {fileID: 6468239925896715508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132072009793132133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &9132072009793132133 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1626150702846411263, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2844145118906370705, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
+  m_PrefabInstance: {fileID: 6468239925896715508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &5715897524015537423 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1626150702846411259, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
   m_PrefabInstance: {fileID: 6468239925896715508}
   m_PrefabAsset: {fileID: 0}

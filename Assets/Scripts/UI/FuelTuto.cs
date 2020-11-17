@@ -9,64 +9,34 @@ namespace UI
 {
     public class FuelTuto : MonoBehaviour
     {
-        [SerializeField] private UIFade fuelTutoPanel;
-        [SerializeField] private UIFade switchButton;
-        [SerializeField] private UIFade fuelIndicator;
-        [SerializeField] private UIFade ctaSwitch;
-        [Space(10)]
-        [SerializeField] private PlayerInputData inputData;
-        [SerializeField] private float timeBeforeSwitchEnable = 2.5f;
-        [Space(10)]
-        [SerializeField] private UnityEvent onTutoEndEvent;
+        [SerializeField] private PlayerSensesData playerSenses;
+        [SerializeField] private UnityEvent onTutoSwitch;
 
         private bool _isListeningInputs;
 
         private void Start()
         {
-            if (onTutoEndEvent == null)
-                onTutoEndEvent = new UnityEvent();
+            if (onTutoSwitch == null)
+                onTutoSwitch = new UnityEvent();
         }
 
-        public void StartTuto()
+        public void WaitForSwitch()
         {
-            fuelTutoPanel.FadeIn();
-            inputData.SetMoveEnable(false);
-            inputData.SetSwitchEnable(false);
-
-            StartCoroutine(ListenInputs());
-        }
-
-        public void EndTuto()
-        {
-            fuelTutoPanel.FadeOut();
-            inputData.SetMoveEnable(true);
-            onTutoEndEvent.Invoke();
-        }
-
-        private IEnumerator ListenInputs()
-        {
-            yield return new WaitForSeconds(timeBeforeSwitchEnable);
-            ctaSwitch.FadeIn();
             _isListeningInputs = true;
-            inputData.SetSwitchEnable(true);
-            if (InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed += HandleInputs;
-            switchButton.FadeIn();
-            fuelIndicator.FadeIn();
+            playerSenses.SenseChangeEvent += HandleSwitch;
         }
 
-        private void HandleInputs(InputAction.CallbackContext obj)
+        private void HandleSwitch(SensesState _)
         {
             _isListeningInputs = false;
-            if (InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed -= HandleInputs;
-            EndTuto();
+            playerSenses.SenseChangeEvent -= HandleSwitch;
+            onTutoSwitch.Invoke();
         }
 
         private void OnDisable()
         {
-            inputData.SetMoveEnable(true);
-            inputData.SetSwitchEnable(true);
-            if (InputManager.IsReady && _isListeningInputs)
-                InputManager.ActionMaps.Player.Switch.performed -= HandleInputs;
+            if (_isListeningInputs)
+                playerSenses.SenseChangeEvent -= HandleSwitch;
         }
     }
 }
