@@ -53,6 +53,10 @@ PrefabInstance:
       propertyPath: sequence.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: FadeIn
       objectReference: {fileID: 0}
+    - target: {fileID: 4434022254685844980, guid: 757c98da0b90bda4bb26d8665b7d597c, type: 3}
+      propertyPath: sequence.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 7702326266464093302}
     - target: {fileID: 5715897524015537419, guid: 757c98da0b90bda4bb26d8665b7d597c, type: 3}
       propertyPath: m_Name
       value: Proto In Game UI Tuto
