@@ -35,7 +35,8 @@ namespace UI
             onStartTuto.Invoke();
             _isListeningInputs = true;
             tutoPanel.onClick.AddListener(HandlePassTuto);
-            if(InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed += HandlePassTuto;
+            //if(InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed += HandlePassTuto;
+            if(InputManager.IsReady) InputManager.ActionMaps.Player.Move.performed += HandlePassTuto;
         }
 
 
@@ -50,7 +51,8 @@ namespace UI
             _endSequence.StartSequence();
             
             tutoPanel.onClick.RemoveListener(HandlePassTuto);
-            if(InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed -= HandlePassTuto;
+            //if(InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed -= HandlePassTuto;
+            if(InputManager.IsReady) InputManager.ActionMaps.Player.Move.performed -= HandlePassTuto;
         }
 
         private void HandleFirstSwitch(SensesState _)
@@ -66,7 +68,8 @@ namespace UI
             if (_isListeningInputs)
             {
                 tutoPanel.onClick.RemoveListener(HandlePassTuto);
-                if(InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed -= HandlePassTuto;
+                //if(InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed -= HandlePassTuto;
+                if(InputManager.IsReady) InputManager.ActionMaps.Player.Move.performed -= HandlePassTuto;
             }
         }
     }
