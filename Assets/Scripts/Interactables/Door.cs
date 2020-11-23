@@ -24,10 +24,13 @@ namespace Interactables
 		
 		[SerializeField] public UnityEvent onOpenEvent;
 		[SerializeField] public UnityEvent onCloseEvent;
-
+		[Space(10)]
 		[SerializeField] protected DoorState closedState;
 		[SerializeField] protected DoorState openState;
 		[SerializeField] protected bool startOpen;
+
+		private bool _isOpen;
+		public bool IsOpen => _isOpen;
 
 		protected virtual void Start()
 		{
@@ -40,21 +43,21 @@ namespace Interactables
 			
 			if (onCloseEvent == null)
 				onCloseEvent = new UnityEvent();
-			
-			if (startOpen)
-				ChangeState(openState);
-			else
-				ChangeState(closedState);
+
+			_isOpen = startOpen;
+			ChangeState(startOpen ? openState : closedState);
 		}
 
 		public void Open()
 		{
+			_isOpen = true;
 			onOpenEvent.Invoke();
 			ChangeState(openState);
 		}
 
 		public void Close()
 		{
+			_isOpen = false;
 			onCloseEvent.Invoke();
 			ChangeState(closedState);
 		}
