@@ -46,6 +46,11 @@ namespace Global
         {
             Application.Quit();
         }
+        
+        public void OpenUrlForm()
+        {
+            Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSfSN4LFlsQJ6qcnRbU9bSnOHxUTkuJ62vxh_UiWcksAsoAWHw/viewform?usp=sf_link");
+        }
 
         private void LoadScene(string sceneName)
         {
