@@ -106,7 +106,7 @@ namespace Player
 			var hit = Physics2D.Raycast(
 				transform.position + new Vector3(raycastCenter.x, raycastCenter.y, 0f),
 				direction,
-				1f,
+				movementDistance,
 				obstacleLayer.Mask);
 			return hit.collider == null;
 		}
