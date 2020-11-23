@@ -17,3 +17,4 @@ MonoBehaviour:
   - Level 2
   - Level 3
   mainMenuSceneName: Main Menu
+  endSceneName: End
