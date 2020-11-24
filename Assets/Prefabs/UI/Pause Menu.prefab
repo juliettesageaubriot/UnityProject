@@ -1225,7 +1225,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3689710873354309914}
         m_TargetAssemblyTypeName: UI.PauseMenu, Assembly-CSharp
-        m_MethodName: OpenOptionTab
+        m_MethodName: CloseOptionTab
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
