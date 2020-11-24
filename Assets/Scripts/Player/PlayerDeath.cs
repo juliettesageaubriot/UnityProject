@@ -13,21 +13,20 @@ namespace Player
     {
 
         [SerializeField] private ScriptableSceneManager sceneManager;
-        [SerializeField] private PlayerInputData playerInput;
+        [SerializeField] private InputData resetInput;
 
         private void OnEnable()
         {
-            if (InputManager.IsReady) InputManager.ActionMaps.Player.Reset.performed += HandleResetInput;
+            resetInput.AddListener(HandleResetInput);
         }
 
         private void OnDisable()
         {
-            if (InputManager.IsReady) InputManager.ActionMaps.Player.Reset.performed -= HandleResetInput;
+            resetInput.RemoveListener(HandleResetInput);
         }
         
         private void HandleResetInput(InputAction.CallbackContext context)
         {
-            if (!playerInput.Can.reset) return;
             sceneManager.ResetCurrentLevel();
         }
 

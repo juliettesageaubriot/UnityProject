@@ -1,44 +1,29 @@
 ﻿using System;
+using System.Linq;
 using Global;
 using UnityEngine;
 
 namespace Player
 {
-    [Serializable]
-    public struct InputTypes
-    {
-        public bool move;
-        public bool senseSwitch;
-        public bool reset;
-    }
-    
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/PlayerInputData", order = 10)]
     public class PlayerInputData : ScriptableObject
     {
-        [SerializeField] private InputTypes inputEnable;
         [SerializeField] private ScriptableSceneManager sceneManager;
+        [SerializeField] private InputData[] Inputs;
 
-        public InputTypes Can => inputEnable;
+        public InputData Get(string inputName)
+        {
+            return Inputs.First(i => i.InputName == inputName);
+        }
 
-        public void SetMoveEnable(bool newVal)
+        public bool Can(string inputName)
         {
-            var state = inputEnable;
-            state.move = newVal;
-            inputEnable = state;
+            return Get(inputName).Can;
         }
-        
-        public void SetSwitchEnable(bool newVal)
+
+        public void SetEnable(string inputName, bool newBool)
         {
-            var state = inputEnable;
-            state.senseSwitch = newVal;
-            inputEnable = state;
-        }
-        
-        public void SetResetEnable(bool newVal)
-        {
-            var state = inputEnable;
-            state.reset = newVal;
-            inputEnable = state;
+            Get(inputName).SetEnable(newBool);
         }
 
         private void OnEnable()
@@ -49,7 +34,7 @@ namespace Player
 
         private void EnableAll()
         {
-            inputEnable = new InputTypes { move = true, reset = true, senseSwitch = true };
+            foreach (var inputData in Inputs) inputData.SetEnable(true);
         }
     }
 }

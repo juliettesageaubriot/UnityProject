@@ -18,7 +18,9 @@ namespace UI
         [SerializeField] private GameObject fisrtOptionButtonUI;
         [SerializeField] private EventSystem eventSystem;
         [SerializeField] private ScriptableSceneManager sceneManager;
-        [SerializeField] private PlayerInputData playerInputData;
+        [SerializeField] private InputData moveInput;
+        [SerializeField] private InputData switchInput;
+        [SerializeField] private InputData pauseInput;
 
         private bool _canPause = true;
 
@@ -28,8 +30,8 @@ namespace UI
         public void Resume()
         {
             if (!_canPause) return;
-            playerInputData.SetMoveEnable(true);
-            playerInputData.SetSwitchEnable(true);
+            moveInput.Enable();
+            switchInput.Enable();
             CloseOptionTab();
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
@@ -39,8 +41,8 @@ namespace UI
         public void Pause()
         {
             if (!_canPause) return;
-            playerInputData.SetMoveEnable(false);
-            playerInputData.SetSwitchEnable(false);
+            moveInput.Disable();
+            switchInput.Disable();
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             gameIsPaused = true;
@@ -63,13 +65,13 @@ namespace UI
         private void OnEnable()
         {
             sceneManager.BeforeSceneChangeEvent += Resume;
-            if(InputManager.IsReady) InputManager.ActionMaps.Player.Pause.performed += RegisterInput;
+            pauseInput.AddListener(RegisterInput);
         }
 
         private void OnDisable()
         {
             sceneManager.BeforeSceneChangeEvent -= Resume;
-            if(InputManager.IsReady) InputManager.ActionMaps.Player.Pause.performed -= RegisterInput;
+            pauseInput.RemoveListener(RegisterInput);
         }
         
         private void Start()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening;
+using Global;
 using Global.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,7 +17,7 @@ namespace Player
 	public class PlayerController : MonoBehaviour
 	{
 		[SerializeField]
-		private PlayerInputData playerInputData;
+		private InputData moveInput;
 		[SerializeField]
 		private PlayerPositionData playerPositionData;
 		
@@ -58,18 +59,17 @@ namespace Player
 
 		private void OnEnable()
 		{
-			if(InputManager.IsReady) InputManager.ActionMaps.Player.Move.performed += RegisterInput;
+			moveInput.AddListener(RegisterInput);
 		}
 
 		private void OnDisable()
 		{
-			if(InputManager.IsReady) InputManager.ActionMaps.Player.Move.performed -= RegisterInput;
+			moveInput.RemoveListener(RegisterInput);
 		}
 
 		private void RegisterInput(InputAction.CallbackContext context)
 		{
-			if (!playerInputData.Can.move
-			 || _inputsToProcess.Count >= maxInputRegistering) return;
+			if (_inputsToProcess.Count >= maxInputRegistering) return;
 
 			var direction = context.ReadValue<Vector2>();
 			// Discard diagonals inputs

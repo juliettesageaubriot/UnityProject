@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 using Audio;
+using Global;
 using Global.Input;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,7 +17,7 @@ namespace Player
 	{
 		[SerializeField][TagSelector] private string fuelTag = "SenseFuel";
 		[SerializeField] private PlayerSensesData data;
-		[SerializeField] private PlayerInputData inputData;
+		[SerializeField] private InputData switchInput;
 		
 		[SerializeField] private SensesState defaultState;
 		[SerializeField] private int defaultFuelAmount;
@@ -30,12 +31,12 @@ namespace Player
 
 		private void OnEnable()
 		{
-			if (InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed += Switch;
+			switchInput.AddListener(Switch);
 		}
 
 		private void OnDisable()
 		{
-			if (InputManager.IsReady) InputManager.ActionMaps.Player.Switch.performed -= Switch;
+			switchInput.RemoveListener(Switch);
 		}
 		
 		private void OnTriggerEnter2D(Collider2D other)
@@ -45,7 +46,6 @@ namespace Player
 
 		private void Switch(InputAction.CallbackContext obj)
 		{
-			if (!inputData.Can.senseSwitch) return;
 			data.Switch();
 		}
 	}

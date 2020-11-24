@@ -406,10 +406,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
-          m_TargetAssemblyTypeName: Player.PlayerInputData, Assembly-CSharp
-          m_MethodName: SetMoveEnable
-          m_Mode: 6
+        - m_Target: {fileID: 11400000, guid: 5a7195eebbbd40743b280305e87a7dd1, type: 2}
+          m_TargetAssemblyTypeName: Global.InputData, Assembly-CSharp
+          m_MethodName: Enable
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -446,10 +446,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
-          m_TargetAssemblyTypeName: Player.PlayerInputData, Assembly-CSharp
-          m_MethodName: SetSwitchEnable
-          m_Mode: 6
+        - m_Target: {fileID: 11400000, guid: dbd8a9b54943eba42b4c4fa9e095f835, type: 2}
+          m_TargetAssemblyTypeName: Global.InputData, Assembly-CSharp
+          m_MethodName: Enable
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -527,10 +527,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
-        m_TargetAssemblyTypeName: Player.PlayerInputData, Assembly-CSharp
-        m_MethodName: SetMoveEnable
-        m_Mode: 6
+      - m_Target: {fileID: 11400000, guid: 5a7195eebbbd40743b280305e87a7dd1, type: 2}
+        m_TargetAssemblyTypeName: Global.InputData, Assembly-CSharp
+        m_MethodName: Disable
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -539,10 +539,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 0
-      - m_Target: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
-        m_TargetAssemblyTypeName: Player.PlayerInputData, Assembly-CSharp
-        m_MethodName: SetSwitchEnable
-        m_Mode: 6
+      - m_Target: {fileID: 11400000, guid: dbd8a9b54943eba42b4c4fa9e095f835, type: 2}
+        m_TargetAssemblyTypeName: Global.InputData, Assembly-CSharp
+        m_MethodName: Disable
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1281,28 +1281,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
---- !u!114 &139513017666636855 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6353571547680248003, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
-  m_PrefabInstance: {fileID: 6468239925896715508}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b6c74a5c2597ba4f9ebed6283ef8c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8211668669882782093 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2897636264880885113, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
-  m_PrefabInstance: {fileID: 6468239925896715508}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &345555532583994525 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6703719217629599849, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
@@ -1335,3 +1313,25 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1626150702846411259, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
   m_PrefabInstance: {fileID: 6468239925896715508}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &139513017666636855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6353571547680248003, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
+  m_PrefabInstance: {fileID: 6468239925896715508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6c74a5c2597ba4f9ebed6283ef8c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8211668669882782093 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2897636264880885113, guid: 3858cab36fb15b44bb2e7de4ef993e27, type: 3}
+  m_PrefabInstance: {fileID: 6468239925896715508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1808,7 +1808,9 @@ MonoBehaviour:
   fisrtOptionButtonUI: {fileID: 2621931051925504037}
   eventSystem: {fileID: 0}
   sceneManager: {fileID: 11400000, guid: 7e61bc17c617fbd498b3a0eed5ef4d15, type: 2}
-  playerInputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
+  moveInput: {fileID: 11400000, guid: 5a7195eebbbd40743b280305e87a7dd1, type: 2}
+  switchInput: {fileID: 11400000, guid: dbd8a9b54943eba42b4c4fa9e095f835, type: 2}
+  pauseInput: {fileID: 11400000, guid: 7a677d893db74c345a037a82148a512b, type: 2}
 --- !u!1 &3979000588540077745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,14 +2673,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
---- !u!1 &3894682998391427065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 376277002808622633, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
-  m_PrefabInstance: {fileID: 3689710873557971408}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3894682998391427062 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 376277002808622630, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
+  m_PrefabInstance: {fileID: 3689710873557971408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3894682998391427065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 376277002808622633, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
   m_PrefabInstance: {fileID: 3689710873557971408}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3689710875177636389

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Global;
 using Player;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace UI
 {
     public class ResetTuto : MonoBehaviour
     {
-        [SerializeField] private PlayerInputData inputData;
+        [SerializeField] private InputData resetInput;
         [Space(10)]
         [SerializeField] private float timeBeforeHint = 5f;
         [SerializeField] private float timeShowHint = 10f;
@@ -17,7 +18,7 @@ namespace UI
 
         private void Start()
         {
-            inputData.SetResetEnable(false);
+            resetInput.Disable();
         }
 
         public void StartResetTuto()
@@ -28,7 +29,7 @@ namespace UI
         private IEnumerator ShowHint()
         {
             yield return new WaitForSeconds(timeBeforeHint);
-            inputData.SetResetEnable(true);
+            resetInput.Enable();
             hint.FadeIn();
             yield return new WaitForSeconds(timeBeforeButton);
             button.FadeIn();
