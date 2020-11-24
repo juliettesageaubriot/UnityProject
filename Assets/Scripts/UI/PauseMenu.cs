@@ -14,10 +14,7 @@ namespace UI
         
         [SerializeField] private PlayerSensesData data;
         [SerializeField] private GameObject pauseMenuUI;
-        [SerializeField] private GameObject mainTabUI;
-        [SerializeField] private GameObject optionTabUI;
-        [SerializeField] private GameObject firstMainButtonUI;
-        [SerializeField] private GameObject firstOptionButtonUI;
+        [SerializeField] private GameObject firstButtonUI;
         [SerializeField] private EventSystem eventSystem;
         [SerializeField] private ScriptableSceneManager sceneManager;
         [SerializeField] private PlayerInputData playerInputData;
@@ -32,7 +29,6 @@ namespace UI
             if (!_canPause) return;
             playerInputData.SetMoveEnable(true);
             playerInputData.SetSwitchEnable(true);
-            CloseOptionTab();
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             gameIsPaused = false;
@@ -49,23 +45,10 @@ namespace UI
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             gameIsPaused = true;
+            eventSystem.SetSelectedGameObject(firstButtonUI);
 
             if (data.State == SensesState.Deaf) return;
             SnapshotManager.Instance.PauseSound();
-        }
-
-        public void OpenOptionTab()
-        {
-            optionTabUI.SetActive(true);
-            mainTabUI.SetActive(false);
-            eventSystem.SetSelectedGameObject(firstOptionButtonUI);
-        }
-        
-        public void CloseOptionTab()
-        {
-            optionTabUI.SetActive(false);
-            mainTabUI.SetActive(true);
-            eventSystem.SetSelectedGameObject(firstMainButtonUI);
         }
 
         private void OnEnable()
@@ -83,7 +66,7 @@ namespace UI
         private void Start()
         {
             pauseMenuUI.SetActive(false);
-            eventSystem.SetSelectedGameObject(firstMainButtonUI);
+            eventSystem.SetSelectedGameObject(firstButtonUI);
         }
 
         private void RegisterInput(InputAction.CallbackContext context)
