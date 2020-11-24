@@ -10,6 +10,7 @@ namespace Global
     {
         [SerializeField] private string[] levelNameList;
         [SerializeField] private string mainMenuSceneName;
+        [SerializeField] private string endSceneName;
         
         public delegate void BeforeSceneChangeHandler();
         public event BeforeSceneChangeHandler BeforeSceneChangeEvent;
@@ -33,7 +34,7 @@ namespace Global
             
             LoadScene(currentLevelIndex < levelNameList.Length - 1
                 ? levelNameList[currentLevelIndex + 1]
-                : mainMenuSceneName);
+                : endSceneName);
         }
 
         public void ResetCurrentLevel()
