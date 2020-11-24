@@ -324,6 +324,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3689710873354309914, guid: 5ed0d731cd3f35249a5eeac0321636a8, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 9013999672319041758}
     - target: {fileID: 3689710873354309917, guid: 5ed0d731cd3f35249a5eeac0321636a8, type: 3}
       propertyPath: m_Name
       value: Pause Menu
@@ -411,6 +415,10 @@ PrefabInstance:
     - target: {fileID: 3689710873354309926, guid: 5ed0d731cd3f35249a5eeac0321636a8, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979000588540077745, guid: 5ed0d731cd3f35249a5eeac0321636a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5153479711573158284, guid: 5ed0d731cd3f35249a5eeac0321636a8, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
