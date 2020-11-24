@@ -70,6 +70,7 @@ AudioMixerController:
   m_Snapshots:
   - {fileID: 24500006}
   - {fileID: -7443884203738373294}
+  - {fileID: 1819621461746417035}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -150,6 +151,44 @@ AudioMixerSnapshotController:
     0220b3e9bad5c47809171f4203152138: -51
     328b9d5ac27bd4e74b7e5c17ae3d4ed0: 2195
     130d9e9ac9c994c6d8aa9ea6b43912cf: 1
+    52d1d74bf6e184d779f9174b5e9cc1f6: 10.9
+    0150e81c97cd64635a24b268e5fe1937: 0
+    65badf0e85bad44248c85f81c11f2233: 0.31
+    6ee5e58ef70b84f3ba154c4f3d0b24f3: 1
+    0633130f86b394cb7993d6adfb6e85e6: 6.5
+  m_TransitionOverrides: {}
+--- !u!245 &1819621461746417035
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pause
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: ce1eeb41cf7ae40ae9b797e795bd4ecb
+  m_FloatValues:
+    d8b97d10b83c848f7bdcd9707f07c42e: 0.18
+    c28dc250f5e8d4b75abe627b495d0367: 87
+    215b8b8039ebc4d30a8c32208d3b0926: 56
+    a5183511a70564a62920ace031e95fa6: -76.74878
+    b28b95213616d4a4684b6bc367c6d00d: 0
+    b41f263192e5e43afbd95def8bfcdc03: 1
+    52e631710dfb844b485284358e603451: 15083
+    e666edb13df8b435abf934042f4f530e: 1
+    f73c50f12d12649e59e12226a87cb95c: 0.016
+    20959a73be8374c18a64f39390331a48: 0.45
+    4d1de4046f7fd4a32a352ba1e3b6f099: 11
+    bc668794e2d444a84a66e0924467ed14: 73
+    190282457724442929b9fbd58afb4d60: 33.5
+    d72f8ee57de9149229c8bee5d16b9585: 5.191
+    be7bc636eea9c4cf8803fcd384a5476b: 5.25
+    e8345dc7065e241328fd487f873cb309: 94
+    75ff3f78ff93b45a5b6475684de247f3: 22000
+    8b10d7a83f69d490faba9c034f65b4cc: 0.14
+    e830e9c96d8594c8a8124acf46d8c276: 7.96
+    0220b3e9bad5c47809171f4203152138: -51
+    328b9d5ac27bd4e74b7e5c17ae3d4ed0: 2195
+    130d9e9ac9c994c6d8aa9ea6b43912cf: -34.73517
     52d1d74bf6e184d779f9174b5e9cc1f6: 10.9
     0150e81c97cd64635a24b268e5fe1937: 0
     65badf0e85bad44248c85f81c11f2233: 0.31
