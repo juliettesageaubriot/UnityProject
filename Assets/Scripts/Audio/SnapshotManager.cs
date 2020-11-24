@@ -15,10 +15,11 @@ namespace Audio
         [SerializeField] private AudioMixer mixer;
         [SerializeField] private AudioMixerSnapshot muffleSnapshot;
         [SerializeField] private AudioMixerSnapshot clearSnapshot;
+        [SerializeField] private AudioMixerSnapshot pauseSnapshot;
 
         [Range(0f, 2f)] [SerializeField] private float transitionDuration = .8f;
 
-        private AudioMixerSnapshot[] SnapshotArray => new[] {muffleSnapshot, clearSnapshot};
+        private AudioMixerSnapshot[] SnapshotArray => new[] {muffleSnapshot, clearSnapshot, pauseSnapshot};
 
         private void Awake()
         {
@@ -39,12 +40,15 @@ namespace Audio
         {
             data.SenseInitEvent -= OnInitSenses;
             data.SenseChangeEvent -= OnChangeSense;
+
         }
 
         private void OnInitSenses(SensesState state)
         {
             if (data.State == SensesState.Deaf) MuffleSound(0f);
             else UnmuffleSound(0f);
+
+            mixer.GetInstanceID();
         }
 
         private void OnChangeSense(SensesState state)
@@ -53,16 +57,28 @@ namespace Audio
             else UnmuffleSound();
         }
 
-        private void UnmuffleSound()
-        { TransitionSnapshot(new[] {0f, 1f}, transitionDuration); }
-        private void UnmuffleSound(float duration)
-        { TransitionSnapshot(new[] {0f, 1f}, duration); }
+        public void UnmuffleSound()
+        { TransitionSnapshot(new[] {0f, 1f, 0f}, transitionDuration); }
+        public void UnmuffleSound(float duration)
+        { TransitionSnapshot(new[] {0f, 1f, 0f}, duration); }
 
-        private void MuffleSound()
-        { TransitionSnapshot(new[] {1f, 0f}, transitionDuration); }
-        private void MuffleSound(float duration)
-        { TransitionSnapshot(new[] {1f, 0f}, duration); }
+        public void MuffleSound()
+        { TransitionSnapshot(new[] {1f, 0f, 0f}, transitionDuration); }
+        public void MuffleSound(float duration)
+        { TransitionSnapshot(new[] {1f, 0f, 0f}, duration); }
 
+        public void PauseSound()
+        {
+            TransitionSnapshot(new[] {0f, 0f, 1f}, transitionDuration);
+            Debug.Log("IM HERE");
+
+        }
+
+         public void PauseSound(float duration)
+         {
+             TransitionSnapshot(new[] {0f, 0f, 1f}, duration); 
+         }
+        
         private void TransitionSnapshot(float[] weight, float duration)
         {
             mixer.TransitionToSnapshots(SnapshotArray, weight, duration);

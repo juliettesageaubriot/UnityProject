@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
-  sceneManager: {fileID: 11400000, guid: 7e61bc17c617fbd498b3a0eed5ef4d15, type: 2}
   mixer: {fileID: 24100000, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   muffleSnapshot: {fileID: 24500006, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   clearSnapshot: {fileID: -7443884203738373294, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
+  pauseSnapshot: {fileID: 1819621461746417035, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   transitionDuration: 0.8
