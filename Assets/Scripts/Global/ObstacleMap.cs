@@ -12,7 +12,7 @@ namespace Global
         Unknown
     }
     
-    [CreateAssetMenu(fileName = "ObstacleMap", menuName = "ScriptableObjects/ObstacleMap", order = 1)]
+    [CreateAssetMenu(fileName = "ObstacleMap", menuName = "ScriptableObjects/ObstacleMap", order = 2)]
     public class ObstacleMap : ScriptableObject
     {
         private GridArray<ObstacleEnum> _obstacleArray;

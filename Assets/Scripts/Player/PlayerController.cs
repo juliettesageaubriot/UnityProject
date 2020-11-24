@@ -17,6 +17,8 @@ namespace Player
 	{
 		[SerializeField]
 		private PlayerInputData playerInputData;
+		[SerializeField]
+		private PlayerPositionData playerPositionData;
 		
 		[SerializeField][Range(0f, 1f)]
 		private float movementDuration = 0.3f;
@@ -38,6 +40,9 @@ namespace Player
 		
 		private readonly Queue<Vector2> _inputsToProcess = new Queue<Vector2>();
 
+		private void Awake()
+		{ playerPositionData.InitTransform(transform); }
+		
 		private void Start()
 		{
 			if (onMove == null)
@@ -46,6 +51,9 @@ namespace Player
 				onCantMove = new MoveEvent();
 			if (onStopMove == null)
 				onStopMove = new UnityEvent();
+			
+			onCantMove.AddListener(playerPositionData.UpdateDirection);
+			onMove.AddListener(playerPositionData.UpdateDirection);
 		}
 
 		private void OnEnable()

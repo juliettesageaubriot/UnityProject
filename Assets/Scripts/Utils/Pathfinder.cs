@@ -2,6 +2,7 @@
 using System.Linq;
 using Global;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Utils
 {
@@ -11,11 +12,16 @@ namespace Utils
         
         [SerializeField] private ObstacleMap obstacleMap;
         [SerializeField] private bool autoCompute;
+        [Space(10)]
+        [SerializeField] private UnityEvent afterCompute;
         private GridArray<int> _distanceMap;
         private GridArray<bool> _computeMap;
 
         private void Start()
-        { if (autoCompute) ComputeDistanceMap(); }
+        {
+            if (autoCompute) ComputeDistanceMap();
+            if (afterCompute == null) afterCompute = new UnityEvent();
+        }
         private void OnEnable()
         { if (autoCompute) obstacleMap.OnCleanArray += ComputeDistanceMap; }
         private void OnDisable()
@@ -29,6 +35,7 @@ namespace Utils
             var firstLayer = new Queue<Vector2>();
             firstLayer.Enqueue(transform.position);
             ComputeLayer(firstLayer, 0);
+            afterCompute.Invoke();
         }
 
         public int GetDistance(Vector2 pos)

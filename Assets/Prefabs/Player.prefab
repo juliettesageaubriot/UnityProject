@@ -65,7 +65,7 @@ MonoBehaviour:
   - {x: -0.04405742, y: -0.071680784, z: 0}
   m_ShapePathHash: -232236496
   m_Mesh: {fileID: 0}
-  m_InstanceId: 23016
+  m_InstanceId: 162516
 --- !u!212 &6106372333009029892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 569730636958665666}
   - component: {fileID: 6976735044435094177}
   - component: {fileID: 7955676047574012052}
+  - component: {fileID: 1853911565545442715}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -400,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
+  playerPositionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
   movementDuration: 0.2
   movementDistance: 1
   maxInputRegistering: 3
@@ -419,9 +421,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 6976735044435094177}
-        m_TargetAssemblyTypeName: PlayerAnimator, Assembly-CSharp
+        m_TargetAssemblyTypeName: Player.PlayerAnimator, Assembly-CSharp
         m_MethodName: OnMove
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -451,7 +453,7 @@ MonoBehaviour:
       - m_Target: {fileID: 6976735044435094177}
         m_TargetAssemblyTypeName: Player.PlayerAnimator, Assembly-CSharp
         m_MethodName: OnCantMove
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -493,6 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 876075364453895117}
+  positionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
 --- !u!114 &7955676047574012052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,6 +510,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneManager: {fileID: 11400000, guid: 7e61bc17c617fbd498b3a0eed5ef4d15, type: 2}
   playerInput: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
+--- !u!114 &1853911565545442715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247923126071222159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd3a873efa74f2a96a8f541a42a32e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
+  raycastCenter: {x: 0.5, y: 0.5}
+  maxDistance: 1
+  interactionLayer:
+    layerIndex: 13
 --- !u!1 &8247923127104871230
 GameObject:
   m_ObjectHideFlags: 0

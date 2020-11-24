@@ -4,18 +4,18 @@ namespace Player
 {
     public class PlayerAnimator : MonoBehaviour
     {
-        [SerializeField]
-        private Animator animator;
+        [SerializeField] private Animator animator;
+        [SerializeField] private PlayerPositionData positionData;
 
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
         private static readonly int Vertical = Animator.StringToHash("Vertical");
 
-        public void OnMove(Vector2 direction)
+        public void OnMove()
         {
             animator.SetBool(IsMoving, true);
-            animator.SetFloat(Horizontal, direction.x);
-            animator.SetFloat(Vertical, direction.y);
+            animator.SetFloat(Horizontal, positionData.Direction.x);
+            animator.SetFloat(Vertical, positionData.Direction.y);
         }
 
         public void OnStopMove()
@@ -23,10 +23,10 @@ namespace Player
             animator.SetBool(IsMoving, false);
         }
 
-        public void OnCantMove(Vector2 direction)
+        public void OnCantMove()
         {
-            animator.SetFloat(Horizontal, direction.x);
-            animator.SetFloat(Vertical, direction.y);
+            animator.SetFloat(Horizontal, positionData.Direction.x);
+            animator.SetFloat(Vertical, positionData.Direction.y);
         }
     }
 }

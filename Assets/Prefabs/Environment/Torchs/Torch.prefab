@@ -82,6 +82,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3855668019215407821}
   - component: {fileID: 3855668019215407810}
+  - component: {fileID: 5847316515383882172}
+  - component: {fileID: 1324568030927859875}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -157,6 +159,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &5847316515383882172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855668019215407820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbd83335e42dc74e88f354de095ae8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleMap: {fileID: 11400000, guid: 8637b4c5470d4ea438cfab61a67fb66e, type: 2}
+  autoCompute: 0
+  afterCompute:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1324568030927859875}
+        m_TargetAssemblyTypeName: Audio.SoundOccluder, Assembly-CSharp
+        m_MethodName: OccludeSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
+--- !u!114 &1324568030927859875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855668019215407820}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2735019749694d44a42ca35112d8bdce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
+  audioSource: {fileID: 8110948220089586269}
+  pathfinder: {fileID: 5847316515383882172}
 --- !u!1 &3855668019496246561
 GameObject:
   m_ObjectHideFlags: 0

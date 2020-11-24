@@ -9,7 +9,8 @@ namespace Player
 {
     public class PlayerInteractor : MonoBehaviour
     {
-        
+        [SerializeField] 
+        private PlayerPositionData positionData;
         [SerializeField]
         private Vector2 raycastCenter = Vector2.zero;
         [SerializeField]
@@ -17,8 +18,6 @@ namespace Player
         [SerializeField] 
         private SingleUnityLayer interactionLayer;
 
-        private Vector2 _direction;
-        
         private void OnEnable()
         {
             if(InputManager.IsReady) InputManager.ActionMaps.Player.Interact.performed += Interact;
@@ -34,7 +33,7 @@ namespace Player
             
             var hit = Physics2D.Raycast(
                 transform.position + new Vector3(raycastCenter.x, raycastCenter.y, 0f),
-                _direction,
+                positionData.Direction,
                 maxDistance,
                 interactionLayer.Mask
             );
@@ -45,11 +44,6 @@ namespace Player
                 if(actionable == null) throw new NullReferenceException(hit.collider.gameObject.name + " doesn't have any actionable script.");
                 actionable.Action();
             }
-        }
-
-        public void UpdateDirection(Vector2 newDirection)
-        {
-            _direction = newDirection;
         }
         
     }
