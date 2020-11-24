@@ -139,9 +139,9 @@ GameObject:
   - component: {fileID: 7752550587065938236}
   - component: {fileID: 7752550587065938232}
   - component: {fileID: 7752550587065938239}
-  - component: {fileID: 7752550587065938237}
+  - component: {fileID: 18074602092154283}
   m_Layer: 8
-  m_Name: Sense Door
+  m_Name: Door
   m_TagString: SenseDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
   - {x: 0, y: 0.2, z: 0}
   m_ShapePathHash: -530749171
   m_Mesh: {fileID: 0}
-  m_InstanceId: 109704
---- !u!114 &7752550587065938237
+  m_InstanceId: 109046
+--- !u!114 &18074602092154283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7752550587065938234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3346867af8258461c8d382a8f5645025, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b19afd3c8d7349f48c416e6eaa9b697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onOpenEvent:
@@ -322,6 +322,3 @@ MonoBehaviour:
     castShadow: 0
     collide: 0
   startOpen: 1
-  data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
-  openSenseState: 2
-  playerTag: Player
