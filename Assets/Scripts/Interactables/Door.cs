@@ -51,15 +51,15 @@ namespace Interactables
 		public void Open()
 		{
 			_isOpen = true;
-			onOpenEvent.Invoke();
 			ChangeState(openState);
+			onOpenEvent.Invoke();
 		}
 
 		public void Close()
 		{
 			_isOpen = false;
-			onCloseEvent.Invoke();
 			ChangeState(closedState);
+			onCloseEvent.Invoke();
 		}
 
 		protected void ChangeState(DoorState state)
