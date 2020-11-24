@@ -392,7 +392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Un Jeu Cool
+  m_text: Sens Unique
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af9aff287dc35164b9f8a58017796926, type: 2}
   m_sharedMaterial: {fileID: 4328962575367949080, guid: af9aff287dc35164b9f8a58017796926, type: 2}
