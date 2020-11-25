@@ -65,7 +65,7 @@ MonoBehaviour:
   - {x: -0.04405742, y: -0.071680784, z: 0}
   m_ShapePathHash: -232236496
   m_Mesh: {fileID: 0}
-  m_InstanceId: 162516
+  m_InstanceId: 29140
 --- !u!212 &6106372333009029892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -449,19 +449,7 @@ MonoBehaviour:
         m_CallState: 2
   onCantMove:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6976735044435094177}
-        m_TargetAssemblyTypeName: Player.PlayerAnimator, Assembly-CSharp
-        m_MethodName: OnCantMove
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   raycastCenter: {x: 0.5, y: 0.5}
   obstacleLayer:
     layerIndex: 8
@@ -522,7 +510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd3a873efa74f2a96a8f541a42a32e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactInput: {fileID: 11400000, guid: c71445556af260e478f9283c2cc308eb, type: 2}
   positionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
   raycastCenter: {x: 0.5, y: 0.5}
   maxDistance: 1

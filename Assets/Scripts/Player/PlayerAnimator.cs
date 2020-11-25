@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Player
 {
@@ -11,22 +12,29 @@ namespace Player
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
         private static readonly int Vertical = Animator.StringToHash("Vertical");
 
+        private void OnEnable()
+        {
+            positionData.DirectionChangeEvent += UpdateDirection;
+        }
+        private void OnDisable()
+        {
+            positionData.DirectionChangeEvent -= UpdateDirection;
+        }
+
+        public void UpdateDirection(Vector2 direction)
+        {
+            animator.SetFloat(Horizontal, direction.x);
+            animator.SetFloat(Vertical, direction.y);
+        }
+
         public void OnMove()
         {
             animator.SetBool(IsMoving, true);
-            animator.SetFloat(Horizontal, positionData.Direction.x);
-            animator.SetFloat(Vertical, positionData.Direction.y);
         }
 
         public void OnStopMove()
         {
             animator.SetBool(IsMoving, false);
-        }
-
-        public void OnCantMove()
-        {
-            animator.SetFloat(Horizontal, positionData.Direction.x);
-            animator.SetFloat(Vertical, positionData.Direction.y);
         }
     }
 }
