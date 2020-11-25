@@ -8,7 +8,7 @@ namespace Global
     [CreateAssetMenu(fileName = "SceneManager", menuName = "ScriptableObjects/ScriptableSceneManager", order = 1)]
     public class ScriptableSceneManager : ScriptableObject
     {
-        [SerializeField] private string[] levelNameList;
+        [SerializeField] private string[] gameSceneQueueList;
         [SerializeField] private string mainMenuSceneName;
         [SerializeField] private string endSceneName;
         
@@ -17,7 +17,7 @@ namespace Global
 
         public void StartGame()
         {
-            LoadScene(levelNameList[0]);
+            LoadScene(gameSceneQueueList[0]);
         }
 
         public void GoToMainMenu()
@@ -29,11 +29,11 @@ namespace Global
         {
             var currentScene = SceneManager.GetActiveScene();
             
-            var currentLevelIndex = Array.FindIndex(levelNameList, sceneName => currentScene.name == sceneName);
+            var currentLevelIndex = Array.FindIndex(gameSceneQueueList, sceneName => currentScene.name == sceneName);
             if (currentLevelIndex == -1) throw new Exception("Cannot go to next level, the current scene isn't a level.");
             
-            LoadScene(currentLevelIndex < levelNameList.Length - 1
-                ? levelNameList[currentLevelIndex + 1]
+            LoadScene(currentLevelIndex < gameSceneQueueList.Length - 1
+                ? gameSceneQueueList[currentLevelIndex + 1]
                 : endSceneName);
         }
 
