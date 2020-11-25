@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 8687579338276369188}
   - component: {fileID: 467524916801583744}
   - component: {fileID: 3298162107382334606}
+  - component: {fileID: 6106615819745513586}
   m_Layer: 11
   m_Name: Sense Fuel
   m_TagString: SenseFuel
@@ -558,3 +559,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 0
+--- !u!114 &6106615819745513586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8687579338276369192}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e53494f0fea3bf4aafde90341ac5f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathfinder: {fileID: 3298162107382334606}
+  player: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
+  soundEmitter: {fileID: 3019672205231387475}

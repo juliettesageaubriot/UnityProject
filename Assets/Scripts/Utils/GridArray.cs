@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Utils
@@ -5,7 +6,9 @@ namespace Utils
     public class GridArray<T>
     {
         private float _cellSize;
-        private Vector2 _originPoint ;
+        public float CellSize => _cellSize;
+        
+        private Vector2 _originPoint;
         private Vector2 _gridSize;
 
         private T[,] _array;
@@ -55,7 +58,13 @@ namespace Utils
         public (int, int) PositionToIndex(Vector2 pos)
         {
             var transformedPos = (pos - _originPoint) / _cellSize;
-            return ((int)transformedPos.x, (int)transformedPos.y);
+            return ((int)Math.Round(transformedPos.x), (int)Math.Round(transformedPos.y));
+        }
+
+        public Vector2 DistanceFromNearestBottomLeftCell(Vector2 pos)
+        {
+            var posFromOrigin = (pos - _originPoint);
+            return new Vector2(posFromOrigin.x % _cellSize, posFromOrigin.y % _cellSize);
         }
     }
 }

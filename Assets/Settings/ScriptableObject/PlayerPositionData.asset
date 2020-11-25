@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd2abb8dd4a49e88ea9b62e6e2b14ff, type: 3}
   m_Name: PlayerPositionData
   m_EditorClassIdentifier: 
+  center: {x: 0.5, y: 0.5}

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Global;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace Utils
         [Space(10)]
         [SerializeField] private UnityEvent afterCompute;
         private GridArray<int> _distanceMap;
+        public GridArray<int> DistanceMap => _distanceMap;
+        
         private GridArray<bool> _computeMap;
 
         private void Start()
@@ -40,6 +43,33 @@ namespace Utils
 
         public int GetDistance(Vector2 pos)
         { return _distanceMap.Get(pos); }
+
+        public (List<Vector2>, int) GetClosestNeigbours(Vector2 pos)
+        {
+            var neighbours = new List<Vector2>();
+            if (_distanceMap.IsOutOfBound(pos) || _distanceMap.Get(pos) == -1) return (neighbours, -1);
+            var closestDistance = 80000;
+            
+            foreach (var direction in Directions)
+            {
+                var neighbourPos = pos + direction * obstacleMap.CellSize;
+                var distance = SafeGetDistance(neighbourPos);
+                if (distance < closestDistance && distance != -1)
+                {
+                    neighbours = new List<Vector2>();
+                    closestDistance = distance;
+                }
+                if (distance == closestDistance)
+                    neighbours.Add(neighbourPos);
+            }
+
+            return (neighbours, closestDistance);
+        }
+
+        public int SafeGetDistance(Vector2 pos)
+        {
+            return _distanceMap.IsOutOfBound(pos) ? -1 : _distanceMap.Get(pos);
+        }
 
         private void ComputeLayer(IEnumerable<Vector2> layerCells, int distance)
         {
