@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Essence
   m_EditorClassIdentifier: 
   colorMode: 3
-  topLeft: {r: 0.5002666, g: 0.3190993, b: 0.8584906, a: 1}
-  topRight: {r: 0.5019608, g: 0.31764707, b: 0.8588236, a: 1}
-  bottomLeft: {r: 0.29476014, g: 0.23260945, b: 0.41509432, a: 1}
-  bottomRight: {r: 0.29411766, g: 0.23137257, b: 0.4156863, a: 1}
+  topLeft: {r: 0.9821629, g: 0.8820755, b: 1, a: 1}
+  topRight: {r: 0.9803922, g: 0.882353, b: 1, a: 1}
+  bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+  bottomRight: {r: 1, g: 1, b: 1, a: 1}
