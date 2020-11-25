@@ -182,6 +182,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1626150702846411259}
     m_Modifications:
+    - target: {fileID: 3677212707256487796, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677212707256487796, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UI.ScriptableResetCounter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677212707256487796, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677212707256487796, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677212707256487796, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bb9af2dfab2a4854adf945c3db83f23, type: 2}
+    - target: {fileID: 3677212707256487796, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnReset
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677212707256487796, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3986007079116210413, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

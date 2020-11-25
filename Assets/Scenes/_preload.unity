@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 636668885}
   - component: {fileID: 636668887}
   - component: {fileID: 636668888}
+  - component: {fileID: 636668889}
   m_Layer: 0
   m_Name: __app
   m_TagString: Untagged
@@ -198,3 +199,30 @@ MonoBehaviour:
   clearSnapshot: {fileID: -7443884203738373294, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   pauseSnapshot: {fileID: 1819621461746417035, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   transitionDuration: 0.8
+--- !u!114 &636668889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636668884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b325652e7aa41fc8784d4088b58f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9bb9af2dfab2a4854adf945c3db83f23, type: 2}
+        m_TargetAssemblyTypeName: UI.ScriptableResetCounter, Assembly-CSharp
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

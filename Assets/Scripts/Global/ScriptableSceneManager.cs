@@ -1,4 +1,5 @@
 ﻿using System;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,7 @@ namespace Global
         [SerializeField] private string[] gameSceneQueueList;
         [SerializeField] private string mainMenuSceneName;
         [SerializeField] private string endSceneName;
+        [SerializeField] private ScriptableResetCounter scriptableResetCounter;
         
         public delegate void BeforeSceneChangeHandler();
         public event BeforeSceneChangeHandler BeforeSceneChangeEvent;
@@ -40,6 +42,7 @@ namespace Global
         public void ResetCurrentLevel()
         {
             var currentScene = SceneManager.GetActiveScene();
+            scriptableResetCounter.OnReset();
             LoadScene(currentScene.name);
         }
 
