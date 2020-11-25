@@ -33,13 +33,15 @@ namespace UI
             Time.timeScale = 1f;
             gameIsPaused = false;
             
-            if(data.State == SensesState.Blind) SnapshotManager.Instance.UnmuffleSound();
+            
+            if(data.State == SensesState.Blind) SnapshotManager.Instance.UnmuffleSound(0f);
         }
 
         public void Pause()
         {
             
             if (!_canPause) return;
+
             playerInputData.SetMoveEnable(false);
             playerInputData.SetSwitchEnable(false);
             pauseMenuUI.SetActive(true);
@@ -48,7 +50,7 @@ namespace UI
             eventSystem.SetSelectedGameObject(firstButtonUI);
 
             if (data.State == SensesState.Deaf) return;
-            SnapshotManager.Instance.PauseSound();
+            SnapshotManager.Instance.PauseSound(0f);
         }
 
         private void OnEnable()

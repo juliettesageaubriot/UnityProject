@@ -68,21 +68,13 @@ namespace Audio
         { TransitionSnapshot(new[] {1f, 0f, 0f}, duration); }
 
         public void PauseSound()
-        {
-            TransitionSnapshot(new[] {0f, 0f, 1f}, transitionDuration);
-            Debug.Log("IM HERE");
-
-        }
+        { TransitionSnapshot(new[] {0f, 0f, 1f}, transitionDuration); }
 
          public void PauseSound(float duration)
-         {
-             TransitionSnapshot(new[] {0f, 0f, 1f}, duration); 
-         }
+         { TransitionSnapshot(new[] {0f, 0f, 1f}, duration); }
         
         private void TransitionSnapshot(float[] weight, float duration)
-        {
-            mixer.TransitionToSnapshots(SnapshotArray, weight, duration);
-        }
+        { mixer.TransitionToSnapshots(SnapshotArray, weight, duration); }
     }
 }
 
