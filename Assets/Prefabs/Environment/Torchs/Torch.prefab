@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 3855668019215407810}
   - component: {fileID: 5847316515383882172}
   - component: {fileID: 1324568030927859875}
+  - component: {fileID: 8545173691827992070}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -203,6 +204,21 @@ MonoBehaviour:
   positionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
   audioSource: {fileID: 8110948220089586269}
   pathfinder: {fileID: 5847316515383882172}
+--- !u!114 &8545173691827992070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855668019215407820}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e53494f0fea3bf4aafde90341ac5f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathfinder: {fileID: 5847316515383882172}
+  player: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
+  soundEmitter: {fileID: 5461956708189601343}
 --- !u!1 &3855668019496246561
 GameObject:
   m_ObjectHideFlags: 0

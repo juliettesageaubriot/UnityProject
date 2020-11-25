@@ -55,6 +55,8 @@ namespace Player
 			
 			onCantMove.AddListener(playerPositionData.UpdateDirection);
 			onMove.AddListener(playerPositionData.UpdateDirection);
+			onStopMove.AddListener(delegate() { playerPositionData.UpdateIsMoving(false); });
+			onMove.AddListener(delegate(Vector2 arg0) { playerPositionData.UpdateIsMoving(true); });
 		}
 
 		private void OnEnable()

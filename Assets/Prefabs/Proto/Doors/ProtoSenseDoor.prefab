@@ -87,6 +87,14 @@ PrefabInstance:
       propertyPath: openState.sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1761f95a2a76c4efbbedff64cc84e44d, type: 3}
+    - target: {fileID: 7752550587065938237, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: onOpenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 65e140afea5a5df458bce795bb7f81b7, type: 3}
+    - target: {fileID: 7752550587065938237, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: onCloseEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 530fd8576fdda96449c8a18673243f41, type: 3}
     - target: {fileID: 7752550587065938239, guid: 84da0f66df17341438977d7495a128f5, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
       value: 0
