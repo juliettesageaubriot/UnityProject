@@ -22,14 +22,9 @@ namespace UI
         [SerializeField] private InputData switchInput;
         [SerializeField] private InputData pauseInput;
 
-        private bool _canPause = true;
-
-        public void EnablePause(bool val)
-        { _canPause = val; }
 
         public void Resume()
         {
-            if (!_canPause) return;
             moveInput.Enable();
             switchInput.Enable();
             CloseOptionTab();
@@ -40,7 +35,6 @@ namespace UI
 
         public void Pause()
         {
-            if (!_canPause) return;
             moveInput.Disable();
             switchInput.Disable();
             pauseMenuUI.SetActive(true);
@@ -80,7 +74,7 @@ namespace UI
             eventSystem.SetSelectedGameObject(fisrtMainButtonUI);
         }
 
-        private void RegisterInput(InputAction.CallbackContext context)
+        private void RegisterInput(InputAction.CallbackContext callbackContext)
         {
             if (gameIsPaused) Resume();
             else Pause();
