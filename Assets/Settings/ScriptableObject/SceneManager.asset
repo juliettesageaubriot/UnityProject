@@ -17,5 +17,6 @@ MonoBehaviour:
   - Level 1
   - Level 2
   - Level 3
+  - Level Maze Blind
   mainMenuSceneName: Main Menu
   endSceneName: End
