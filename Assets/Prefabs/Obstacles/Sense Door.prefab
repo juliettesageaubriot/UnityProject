@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83679479365334910}
   - component: {fileID: 6582755270915525683}
+  - component: {fileID: 2691283766233189612}
   m_Layer: 8
   m_Name: DoorSound
   m_TagString: Untagged
@@ -127,6 +128,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2691283766233189612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042555018007500488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2735019749694d44a42ca35112d8bdce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
+  audioSource: {fileID: 6582755270915525683}
+  pathfinder: {fileID: 5783887078646385144}
 --- !u!1 &7752550587065938234
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +156,8 @@ GameObject:
   - component: {fileID: 7752550587065938232}
   - component: {fileID: 7752550587065938239}
   - component: {fileID: 7752550587065938237}
+  - component: {fileID: 5783887078646385144}
+  - component: {fileID: 7771189315443657821}
   m_Layer: 8
   m_Name: Sense Door
   m_TagString: SenseDoor
@@ -303,7 +321,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
   onCloseEvent:
     m_PersistentCalls:
       m_Calls:
@@ -330,7 +348,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
   closedState:
     sprite: {fileID: 21300000, guid: af02b2c530e764a219d88139033585e5, type: 3}
     sortingLayerName: Default
@@ -349,3 +367,47 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   openSenseState: 2
   playerTag: Player
+--- !u!114 &5783887078646385144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752550587065938234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbd83335e42dc74e88f354de095ae8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleMap: {fileID: 11400000, guid: 8637b4c5470d4ea438cfab61a67fb66e, type: 2}
+  autoCompute: 1
+  afterCompute:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2691283766233189612}
+        m_TargetAssemblyTypeName: Audio.SoundOccluder, Assembly-CSharp
+        m_MethodName: OccludeSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7771189315443657821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752550587065938234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e53494f0fea3bf4aafde90341ac5f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathfinder: {fileID: 5783887078646385144}
+  player: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
+  soundEmitter: {fileID: 4042555018007500488}

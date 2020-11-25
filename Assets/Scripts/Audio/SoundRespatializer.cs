@@ -18,6 +18,7 @@ namespace Audio
         public void Update()
         {
             var playerFromPosition = player.Position;
+            
             playerFromPosition.x = player.Direction.x > 0 ? Mathf.Floor(playerFromPosition.x) : Mathf.Ceil(playerFromPosition.x);
             playerFromPosition.y = player.Direction.y > 0 ? Mathf.Floor(playerFromPosition.y) : Mathf.Ceil(playerFromPosition.y);
             var (direction, distance) = GetSoundDirection(playerFromPosition);
@@ -35,11 +36,14 @@ namespace Audio
                 direction = Vector2.Lerp(nextDirection, direction, 1f - progression);
                 finalDistance = Mathf.Lerp(nextDistance, distance, 1f - progression);
             }
+            
             soundEmitter.transform.position = player.CenterPosition + direction * (1f + finalDistance);
         }
 
         private (Vector2, int) GetSoundDirection(Vector2 pos)
         {
+            var hereDistance = pathfinder.DistanceMap.Get(player.Position);
+            if (hereDistance == 0) return (Vector2.zero, 0);
             var (neighbours, distance) = pathfinder.GetClosestNeigbours(pos);
             var direction = Vector2.zero;
             foreach (var neighbour in neighbours)
