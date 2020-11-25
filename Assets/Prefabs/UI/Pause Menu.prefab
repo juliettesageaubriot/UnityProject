@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b6c74a5c2597ba4f9ebed6283ef8c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   pauseMenuUI: {fileID: 1136629702704250533}
   firstButtonUI: {fileID: 3894682998391427065}
   eventSystem: {fileID: 0}
