@@ -18,6 +18,7 @@ namespace UI
     public class UIFade : MonoBehaviour
     {
         [SerializeField] private float fadeDuration;
+        public float FadeDuration => fadeDuration;
 
         [SerializeField]
         private FadeState hideState = new FadeState() {interactable = false, opacity = 0f, blocksRaycasts = false};

@@ -41,6 +41,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3676545423972618226, guid: 757c98da0b90bda4bb26d8665b7d597c, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676545423972618227, guid: 757c98da0b90bda4bb26d8665b7d597c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4434022254685844980, guid: 757c98da0b90bda4bb26d8665b7d597c, type: 3}
       propertyPath: sequence.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -191,6 +199,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3370417413230372490}
     m_Modifications:
+    - target: {fileID: 4343922390933281898, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 53.225464
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343922390933281898, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343922390933281898, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343922390933281898, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343922390933281898, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766553739249708262, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 53.225464
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766553739249708262, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766553739249708262, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766553739249708262, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766553739249708262, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6949698699132303140, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
       propertyPath: m_Name
       value: Proto Fuel Indicator
@@ -225,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949698699132303141, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6949698699132303141, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -241,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949698699132303141, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 708.12
       objectReference: {fileID: 0}
     - target: {fileID: 6949698699132303141, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -249,11 +297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949698699132303141, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 290.98352
+      value: 34.25969
       objectReference: {fileID: 0}
     - target: {fileID: 6949698699132303141, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 62.376022
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6949698699132303141, guid: a4d4d4cbb9896444fa57f8aba650139e, type: 3}
       propertyPath: m_AnchorMin.x

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Player;
 using UnityEngine;
@@ -46,7 +47,19 @@ namespace UI
 
         private void RemoveOneIcon()
         {
-            Destroy(_fuelIcons.Pop());
+            StartCoroutine(RemoveAnim());
+        }
+
+        private IEnumerator RemoveAnim()
+        {
+            var icon = _fuelIcons.Pop();
+            var move = icon.GetComponent<UIMove>();
+            var fade = icon.GetComponent<UIFade>();
+            var maxDuration = Mathf.Max(move.MoveDuration, fade.FadeDuration);
+            move.MoveOut();
+            fade.FadeOut();
+            yield return new WaitForSeconds(maxDuration);
+            Destroy(icon);
         }
     }
 }
