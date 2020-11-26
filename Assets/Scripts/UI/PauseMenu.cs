@@ -18,6 +18,7 @@ namespace UI
         [SerializeField] private EventSystem eventSystem;
         [SerializeField] private ScriptableSceneManager sceneManager;
         [SerializeField] private InputData pauseInput;
+        [SerializeField] private InputData[] inputsToDisable;
 
 
         public void Resume()
@@ -25,6 +26,7 @@ namespace UI
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             gameIsPaused = false;
+            foreach (var input in inputsToDisable) input.Enable();
             
             if(data.State == SensesState.Blind) SnapshotManager.Instance.UnmuffleSound(0f);
         }
@@ -35,6 +37,7 @@ namespace UI
             Time.timeScale = 0f;
             gameIsPaused = true;
             eventSystem.SetSelectedGameObject(firstButtonUI);
+            foreach (var input in inputsToDisable) input.Disable();
 
             if (data.State == SensesState.Deaf) return;
             SnapshotManager.Instance.PauseSound(0f);
@@ -43,13 +46,13 @@ namespace UI
         private void OnEnable()
         {
             sceneManager.BeforeSceneChangeEvent += Resume;
-            pauseInput.AddListener(RegisterInput);
+            pauseInput.InputEvent += RegisterInput;
         }
 
         private void OnDisable()
         {
             sceneManager.BeforeSceneChangeEvent -= Resume;
-            pauseInput.RemoveListener(RegisterInput);
+            pauseInput.InputEvent -= RegisterInput;
         }
         
         private void Start()

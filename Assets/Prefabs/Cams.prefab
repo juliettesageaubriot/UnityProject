@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6175930527433183511}
   - component: {fileID: 8761008417233872170}
   m_Layer: 0
-  m_Name: Cinematic Panel
+  m_Name: Bg Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6368421152559660824}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 216736162241513007}
   - component: {fileID: 7740630853451186428}
   m_Layer: 0
-  m_Name: BgPanel
+  m_Name: Cinematic Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6368421152559660824}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -230,8 +230,8 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2928573654113330130}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
+  m_Alpha: 0
+  m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &7740630853451186428
@@ -253,9 +253,9 @@ MonoBehaviour:
     blocksRaycasts: 0
   visibleState:
     opacity: 1
-    interactable: 1
+    interactable: 0
     blocksRaycasts: 1
-  startVisible: 1
+  startVisible: 0
 --- !u!1 &4990858017457692709
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,8 +288,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 501126661987478785}
   - {fileID: 895585393784156537}
+  - {fileID: 501126661987478785}
   m_Father: {fileID: 7851932036932083812}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -350,7 +350,7 @@ CanvasGroup:
   m_GameObject: {fileID: 4990858017457692709}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &5004994216253396306
@@ -387,6 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0229dec18b1d92b4197f26b6355cbbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensesData: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
+  inputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
   mainBlindCanvas: {fileID: 5004994216253396306}
   cinematicPanel: {fileID: 7740630853451186428}
   cinematic: {fileID: 7631001276864029895}
@@ -548,7 +550,6 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   blindCamera: {fileID: 7851932036932083815}
   normalCamera: {fileID: 7851932037914898991}
-  blindCanvas: {fileID: 5511699453123311017}
 --- !u!1 &7851932037914898977
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 895585393784156537, guid: 01a07954fc7b1494387d78af111f98fb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 895585393784156537, guid: 01a07954fc7b1494387d78af111f98fb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 895585393784156537, guid: 01a07954fc7b1494387d78af111f98fb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7851932037266791002, guid: 01a07954fc7b1494387d78af111f98fb, type: 3}
       propertyPath: m_Name
       value: ProtoCams

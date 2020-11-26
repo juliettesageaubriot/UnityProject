@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   fuelIconPrefab: {fileID: 4340272724917094925, guid: 6cc8561d198131041ba6b862c13b30f2, type: 3}
+  delayIconAnim: 1.8
 --- !u!114 &8420687784617483228
 MonoBehaviour:
   m_ObjectHideFlags: 0

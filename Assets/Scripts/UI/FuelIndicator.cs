@@ -11,6 +11,7 @@ namespace UI
     {
         [SerializeField] private PlayerSensesData playerData;
         [SerializeField] private GameObject fuelIconPrefab;
+        [SerializeField] private float delayIconAnim;
         private readonly Stack<GameObject> _fuelIcons = new Stack<GameObject>();
 
         private void OnEnable() {
@@ -55,6 +56,7 @@ namespace UI
             var icon = _fuelIcons.Pop();
             var move = icon.GetComponent<UIMove>();
             var fade = icon.GetComponent<UIFade>();
+            yield return new WaitForSeconds(delayIconAnim);
             var maxDuration = Mathf.Max(move.MoveDuration, fade.FadeDuration);
             move.MoveOut();
             fade.FadeOut();

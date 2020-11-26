@@ -61,12 +61,12 @@ namespace Player
 
 		private void OnEnable()
 		{
-			moveInput.AddListener(RegisterInput);
+			moveInput.InputEvent += RegisterInput;
 		}
 
 		private void OnDisable()
 		{
-			moveInput.RemoveListener(RegisterInput);
+			moveInput.InputEvent -= RegisterInput;
 		}
 
 		private void RegisterInput(InputAction.CallbackContext context)

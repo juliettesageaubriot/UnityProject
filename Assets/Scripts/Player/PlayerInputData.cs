@@ -9,11 +9,20 @@ namespace Player
     public class PlayerInputData : ScriptableObject
     {
         [SerializeField] private ScriptableSceneManager sceneManager;
-        [SerializeField] private InputData[] Inputs;
+        [SerializeField] private InputData[] inputs;
 
+        public void EnableAll()
+        {
+            foreach (var inputData in inputs) inputData.SetEnable(true);
+        }
+        public void DisableAll()
+        {
+            foreach (var inputData in inputs) inputData.SetEnable(false);
+        }
+        
         public InputData Get(string inputName)
         {
-            return Inputs.First(i => i.InputName == inputName);
+            return inputs.First(i => i.InputName == inputName);
         }
 
         public bool Can(string inputName)
@@ -26,15 +35,15 @@ namespace Player
             Get(inputName).SetEnable(newBool);
         }
 
+        public void ListenInputs()
+        {
+            foreach (var inputData in inputs) inputData.ListenInput();
+        }
+
         private void OnEnable()
         { sceneManager.BeforeSceneChangeEvent += EnableAll; }
 
         private void OnDisable()
         { sceneManager.BeforeSceneChangeEvent -= EnableAll; }
-
-        private void EnableAll()
-        {
-            foreach (var inputData in Inputs) inputData.SetEnable(true);
-        }
     }
 }
