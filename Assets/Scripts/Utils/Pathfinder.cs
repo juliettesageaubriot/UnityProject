@@ -12,6 +12,7 @@ namespace Utils
         private static readonly Vector2[] Directions = {Vector2.up, Vector2.right, Vector2.down, Vector2.left};
         
         [SerializeField] private ObstacleMap obstacleMap;
+        [SerializeField] private Vector2 floorOffset = Vector2.zero;
         [SerializeField] private bool autoCompute;
         [Space(10)]
         [SerializeField] private UnityEvent afterCompute;
@@ -36,7 +37,7 @@ namespace Utils
             _distanceMap.FillArray(-1);
             _computeMap = GridArray<bool>.From(obstacleMap.ObstacleArray);
             var firstLayer = new Queue<Vector2>();
-            firstLayer.Enqueue(transform.position);
+            firstLayer.Enqueue((Vector2)transform.position + floorOffset);
             ComputeLayer(firstLayer, 0, true);
             afterCompute.Invoke();
         }

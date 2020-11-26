@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleMap: {fileID: 11400000, guid: 8637b4c5470d4ea438cfab61a67fb66e, type: 2}
+  floorOffset: {x: 0, y: -1}
   autoCompute: 1
   afterCompute:
     m_PersistentCalls:
