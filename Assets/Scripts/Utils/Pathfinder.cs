@@ -22,8 +22,8 @@ namespace Utils
 
         private void Start()
         {
-            if (autoCompute) ComputeDistanceMap();
             if (afterCompute == null) afterCompute = new UnityEvent();
+            if (autoCompute) ComputeDistanceMap();
         }
         private void OnEnable()
         { if (autoCompute) obstacleMap.OnCleanArray += ComputeDistanceMap; }
@@ -37,7 +37,7 @@ namespace Utils
             _computeMap = GridArray<bool>.From(obstacleMap.ObstacleArray);
             var firstLayer = new Queue<Vector2>();
             firstLayer.Enqueue(transform.position);
-            ComputeLayer(firstLayer, 0);
+            ComputeLayer(firstLayer, 0, true);
             afterCompute.Invoke();
         }
 
@@ -71,14 +71,14 @@ namespace Utils
             return _distanceMap.IsOutOfBound(pos) ? -1 : _distanceMap.Get(pos);
         }
 
-        private void ComputeLayer(IEnumerable<Vector2> layerCells, int distance)
+        private void ComputeLayer(IEnumerable<Vector2> layerCells, int distance, bool allowObstacle = false)
         {
             var nextLayerCells = new Queue<Vector2>();
             
             var validCells = layerCells.Where(
                 cell => !_computeMap.IsOutOfBound(cell)
                         && !_computeMap.Get(cell)
-                        && obstacleMap.GetObstacle(cell) != ObstacleEnum.Obstacle
+                        && (obstacleMap.GetObstacle(cell) != ObstacleEnum.Obstacle || allowObstacle)
             );
             
             foreach (var cell in validCells)

@@ -13,7 +13,6 @@ namespace UI
             _sequence = GetComponent<EventSequence>();
             if (scriptableResetCounter.ResetCounter > 4 && scriptableResetCounter.ResetCounter < 8)
             {
-                Debug.Log("test");
                 _sequence.StartSequence();
             }
         }

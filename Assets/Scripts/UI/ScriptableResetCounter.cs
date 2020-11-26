@@ -10,7 +10,9 @@ namespace UI
     public class ScriptableResetCounter : ScriptableObject
     {
         public int GlobalResetCounter => _sceneResetCounter.Values.Sum();
-        public int ResetCounter => _sceneResetCounter[SceneManager.GetActiveScene().name];
+        public int ResetCounter => _sceneResetCounter.ContainsKey(SceneManager.GetActiveScene().name)
+            ? _sceneResetCounter[SceneManager.GetActiveScene().name]
+            : 0;
 
         private Dictionary<string, int> _sceneResetCounter;
         
@@ -26,7 +28,6 @@ namespace UI
             string id = SceneManager.GetActiveScene().name;
 
             _sceneResetCounter.TryGetValue(id, out currentCount);
-            Debug.Log(currentCount);
             _sceneResetCounter[id] = currentCount + 1;
         }
 
