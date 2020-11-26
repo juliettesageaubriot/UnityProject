@@ -18,11 +18,12 @@ namespace Player
 		[SerializeField][TagSelector] private string fuelTag = "SenseFuel";
 		[SerializeField] private PlayerSensesData data;
 		[SerializeField] private InputData switchInput;
-		
+
 		[SerializeField] private SensesState defaultState;
 		[SerializeField] private int defaultFuelAmount;
-		
-		
+
+
+
 		private void Start()
 		{
 			data.InitFuel(defaultFuelAmount);
