@@ -3,6 +3,7 @@ using System.Xml.Serialization;
 using Audio;
 using Global;
 using Global.Input;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -13,6 +14,7 @@ namespace Player
 	[Serializable]
 	public class SenseChangeEvent : UnityEvent<SensesState> {}
 
+	[DefaultExecutionOrder(100)]
 	public class PlayerSenses : MonoBehaviour
 	{
 		[SerializeField][TagSelector] private string fuelTag = "SenseFuel";
@@ -21,9 +23,7 @@ namespace Player
 
 		[SerializeField] private SensesState defaultState;
 		[SerializeField] private int defaultFuelAmount;
-
-
-
+		
 		private void Start()
 		{
 			data.InitFuel(defaultFuelAmount);
