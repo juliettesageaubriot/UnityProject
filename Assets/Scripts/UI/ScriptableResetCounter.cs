@@ -24,8 +24,9 @@ namespace UI
         {
             int currentCount;
             string id = SceneManager.GetActiveScene().name;
-            
+
             _sceneResetCounter.TryGetValue(id, out currentCount);
+            Debug.Log(currentCount);
             _sceneResetCounter[id] = currentCount + 1;
         }
 
