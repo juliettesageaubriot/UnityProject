@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerInputData
   m_EditorClassIdentifier: 
   sceneManager: {fileID: 11400000, guid: 7e61bc17c617fbd498b3a0eed5ef4d15, type: 2}
-  Inputs:
+  inputs:
+  - {fileID: 11400000, guid: c71445556af260e478f9283c2cc308eb, type: 2}
   - {fileID: 11400000, guid: 5a7195eebbbd40743b280305e87a7dd1, type: 2}
+  - {fileID: 11400000, guid: 7a677d893db74c345a037a82148a512b, type: 2}
   - {fileID: 11400000, guid: b972ebd75fdb6a24392101917dc55b21, type: 2}
   - {fileID: 11400000, guid: dbd8a9b54943eba42b4c4fa9e095f835, type: 2}
-  - {fileID: 11400000, guid: 7a677d893db74c345a037a82148a512b, type: 2}
-  - {fileID: 11400000, guid: c71445556af260e478f9283c2cc308eb, type: 2}

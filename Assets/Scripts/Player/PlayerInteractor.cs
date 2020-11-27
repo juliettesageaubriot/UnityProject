@@ -1,4 +1,5 @@
 using System;
+using Global;
 using Global.Input;
 using Interactables;
 using UnityEngine;
@@ -9,6 +10,8 @@ namespace Player
 {
     public class PlayerInteractor : MonoBehaviour
     {
+        [SerializeField]
+        private InputData interactInput;
         [SerializeField] 
         private PlayerPositionData positionData;
         [SerializeField]
@@ -19,14 +22,10 @@ namespace Player
         private SingleUnityLayer interactionLayer;
 
         private void OnEnable()
-        {
-            if(InputManager.IsReady) InputManager.ActionMaps.Player.Interact.performed += Interact;
-        }
+        { interactInput.InputEvent += Interact; }
 
         private void OnDisable()
-        {
-            if(InputManager.IsReady) InputManager.ActionMaps.Player.Interact.performed -= Interact;
-        }
+        { interactInput.InputEvent -= Interact; }
 
         private void Interact(InputAction.CallbackContext callbackContext)
         {

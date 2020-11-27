@@ -32,12 +32,12 @@ namespace Player
 
 		private void OnEnable()
 		{
-			switchInput.AddListener(Switch);
+			switchInput.InputEvent += Switch;
 		}
 
 		private void OnDisable()
 		{
-			switchInput.RemoveListener(Switch);
+			switchInput.InputEvent -= Switch;
 		}
 		
 		private void OnTriggerEnter2D(Collider2D other)

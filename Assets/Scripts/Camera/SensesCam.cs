@@ -10,7 +10,6 @@ namespace Camera
         [SerializeField] private PlayerSensesData data;
         [SerializeField] private UnityEngine.Camera blindCamera;
         [SerializeField] private UnityEngine.Camera normalCamera;
-        [SerializeField] private BlindCanvas blindCanvas;
 
         private void OnEnable() { 
             data.SenseInitEvent += UpdateCams;
@@ -42,14 +41,12 @@ namespace Camera
         {
             blindCamera.enabled = true;
             normalCamera.enabled = false;
-            blindCanvas.ToBlind();
         }
 
         private void ToSighted()
         {
             normalCamera.enabled = true;
             blindCamera.enabled = false;
-            blindCanvas.ToSighted();
         }
     
     }

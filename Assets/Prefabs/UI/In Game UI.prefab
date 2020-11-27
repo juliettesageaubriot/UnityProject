@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1626150702846411260}
   - component: {fileID: 1626150702846411261}
   - component: {fileID: 1626150702846411262}
+  - component: {fileID: 6828292670869051547}
   m_Layer: 5
   m_Name: In Game UI
   m_TagString: Untagged
@@ -101,6 +102,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6828292670869051547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626150702846411263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fa2944ee2b8d04ba91cb90f2a8a6f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bus: {fileID: 11400000, guid: 0cb1835d4e844f8488a153cb00d7c75b, type: 2}
 --- !u!1 &9013999672319041744
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3716121812670188751, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 708.12
+      value: -119
       objectReference: {fileID: 0}
     - target: {fileID: 3986007079116210413, guid: 60d44253e8a029043a47677b04c78f67, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

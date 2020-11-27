@@ -26,11 +26,14 @@ namespace UI
         [SerializeField] private bool startIn = true;
         [SerializeField] private bool offsetValues = false;
         private RectTransform _rectTransform;
-    
 
-        private void Start()
+        private void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
+        }
+        
+        private void Start()
+        {
             Fade(startIn ? inState : outState, 0f);
         }
 

@@ -17,12 +17,12 @@ namespace Player
 
         private void OnEnable()
         {
-            resetInput.AddListener(HandleResetInput);
+            resetInput.InputEvent += HandleResetInput;
         }
 
         private void OnDisable()
         {
-            resetInput.RemoveListener(HandleResetInput);
+            resetInput.InputEvent -= HandleResetInput;
         }
         
         private void HandleResetInput(InputAction.CallbackContext context)

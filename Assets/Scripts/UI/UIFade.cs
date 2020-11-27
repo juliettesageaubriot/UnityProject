@@ -29,9 +29,13 @@ namespace UI
     
         private CanvasGroup _canvasGroup;
 
-        private void Start()
+        private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
+        }
+
+        private void Start()
+        {
             Fade(startVisible ? visibleState : hideState, 0f);
         }
 
