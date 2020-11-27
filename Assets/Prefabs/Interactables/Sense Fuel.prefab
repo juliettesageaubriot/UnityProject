@@ -606,4 +606,5 @@ MonoBehaviour:
     popup: {fileID: 3258090813059781907, guid: 20f837a15dde40444ae0755418bf5fff, type: 3}
     autoRemove: 1
     autoRemoveDelay: 4
-    removePrevious: 1
+    removePrevious: 0
+    waitForRemovePrevious: 1

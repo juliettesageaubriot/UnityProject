@@ -5,22 +5,28 @@ using UnityEngine;
 
 namespace Camera
 {
-    public class SensesCam : MonoBehaviour
+    public class SensesCam : PopupSender
     {
         [SerializeField] private PlayerSensesData data;
         [SerializeField] private UnityEngine.Camera blindCamera;
         [SerializeField] private UnityEngine.Camera normalCamera;
 
         private void OnEnable() { 
-            data.SenseInitEvent += UpdateCams;
+            data.SenseInitEvent += ChangeCams;
             data.SenseChangeEvent += UpdateCams;
         }
         private void OnDisable() { 
-            data.SenseInitEvent -= UpdateCams;
+            data.SenseInitEvent -= ChangeCams;
             data.SenseChangeEvent -= UpdateCams;
         }
 
         private void UpdateCams(SensesState state)
+        {
+            ChangeCams(state);   
+            SendPopup();
+        }
+
+        private void ChangeCams(SensesState state)
         {
             switch (state)
             {

@@ -13,9 +13,29 @@ namespace UI.Popup
         private Dictionary<AbstractPopup, PopupParameters> _popups = new Dictionary<AbstractPopup, PopupParameters>();
         
         private void OnEnable()
-        { bus.PopupEvent += Generate; }
+        { bus.PopupEvent += HandlePopup; }
         private void OnDisable()
-        { bus.PopupEvent -= Generate; }
+        { bus.PopupEvent -= HandlePopup; }
+
+        private void HandlePopup(PopupParameters popupParams)
+        {
+            if (popupParams.removePrevious == RemovePrevious.Never) Generate(popupParams);
+            else StartCoroutine(DestroyAllAndGenerate(popupParams));
+        }
+
+        private IEnumerator DestroyAllAndGenerate(PopupParameters popupParams)
+        {
+            foreach (var popupable in _popups)
+                if ( popupParams.removePrevious == RemovePrevious.Always)
+                    popupable.Key.PopOut();
+            
+            while (popupParams.waitForRemovePrevious && _popups.Count > 0)
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            Generate(popupParams);
+        }
 
         private void Generate(PopupParameters popupParams)
         {
@@ -27,10 +47,6 @@ namespace UI.Popup
                 throw new NullReferenceException("There is no AbstractPopup component on object " + popup.name);
             
             popupComponent.InitPopup(this);
-            
-            if (popupParams.removePrevious)
-                foreach (var popupable in _popups)
-                    popupable.Key.PopOut();
 
             _popups.Add(popupComponent, popupParams);
 
@@ -40,6 +56,7 @@ namespace UI.Popup
 
         public void RemoveOneFromList(AbstractPopup popup)
         {
+            if (!_popups.ContainsKey(popup)) return;
             bus.HasDestroyPopup(_popups[popup]);
             _popups.Remove(popup);
             Destroy(popup.gameObject);
@@ -48,7 +65,7 @@ namespace UI.Popup
         private IEnumerator DOAutoDestroy(float delay, AbstractPopup popup)
         {
             yield return new WaitForSeconds(delay);
-            popup.PopOut();
+            if (_popups.ContainsKey(popup)) popup.PopOut();
         }
     }
 }

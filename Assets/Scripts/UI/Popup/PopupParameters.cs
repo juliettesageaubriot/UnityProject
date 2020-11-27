@@ -3,6 +3,12 @@ using UnityEngine;
 
 namespace UI.Popup
 {
+    public enum RemovePrevious
+    {
+        Always,
+        Never
+    }
+    
     [Serializable]
     public struct PopupParameters
     {
@@ -10,6 +16,7 @@ namespace UI.Popup
         public GameObject popup;
         public bool autoRemove;
         public float autoRemoveDelay;
-        public bool removePrevious;
+        public RemovePrevious removePrevious;
+        public bool waitForRemovePrevious;
     }
 }

@@ -76,7 +76,8 @@ MonoBehaviour:
     popup: {fileID: 2799048129497106777, guid: 30fa34ecd60211a47a6b2c5a8c55d1fd, type: 3}
     autoRemove: 1
     autoRemoveDelay: 3
-    removePrevious: 1
+    removePrevious: 0
+    waitForRemovePrevious: 1
 --- !u!1 &4042555018007500488
 GameObject:
   m_ObjectHideFlags: 0
