@@ -21,28 +21,41 @@ namespace Player
         [SerializeField] 
         private SingleUnityLayer interactionLayer;
 
+        private IActionable _actionable = null;
+
+        public bool CanInteract => _actionable != null && _actionable.IsActionable();
+
         private void OnEnable()
         { interactInput.InputEvent += Interact; }
 
         private void OnDisable()
         { interactInput.InputEvent -= Interact; }
 
-        private void Interact(InputAction.CallbackContext callbackContext)
+        public void CheckInteract()
         {
-            
             var hit = Physics2D.Raycast(
                 transform.position + new Vector3(raycastCenter.x, raycastCenter.y, 0f),
                 positionData.Direction,
                 maxDistance,
                 interactionLayer.Mask
             );
-            
-            if (hit.collider != null)
+
+            if (hit.collider == null)
             {
-                var actionable = hit.collider.gameObject.GetComponent<IActionable>();
-                if(actionable == null) throw new NullReferenceException(hit.collider.gameObject.name + " doesn't have any actionable script.");
-                actionable.Action();
+                _actionable = null;
+                return;
             }
+
+            var actionableComponent = hit.collider.gameObject.GetComponent<IActionable>();
+            if (actionableComponent == null)
+                throw new NullReferenceException(hit.collider.gameObject.name +
+                                                 " doesn't have any actionable script.");
+            _actionable = actionableComponent;
+        }
+
+        private void Interact(InputAction.CallbackContext callbackContext)
+        {
+            if (CanInteract) _actionable.Action();
         }
         
     }

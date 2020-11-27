@@ -300,7 +300,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2358548155283033169}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -338,7 +338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1482b85c1d8fa143b41515ebeabb9e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 2358548155283033164}
   playerInputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
   interactInput: {fileID: 11400000, guid: c71445556af260e478f9283c2cc308eb, type: 2}
 --- !u!1 &2358548155299246557

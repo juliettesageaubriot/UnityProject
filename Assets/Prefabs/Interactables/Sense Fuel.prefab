@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 467524916801583744}
   - component: {fileID: 3298162107382334606}
   - component: {fileID: 6106615819745513586}
+  - component: {fileID: 8233173210622168468}
   m_Layer: 11
   m_Name: Sense Fuel
   m_TagString: SenseFuel
@@ -517,6 +518,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8233173210622168468}
+        m_TargetAssemblyTypeName: UI.PopupSender, Assembly-CSharp
+        m_MethodName: SendPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   soundPlayer: {fileID: 3407706697296128719}
 --- !u!114 &3298162107382334606
 MonoBehaviour:
@@ -531,6 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleMap: {fileID: 11400000, guid: 8637b4c5470d4ea438cfab61a67fb66e, type: 2}
+  floorOffset: {x: 0, y: 0}
   autoCompute: 1
   afterCompute:
     m_PersistentCalls:
@@ -574,3 +588,22 @@ MonoBehaviour:
   pathfinder: {fileID: 3298162107382334606}
   player: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
   soundEmitter: {fileID: 3019672205231387475}
+--- !u!114 &8233173210622168468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8687579338276369192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 120549d0eb4c34f4f800515f226072fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bus: {fileID: 11400000, guid: 0cb1835d4e844f8488a153cb00d7c75b, type: 2}
+  popupParameters:
+    popupName: Fuel Obtained
+    popup: {fileID: 3258090813059781907, guid: 20f837a15dde40444ae0755418bf5fff, type: 3}
+    autoRemove: 1
+    autoRemoveDelay: 4
+    removePrevious: 1

@@ -6,29 +6,21 @@ using UnityEngine.InputSystem;
 
 namespace UI.Popup
 {
-    public class FuelTuto : AbstractPopup
+    public class FuelTuto : FadePopup
     {
-        [SerializeField] private UIFade fade;
         [SerializeField] private PlayerInputData playerInputData;
         [SerializeField] private InputData interactInput;
         
         public override void PopIn()
         {
             playerInputData.DisableAll();
-            fade.FadeIn();
+            base.PopIn();
         }
 
         public override void PopOut()
         {
             playerInputData.EnableAll();
-            fade.FadeOut();
-            StartCoroutine(DestroyAfterTime());
-        }
-
-        private IEnumerator DestroyAfterTime()
-        {
-            yield return new WaitForSeconds(fade.FadeDuration);
-            DestroyPopup();
+            base.PopOut();
         }
         
         private void OnEnable()

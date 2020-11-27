@@ -6,37 +6,28 @@ using UnityEngine.InputSystem;
 
 namespace UI.Popup
 {
-    public class SwitchTuto : AbstractPopup
+    public class SwitchTuto : FadePopup
     {
-        [SerializeField] private UIFade fade;
         [SerializeField] private InputData switchInput;
-        
-        public override void PopIn()
-        {
-            fade.FadeIn();
-        }
+        private bool _listenInputs;
 
-        public override void PopOut()
-        {
-            fade.FadeOut();
-            StartCoroutine(WaitForDestroy());
-        }
-        
         private void OnEnable()
-        { switchInput.InputEvent += HandleSwitch; }
+        {
+            switchInput.InputEvent += HandleSwitch;
+            _listenInputs = true;
+        }
         
         private void OnDisable()
-        { switchInput.InputEvent -= HandleSwitch; }
+        {
+            if (_listenInputs) switchInput.InputEvent -= HandleSwitch;
+            _listenInputs = false;
+        }
 
         private void HandleSwitch(InputAction.CallbackContext context)
         {
             PopOut();
-        }
-
-        private IEnumerator WaitForDestroy()
-        {
-            yield return new WaitForSeconds(fade.FadeDuration);
-            DestroyPopup();
+            if (_listenInputs) switchInput.InputEvent -= HandleSwitch;
+            _listenInputs = false;
         }
     }
 }
