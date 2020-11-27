@@ -1,27 +1,53 @@
-﻿using Player;
+﻿using Global;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class SwitchButton : MonoBehaviour
+    public class SwitchButton : InputButton
     {
         [SerializeField] private PlayerSensesData sensesData;
-        private Button _button;
 
-        private void Start()
+
+        protected override void OnEnable()
         {
-            _button = GetComponent<Button>();
+            sensesData.FuelChangeEvent += UpdateButtonInteractable;
+            sensesData.FuelInitEvent += InitButtonInteractable;
+            base.OnEnable();
         }
 
-        private void OnEnable()
-        { sensesData.FuelChangeEvent += OnFuelChange; }
-        private void OnDisable()
-        { sensesData.FuelChangeEvent -= OnFuelChange; }
+        protected override void OnDisable()
+        { 
+            sensesData.FuelChangeEvent -= UpdateButtonInteractable;
+            sensesData.FuelInitEvent -= InitButtonInteractable;
+            base.OnDisable();
+        }
 
-        private void OnFuelChange(int fuelAmount)
+        private void UpdateButtonInteractable(int fuelAmount)
         {
-            _button.interactable = fuelAmount != 0;
+            UpdateButtonInteractable(fuelAmount, inputData.Can, fade.FadeDuration);
+        }
+        
+        protected override void UpdateButtonInteractable(bool isInputEnable, float duration)
+        {
+            UpdateButtonInteractable(sensesData.FuelAmount, isInputEnable, duration);
+        }
+
+        private void InitButtonInteractable(int fuelAmount)
+        {
+            UpdateButtonInteractable(fuelAmount, inputData.Can, 0f);
+        }
+
+        private void UpdateButtonInteractable(int fuelAmount, bool isInputEnable, float duration)
+        {
+            var isNowInteractable = fuelAmount != 0 && isInputEnable;
+            if (isNowInteractable != button.interactable)
+            {
+                if (isNowInteractable) fade.FadeIn(duration);
+                else fade.FadeOut(duration);
+            }
+            button.interactable = isNowInteractable;
         }
     }
 }

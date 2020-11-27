@@ -9,8 +9,14 @@ namespace UI.Popup
     {
         [SerializeField] private PlayerSensesData sensesData;
         [SerializeField] private float timeBeforeHint = 8f;
-
+        
+        private InputButton _resetButton;
         private bool _listenInputs;
+
+        private void Start()
+        {
+            _resetButton = GetComponent<InputButton>();
+        }
 
         private void OnEnable()
         {
@@ -34,8 +40,8 @@ namespace UI.Popup
         private IEnumerator WaitBeforeSend()
         {
             yield return new WaitForSeconds(timeBeforeHint);
-            
-            GetComponent<UIFade>().FadeIn();
+
+            _resetButton.ForceDisable = false;
             SendPopup();
         }
     }

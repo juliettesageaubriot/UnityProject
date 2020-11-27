@@ -12,10 +12,13 @@ namespace Global
         public string InputName => inputName;
         
         [SerializeField] private bool isEnabled = true;
+
         public bool Can => isEnabled;
 
         public delegate void InputDelegate(InputAction.CallbackContext context);
         public event InputDelegate InputEvent;
+        public delegate void ChangeEnableDelegate(bool isEnable);
+        public event ChangeEnableDelegate ChangeEnableEvent;
         
         [CanBeNull]
         public InputAction BaseEvent => InputManager.IsReady ? InputManager.ActionMaps.Player.Get()[inputName] : null;
@@ -27,11 +30,12 @@ namespace Global
 
         public void SetEnable(bool newEnable)
         {
+            ChangeEnableEvent?.Invoke(newEnable);
             isEnabled = newEnable;
         }
 
-        public void Enable() { isEnabled = true; }
-        public void Disable() { isEnabled = false;  }
+        public void Enable() { SetEnable(true); }
+        public void Disable() { SetEnable(false);  }
 
 
         private void InvokeSyntheticEvent(InputAction.CallbackContext ctx)

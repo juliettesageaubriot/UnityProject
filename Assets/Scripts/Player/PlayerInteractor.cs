@@ -11,6 +11,8 @@ namespace Player
     public class PlayerInteractor : MonoBehaviour
     {
         [SerializeField]
+        private PlayerInteractData interactData;
+        [SerializeField]
         private InputData interactInput;
         [SerializeField] 
         private PlayerPositionData positionData;
@@ -22,14 +24,28 @@ namespace Player
         private SingleUnityLayer interactionLayer;
 
         private IActionable _actionable = null;
+        private bool _lastCanInteract;
 
         public bool CanInteract => _actionable != null && _actionable.IsActionable();
+
+        private void Start()
+        {
+            interactData.CanInteractHasChanged(CanInteract);
+        }
 
         private void OnEnable()
         { interactInput.InputEvent += Interact; }
 
         private void OnDisable()
         { interactInput.InputEvent -= Interact; }
+
+        private void Update()
+        {
+            var newCanInteract = CanInteract;
+            if (_lastCanInteract != newCanInteract)
+                interactData.CanInteractHasChanged(newCanInteract);
+            _lastCanInteract = CanInteract;
+        }
 
         public void CheckInteract()
         {
