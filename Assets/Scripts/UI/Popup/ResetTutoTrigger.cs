@@ -11,13 +11,7 @@ namespace UI.Popup
         [SerializeField] private float timeBeforeHint = 8f;
 
         private bool _listenInputs;
-/*
-        private void Start()
-        {
-            fade.FadeIn();
-        }*/
 
-        
         private void OnEnable()
         {
             _listenInputs = true;

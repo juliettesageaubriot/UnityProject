@@ -33,11 +33,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
       propertyPath: onStopMove.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
       propertyPath: onCantMove.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onCantMove.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1492925927523776492}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onCantMove.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player.PlayerInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onCantMove.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CheckInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onCantMove.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onStopMove.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1492925927523776492}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onStopMove.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player.PlayerInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onStopMove.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CheckInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onStopMove.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8247923126071222158, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -91,3 +123,14 @@ PrefabInstance:
     - {fileID: 876075364453895117, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
     - {fileID: 6976735044435094177, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+--- !u!114 &1492925927523776492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1853911565545442715, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+  m_PrefabInstance: {fileID: 940577804877396599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd3a873efa74f2a96a8f541a42a32e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

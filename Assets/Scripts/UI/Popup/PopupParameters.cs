@@ -8,8 +8,8 @@ namespace UI.Popup
     {
         public string popupName;
         public GameObject popup;
+        public bool autoRemove;
         public float autoRemoveDelay;
         public bool removePrevious;
-        public bool autoRemove;
     }
 }
