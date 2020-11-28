@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using Utils;
 
 namespace Interactables
@@ -17,13 +18,23 @@ namespace Interactables
     {
         [SerializeField] private SingleUnityLayer playerLayer;
         [SerializeField] private FakeWallSwitch[] walls;
+        [SerializeField] private UnityEvent switchEvent;
 
         private bool _hasTriggered;
-        
+
+        private void Start()
+        {
+            if (switchEvent == null)
+                switchEvent = new UnityEvent();
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!_hasTriggered && other.gameObject.layer == playerLayer.LayerIndex)
+            {
                 StartCoroutine(TriggerSwitch());
+                switchEvent.Invoke();
+            }
         }
 
         private IEnumerator TriggerSwitch()
