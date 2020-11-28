@@ -20,18 +20,22 @@ namespace UI.Popup
 
         private void HandlePopup(PopupParameters popupParams)
         {
-            StartCoroutine(DestroyAllAndGenerate(popupParams));
+            PopOutPrevious();
+            if (popupParams.waitForPreviousDisappear) StartCoroutine(WaitGenerate(popupParams));
+            else Generate(popupParams);
         }
-
-        private IEnumerator DestroyAllAndGenerate(PopupParameters popupParams)
+        
+        private void PopOutPrevious()
         {
             foreach (var popupable in _popups)
                 if (popupable.Value.disappearBeforeNext == DisappearBeforeNext.Always)
                     popupable.Key.PopOut();
-            
-            while (
-                popupParams.waitForPreviousDisappear
-                && _popups.Count(
+        }
+        
+
+        private IEnumerator WaitGenerate(PopupParameters popupParams)
+        {
+            while (_popups.Count(
                     kvp =>
                         kvp.Value.disappearBeforeNext == DisappearBeforeNext.Always
                         ) > 0
