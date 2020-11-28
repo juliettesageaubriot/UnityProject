@@ -128,7 +128,7 @@ MonoBehaviour:
   playerSensesData: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   playerInputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
   toBlindClip: {fileID: 32900000, guid: 680dbd6552c473940b49205362649da2, type: 3}
-  toSightedClip: {fileID: 32900000, guid: 680dbd6552c473940b49205362649da2, type: 3}
+  toSightedClip: {fileID: 32900000, guid: 09514c8f20918064b88864a89a093238, type: 3}
   videoPlayer: {fileID: 2032739952717849955}
 --- !u!1 &3361152806145147219
 GameObject:
