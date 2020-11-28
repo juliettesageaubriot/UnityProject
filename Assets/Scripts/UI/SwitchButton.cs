@@ -36,7 +36,9 @@ namespace UI
 
         private void InitButtonInteractable(int fuelAmount)
         {
-            UpdateButtonInteractable(fuelAmount, inputData.Can, 0f);
+            button.interactable = fuelAmount != 0 && inputData.Can;
+            if (button.interactable) fade.FadeIn(0f);
+            else fade.FadeOut(0f);
         }
 
         private void UpdateButtonInteractable(int fuelAmount, bool isInputEnable, float duration)
