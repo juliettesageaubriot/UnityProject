@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 27}
+  m_AnchoredPosition: {x: 0, y: 55.000008}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27477960
@@ -505,7 +505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
+  m_AnchoredPosition: {x: 0, y: 33}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1154433069
@@ -668,7 +668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 126}
+  m_AnchoredPosition: {x: 0, y: 152}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1158948748
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Merci d'avoir jou\xE9 \nSens Unique"
+  m_text: "Merci d'avoir jou\xE9 \n\xE0 Wisaru"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af9aff287dc35164b9f8a58017796926, type: 2}
   m_sharedMaterial: {fileID: 4328962575367949080, guid: af9aff287dc35164b9f8a58017796926, type: 2}
@@ -754,7 +754,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -33.657196, y: 0, z: -25.794617, w: -26.025269}
+  m_margin: {x: -33.657196, y: 0, z: -25.794617, w: -44.463055}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -939,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376277002808622630, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -116
+      value: -87.99999
       objectReference: {fileID: 0}
     - target: {fileID: 376277002808622630, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1197,7 +1197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376277002808622630, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64
+      value: -35.999992
       objectReference: {fileID: 0}
     - target: {fileID: 376277002808622630, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
       propertyPath: m_SizeDelta.x
