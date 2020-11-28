@@ -145,4 +145,4 @@ MonoBehaviour:
     opacity: 1
     interactable: 1
     blocksRaycasts: 1
-  startVisible: 1
+  startVisible: 0

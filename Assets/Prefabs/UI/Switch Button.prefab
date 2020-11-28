@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 593922968424452909}
   - component: {fileID: 1805963018803015601}
   - component: {fileID: 4868837844658645159}
+  - component: {fileID: 402421266780623867}
   m_Layer: 5
   m_Name: Switch Button
   m_TagString: Untagged
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 0.3
   hideState:
-    opacity: 0
+    opacity: 0.2
     interactable: 0
     blocksRaycasts: 0
   visibleState:
@@ -203,6 +204,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensesData: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   animator: {fileID: 1805963018803015601}
+--- !u!114 &402421266780623867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236523233721205205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7068c820968e8ec4aa494bfdea7f36cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputData: {fileID: 11400000, guid: dbd8a9b54943eba42b4c4fa9e095f835, type: 2}
+  forceDisable: 0
+  sensesData: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
 --- !u!1 &9017058334818037754
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,24 +3,25 @@ using Global;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
 
 namespace UI.Popup
 {
-    public class FuelTuto : FadePopup
+    public class FuelTuto : AbstractPopup
     {
         [SerializeField] private PlayerInputData playerInputData;
         [SerializeField] private InputData interactInput;
+        [SerializeField] private EventSequence popOutSequence;
         
         public override void PopIn()
         {
             playerInputData.DisableAll();
-            base.PopIn();
         }
 
         public override void PopOut()
         {
+            popOutSequence.StartSequence();
             playerInputData.EnableAll();
-            base.PopOut();
         }
         
         private void OnEnable()
@@ -35,6 +36,11 @@ namespace UI.Popup
         private void HandleSkip(InputAction.CallbackContext callbackContext)
         {
             PopOut();
+        }
+        
+        public new void DestroyPopup()
+        {
+            base.DestroyPopup();
         }
     }
 }

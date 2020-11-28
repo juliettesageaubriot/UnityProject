@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3258090813059781906}
   - component: {fileID: 3258090813059781916}
-  - component: {fileID: 5506287738519219284}
-  - component: {fileID: 1212373589485828394}
-  - component: {fileID: 3329913658114873098}
+  - component: {fileID: 6271567490371273014}
+  - component: {fileID: 8214200130534282551}
+  - component: {fileID: 1142492473679898681}
+  - component: {fileID: 4729624791171123493}
+  - component: {fileID: 4544223496393893583}
   m_Layer: 5
   m_Name: Fuel Obtained Popup
   m_TagString: Untagged
@@ -48,19 +50,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3258090813059781907}
   m_CullTransparentMesh: 0
---- !u!225 &5506287738519219284
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3258090813059781907}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &1212373589485828394
+--- !u!114 &6271567490371273014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 0.5
+  fadeDuration: 0.8
   hideState:
     opacity: 0
     interactable: 0
@@ -82,7 +72,7 @@ MonoBehaviour:
     interactable: 1
     blocksRaycasts: 1
   startVisible: 0
---- !u!114 &3329913658114873098
+--- !u!114 &8214200130534282551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,9 +81,133 @@ MonoBehaviour:
   m_GameObject: {fileID: 3258090813059781907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8014bbe514d40379ad684a5aacbde8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 544848c39b609534a84fb7cb13c8d0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playOnAwake: 0
+  relativeToPrevious: 1
+  sequence:
+  - interval: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6271567490371273014}
+          m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+          m_MethodName: FadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - interval: 2.5
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4729624791171123493}
+          m_TargetAssemblyTypeName: UI.Popup.PopupSequence, Assembly-CSharp
+          m_MethodName: PopOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1142492473679898681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258090813059781907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544848c39b609534a84fb7cb13c8d0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 0
+  relativeToPrevious: 1
+  sequence:
+  - interval: 1
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3949190691989216182}
+          m_TargetAssemblyTypeName: UI.UIFade, Assembly-CSharp
+          m_MethodName: FadeOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - interval: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2700416184896890828}
+          m_TargetAssemblyTypeName: UI.PickupAnimation, Assembly-CSharp
+          m_MethodName: MoveToStock
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - interval: 1
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4729624791171123493}
+          m_TargetAssemblyTypeName: UI.Popup.PopupSequence, Assembly-CSharp
+          m_MethodName: DestroyPopup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &4729624791171123493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258090813059781907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d89bcabc8840f088fadde4ea3f516b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popInSequence: {fileID: 8214200130534282551}
+  popOutSequence: {fileID: 1142492473679898681}
+--- !u!225 &4544223496393893583
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258090813059781907}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4847617731744433545
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +265,7 @@ GameObject:
   - component: {fileID: 3067954232818414929}
   - component: {fileID: 588929530456209613}
   - component: {fileID: 1532668554179897918}
+  - component: {fileID: 2700416184896890828}
   m_Layer: 5
   m_Name: Fuel icon
   m_TagString: Untagged
@@ -215,6 +330,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2700416184896890828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5020970340889952820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d2d6c54bb918e24f9f86ad2377e2bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 11400000, guid: e26d408e8222fbc4992d2721728ba653, type: 2}
+  duration: 0.8
 --- !u!1 &7274224625187608055
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +355,8 @@ GameObject:
   - component: {fileID: 1003803924900067142}
   - component: {fileID: 1572800284559360817}
   - component: {fileID: 7854174049393302630}
+  - component: {fileID: 983952794965753204}
+  - component: {fileID: 3949190691989216182}
   m_Layer: 5
   m_Name: Fuel text
   m_TagString: Untagged
@@ -349,3 +480,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &983952794965753204
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7274224625187608055}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &3949190691989216182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7274224625187608055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 0.8
+  hideState:
+    opacity: 0
+    interactable: 0
+    blocksRaycasts: 0
+  visibleState:
+    opacity: 1
+    interactable: 1
+    blocksRaycasts: 1
+  startVisible: 1

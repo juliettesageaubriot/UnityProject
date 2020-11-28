@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Global;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,15 +14,20 @@ namespace UI
         [SerializeField] private PlayerSensesData playerData;
         [SerializeField] private GameObject fuelIconPrefab;
         [SerializeField] private float delayIconAnim;
+        [SerializeField] private FuelUIAnimator fuelAnimator;
         private readonly Stack<GameObject> _fuelIcons = new Stack<GameObject>();
+
+        private GameObject _placeholderFuelIcon;
 
         private void OnEnable() {
             playerData.FuelInitEvent += UpdateIcons;
             playerData.FuelChangeEvent += UpdateIcons;
+            fuelAnimator.AnimationEndEvent += EnableLastIcon;
         }
         private void OnDisable() {
             playerData.FuelInitEvent -= UpdateIcons;
             playerData.FuelChangeEvent -= UpdateIcons;
+            fuelAnimator.AnimationEndEvent -= EnableLastIcon;
         }
 
         private void UpdateIcons(int newAmount)
@@ -36,14 +43,27 @@ namespace UI
                 // Remove several
                 for (var i = 0; i < fuelCount - newAmount; i++)
                     RemoveOneIcon();
+
+            if (_fuelIcons.Count > 0)
+                fuelAnimator.FuelDestinationTransform = (RectTransform)_fuelIcons.Last().transform;
         
             // Rebuild layout to force horizontal layout group to do his job
             LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
         }
 
+        private void EnableLastIcon()
+        {
+            if (_fuelIcons.Count > 0)
+                _fuelIcons.Last().GetComponent<UIFade>().FadeIn(0f);
+        }
+
+
         private void AddOneIcon()
         {
-            _fuelIcons.Push(Instantiate(fuelIconPrefab, transform));
+            var lastIcon = Instantiate(fuelIconPrefab, transform);
+            var fade = lastIcon.GetComponent<UIFade>();
+            fade.FadeOut(0f);
+            _fuelIcons.Push(lastIcon);
         }
 
         private void RemoveOneIcon()

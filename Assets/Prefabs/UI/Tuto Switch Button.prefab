@@ -241,6 +241,22 @@ PrefabInstance:
       propertyPath: m_Transition
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4170523301560287063, guid: 1beb4d56b6131488492a0ac6f26a2544, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170523301560287063, guid: 1beb4d56b6131488492a0ac6f26a2544, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.22352941
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170523301560287063, guid: 1beb4d56b6131488492a0ac6f26a2544, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.54901963
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170523301560287063, guid: 1beb4d56b6131488492a0ac6f26a2544, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4868837844658645159, guid: 1beb4d56b6131488492a0ac6f26a2544, type: 3}
       propertyPath: m_Enabled
       value: 1

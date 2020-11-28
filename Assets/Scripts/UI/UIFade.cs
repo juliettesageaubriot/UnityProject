@@ -46,9 +46,7 @@ namespace UI
 
         private void Fade(FadeState state)
         {
-            _canvasGroup.DOFade(state.opacity, fadeDuration);
-            _canvasGroup.interactable = state.interactable;
-            _canvasGroup.blocksRaycasts = state.blocksRaycasts;
+            Fade(state, fadeDuration);
         }
         private void Fade(FadeState state, float duration)
         {
