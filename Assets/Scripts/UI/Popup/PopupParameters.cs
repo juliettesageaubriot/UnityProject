@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UI.Popup
 {
-    public enum RemovePrevious
+    public enum DisappearBeforeNext
     {
         Always,
         Never
@@ -16,7 +16,7 @@ namespace UI.Popup
         public GameObject popup;
         public bool autoRemove;
         public float autoRemoveDelay;
-        public RemovePrevious removePrevious;
-        public bool waitForRemovePrevious;
+        public DisappearBeforeNext disappearBeforeNext;
+        public bool waitForPreviousDisappear;
     }
 }

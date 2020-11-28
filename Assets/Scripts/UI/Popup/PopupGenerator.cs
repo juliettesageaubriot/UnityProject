@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Global;
 using UnityEngine;
 
@@ -19,18 +20,22 @@ namespace UI.Popup
 
         private void HandlePopup(PopupParameters popupParams)
         {
-            if (popupParams.removePrevious == RemovePrevious.Never) Generate(popupParams);
-            else StartCoroutine(DestroyAllAndGenerate(popupParams));
+            StartCoroutine(DestroyAllAndGenerate(popupParams));
         }
 
         private IEnumerator DestroyAllAndGenerate(PopupParameters popupParams)
         {
             foreach (var popupable in _popups)
-                if ( popupParams.removePrevious == RemovePrevious.Always)
+                if (popupable.Value.disappearBeforeNext == DisappearBeforeNext.Always)
                     popupable.Key.PopOut();
             
-            while (popupParams.waitForRemovePrevious && _popups.Count > 0)
-            {
+            while (
+                popupParams.waitForPreviousDisappear
+                && _popups.Count(
+                    kvp =>
+                        kvp.Value.disappearBeforeNext == DisappearBeforeNext.Always
+                        ) > 0
+            ) {
                 yield return new WaitForSeconds(0.1f);
             }
 
