@@ -1,20 +1,16 @@
 ﻿using UnityEngine;
-using Utils;
 
 namespace UI
 {
-    public class SlabTuto : MonoBehaviour
+    public class SlabTuto : PopupSender
     {
         [SerializeField] private ScriptableResetCounter scriptableResetCounter;
+        [SerializeField] private int resetAmountBeforeShowing = 4;
         
-        private EventSequence _sequence;
-        void Start()
+        private void Start()
         {
-            _sequence = GetComponent<EventSequence>();
-            if (scriptableResetCounter.ResetCounter > 4 && scriptableResetCounter.ResetCounter < 8)
-            {
-                _sequence.StartSequence();
-            }
+            if (scriptableResetCounter.ResetCounter > resetAmountBeforeShowing)
+                SendPopup();
         }
     }
 }
