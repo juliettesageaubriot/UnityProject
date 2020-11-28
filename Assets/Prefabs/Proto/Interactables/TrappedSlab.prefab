@@ -228,18 +228,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 07a5c8dc4d5308d40abe4ea37ce0c72b, type: 3}
-    - target: {fileID: 658227793119934095, guid: d97b1debbba6db34ab6e6a21d9fd69ee, type: 3}
-      propertyPath: m_Color.r
-      value: 0.44705883
-      objectReference: {fileID: 0}
-    - target: {fileID: 658227793119934095, guid: d97b1debbba6db34ab6e6a21d9fd69ee, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8117647
-      objectReference: {fileID: 0}
-    - target: {fileID: 658227793119934095, guid: d97b1debbba6db34ab6e6a21d9fd69ee, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 658227793119934131, guid: d97b1debbba6db34ab6e6a21d9fd69ee, type: 3}
       propertyPath: m_Name
       value: TrappedSlab
