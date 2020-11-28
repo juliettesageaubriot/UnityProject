@@ -1,8 +1,4 @@
-using System.Collections;
-using Global;
-using Player;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Utils;
 
 namespace UI.Popup
@@ -20,7 +16,9 @@ namespace UI.Popup
 
         public override void PopOut()
         {
+            if (IsPopingOut) return;
             if (popOutSequence != null) popOutSequence.StartSequence();
+            base.PopOut();
         }
         
         public new void DestroyPopup()

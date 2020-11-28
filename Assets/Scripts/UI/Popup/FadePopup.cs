@@ -22,6 +22,7 @@ namespace UI.Popup
         {
             _fade.FadeOut();
             StartCoroutine(WaitForDestroy());
+            base.PopOut();
         }
         
         private IEnumerator WaitForDestroy()

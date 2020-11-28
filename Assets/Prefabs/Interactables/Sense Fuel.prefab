@@ -604,7 +604,7 @@ MonoBehaviour:
   popupParameters:
     popupName: Fuel Obtained
     popup: {fileID: 3258090813059781907, guid: 20f837a15dde40444ae0755418bf5fff, type: 3}
-    autoRemove: 1
-    autoRemoveDelay: 4
+    autoRemove: 0
+    autoRemoveDelay: 0
     disappearBeforeNext: 0
     waitForPreviousDisappear: 1

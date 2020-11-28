@@ -22,6 +22,7 @@ namespace UI.Popup
         {
             popOutSequence.StartSequence();
             playerInputData.EnableAll();
+            base.PopOut();
         }
         
         private void OnEnable()

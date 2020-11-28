@@ -28,7 +28,7 @@ namespace UI.Popup
         private void PopOutPrevious()
         {
             foreach (var popupable in _popups)
-                if (popupable.Value.disappearBeforeNext == DisappearBeforeNext.Always)
+                if (popupable.Value.disappearBeforeNext == DisappearBeforeNext.Always && !popupable.Key.IsPopingOut)
                     popupable.Key.PopOut();
         }
         
@@ -74,7 +74,8 @@ namespace UI.Popup
         private IEnumerator DOAutoDestroy(float delay, AbstractPopup popup)
         {
             yield return new WaitForSeconds(delay);
-            if (_popups.ContainsKey(popup)) popup.PopOut();
+            if (_popups.ContainsKey(popup) && !popup.IsPopingOut)
+                popup.PopOut();
         }
     }
 }

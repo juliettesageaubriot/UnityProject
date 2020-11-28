@@ -32,6 +32,8 @@ namespace UI
 
         private void UpdateIcons(int newAmount)
         {
+            if (fuelAnimator.IsAnimating) fuelAnimator.InterruptAnim();
+            
             var fuelCount = _fuelIcons.Count;
             if (newAmount == fuelCount) return;
         
