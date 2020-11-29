@@ -676,7 +676,7 @@ MonoBehaviour:
   playerPositionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
   movementDuration: 0.2
   movementDistance: 1
-  maxInputRegistering: 3
+  maxInputRegistering: 2
   onMove:
     m_PersistentCalls:
       m_Calls:
