@@ -54,7 +54,7 @@ namespace Global
             if (getUnknown || obstacle != ObstacleEnum.Unknown) return obstacle;
             var hit = Physics2D.CircleCast(
                 position + raycastOffset,
-                cellSize / 2f,
+                cellSize / 4f,
                 Vector2.zero,
                 0f,
                 obstacleLayer.Mask);
