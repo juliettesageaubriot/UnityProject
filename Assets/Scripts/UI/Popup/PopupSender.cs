@@ -7,7 +7,7 @@ namespace UI
     public class PopupSender : MonoBehaviour
     {
         [SerializeField] protected PopupBus bus;
-        [SerializeField] private PopupParameters popupParameters;
+        [SerializeField] protected PopupParameters popupParameters;
 
         public void SendPopup()
         {

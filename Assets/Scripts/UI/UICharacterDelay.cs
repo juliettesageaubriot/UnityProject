@@ -10,8 +10,8 @@ namespace UI
     {
         private static char[] _pauseCharacters = { '.', '?', '!' };
         
-        [SerializeField] private float delay = 0.1f; 
-        [SerializeField] private float pointDelay = 0.1f; 
+        [SerializeField] private float delay = 0.03f; 
+        [SerializeField] private float pointDelay = 0.3f; 
         private TextMeshProUGUI _textMeshPro;
         [SerializeField] private bool animateAtStart;
         [SerializeField] private bool cleanAtStart = true;

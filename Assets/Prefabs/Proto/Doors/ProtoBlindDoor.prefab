@@ -13,7 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1486762405781832368, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
       propertyPath: m_InstanceId
-      value: -89988
+      value: -593160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: onInitState.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
       propertyPath: closedState.sprite
@@ -26,6 +30,30 @@ PrefabInstance:
     - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
       propertyPath: openSenseState
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: onInitState.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: onInitState.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: onInitState.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 920194489885325709}
+    - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: onInitState.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI.Popup.DoorHintPopupTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: onInitState.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandleInitDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: onInitState.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1486762405781832371, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
       propertyPath: m_Sprite
@@ -79,5 +107,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4220063523622223704, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: popupParameters.popupName
+      value: Blind Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220063523622223704, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: openPopup
+      value: 
+      objectReference: {fileID: 511434477518216406, guid: 16842754630b16040b8a26252cff7a1c, type: 3}
+    - target: {fileID: 4220063523622223704, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: closedPopup
+      value: 
+      objectReference: {fileID: 1984053983972194620, guid: 136f859c49fc7cd4a9b9afec02cf30fb, type: 3}
+    - target: {fileID: 5065398714974710130, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: popupParameters.autoRemove
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065398714974710130, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: popupParameters.autoRemoveDelay
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5065398714974710130, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+--- !u!114 &920194489885325709 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4220063523622223704, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+  m_PrefabInstance: {fileID: 3915208526086473429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d246117e2c5cf99409a00905c3e82bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

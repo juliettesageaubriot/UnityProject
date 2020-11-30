@@ -1,12 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4965646433858674951
+--- !u!1001 &5996113984410350568
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 360085577324918373, guid: 2b7b8310610714f47af352b3a612c75a, type: 3}
+      propertyPath: blindText
+      value: "Je sens une porte, celle-ci est ferm\xE9e. Malgr\xE8s tous mes efforts,
+        je n'arrive \r\npas \xE0 l'ouvrir."
+      objectReference: {fileID: 0}
+    - target: {fileID: 360085577324918373, guid: 2b7b8310610714f47af352b3a612c75a, type: 3}
+      propertyPath: allSenseText
+      value: "C'est la porte de Kikazaru, le singe soud. Elle est actuellement ferm\xE9e."
+      objectReference: {fileID: 0}
+    - target: {fileID: 360085577324918373, guid: 2b7b8310610714f47af352b3a612c75a, type: 3}
+      propertyPath: deafText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1916704867184790992, guid: 2b7b8310610714f47af352b3a612c75a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -93,12 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7075632678341535838, guid: 2b7b8310610714f47af352b3a612c75a, type: 3}
       propertyPath: m_Name
-      value: Door Hint
-      objectReference: {fileID: 0}
-    - target: {fileID: 8358908230861178627, guid: 2b7b8310610714f47af352b3a612c75a, type: 3}
-      propertyPath: m_text
-      value: "C'est la porte de Mizaru, le singe aveugle mais elle est actuellement
-        ferm\xE9e."
+      value: ClosedDeafDoorHint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b7b8310610714f47af352b3a612c75a, type: 3}

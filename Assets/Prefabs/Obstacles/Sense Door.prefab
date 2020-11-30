@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1112042458607023476}
   - component: {fileID: 3604581381621097635}
-  - component: {fileID: 4143158154656357117}
+  - component: {fileID: 5018188947848842455}
   m_Layer: 13
   m_Name: Door Actionable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1112042458607023476
 Transform:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4143158154656357117
+--- !u!114 &5018188947848842455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,19 +67,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3528900895008703951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ffd1bafa8a235a46a9c52150719f444, type: 3}
+  m_Script: {fileID: 11500000, guid: d246117e2c5cf99409a00905c3e82bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bus: {fileID: 11400000, guid: 0cb1835d4e844f8488a153cb00d7c75b, type: 2}
   popupParameters:
-    popupName: Door Hint
-    popup: {fileID: 2799048129497106777, guid: 30fa34ecd60211a47a6b2c5a8c55d1fd, type: 3}
-    autoRemove: 1
-    autoRemoveDelay: 3
-    disappearBeforeNext: 1
+    popupName: 
+    popup: {fileID: 0}
+    autoRemove: 0
+    autoRemoveDelay: 0
+    disappearBeforeNext: 0
     skipIf: 1
     waitForPreviousDisappear: 0
     destroyImmediatePrevious: 0
+  openPopup: {fileID: 0}
+  closedPopup: {fileID: 0}
 --- !u!1 &4042555018007500488
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +365,7 @@ MonoBehaviour:
   - {x: 0, y: 0.2, z: 0}
   m_ShapePathHash: -530749171
   m_Mesh: {fileID: 0}
-  m_InstanceId: 75680
+  m_InstanceId: 509284
 --- !u!114 &7752550587065938237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +405,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5018188947848842455}
+        m_TargetAssemblyTypeName: UI.Popup.DoorHintPopupTrigger, Assembly-CSharp
+        m_MethodName: SetOpenPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onCloseEvent:
     m_PersistentCalls:
       m_Calls:
@@ -424,6 +438,33 @@ MonoBehaviour:
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 530fd8576fdda96449c8a18673243f41, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5018188947848842455}
+        m_TargetAssemblyTypeName: UI.Popup.DoorHintPopupTrigger, Assembly-CSharp
+        m_MethodName: SetClosePopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onInitState:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5018188947848842455}
+        m_TargetAssemblyTypeName: UI.Popup.DoorHintPopupTrigger, Assembly-CSharp
+        m_MethodName: HandleInitDoor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
