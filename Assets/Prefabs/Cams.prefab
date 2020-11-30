@@ -159,6 +159,7 @@ MonoBehaviour:
     autoRemove: 0
     autoRemoveDelay: 0
     disappearBeforeNext: 2
+    skipIf: 2
     waitForPreviousDisappear: 0
     destroyImmediatePrevious: 1
   data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}

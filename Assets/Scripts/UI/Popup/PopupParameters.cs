@@ -10,6 +10,13 @@ namespace UI.Popup
         Never
     }
     
+    public enum Skip
+    {
+        DifferentName,
+        SameName,
+        Never
+    }
+    
     [Serializable]
     public struct PopupParameters
     {
@@ -18,6 +25,7 @@ namespace UI.Popup
         public bool autoRemove;
         public float autoRemoveDelay;
         public DisappearBeforeNext disappearBeforeNext;
+        public Skip skipIf;
         public bool waitForPreviousDisappear;
         public bool destroyImmediatePrevious;
     }

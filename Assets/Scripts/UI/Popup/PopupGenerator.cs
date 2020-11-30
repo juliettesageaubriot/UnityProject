@@ -20,6 +20,13 @@ namespace UI.Popup
 
         private void HandlePopup(PopupParameters popupParams)
         {
+            if (
+                (popupParams.skipIf == Skip.DifferentName
+                 && _popups.Values.ToList().Exists(p => p.popupName != popupParams.popupName))
+                || (popupParams.skipIf == Skip.SameName
+                    && _popups.Values.ToList().Exists(p => p.popupName == popupParams.popupName))
+            ) return;
+            
             PopOutPrevious(popupParams);
             if (popupParams.waitForPreviousDisappear) StartCoroutine(WaitGenerate(popupParams));
             else Generate(popupParams);

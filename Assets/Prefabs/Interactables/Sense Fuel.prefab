@@ -607,4 +607,6 @@ MonoBehaviour:
     autoRemove: 0
     autoRemoveDelay: 0
     disappearBeforeNext: 0
+    skipIf: 1
     waitForPreviousDisappear: 1
+    destroyImmediatePrevious: 0
