@@ -8,13 +8,14 @@ namespace Interactables
     {
         [SerializeField] private GameObject hollowSlabPrefab;
         [SerializeField] private GameObject solidSlabPrefab;
-    
+        [Space(10)]
         [SerializeField] private GameObject fragileTrappedSlabPrefab;
         [SerializeField] private GameObject fragileSolidSlabPrefab;
-
+        [Space(10)]
         [SerializeField] private Transform indicatorGroupTransform;
         [SerializeField] private Transform fragileGroupTransform;
-    
+        [SerializeField] private GameObject endPointTrigger;
+        [Space(10)]
         [SerializeField] private float gridSize = 1f;
     
 
@@ -38,7 +39,17 @@ namespace Interactables
         private readonly bool[,] _layoutArray = new bool[Width, Height];
         private readonly GameObject[,] _fragileSlabsArray = new GameObject[Width, Height];
         private readonly GameObject[,] _indicatorSlabsArray = new GameObject[Width, Height];
-    
+
+        public void DestroyTrapSlabs()
+        {
+            foreach (var o in _fragileSlabsArray)
+            {
+                if (o.TryGetComponent<TrappedSlab>(out var trappedSlab))
+                {
+                    trappedSlab.BreakSlab();
+                }
+            }
+        }
     
         private void Start()
         {
@@ -78,6 +89,8 @@ namespace Interactables
             for (var i = 0; i < Width; i++)
                 _layoutArray[i, 1] = i >= Math.Min(startCellX, lastCellX) && i <= Math.Max(startCellX, lastCellX);
 
+            endPointTrigger.transform.position =
+                fragileGroupTransform.TransformPoint(new Vector3(lastCellX * gridSize, 3 * gridSize));
         }
 
         private void InstantiateSlabs(
