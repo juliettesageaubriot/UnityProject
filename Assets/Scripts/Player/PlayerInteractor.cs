@@ -47,11 +47,11 @@ namespace Player
             _lastCanInteract = CanInteract;
         }
 
-        public void CheckInteract()
+        public void CheckInteract(Vector2 direction)
         {
             var hit = Physics2D.Raycast(
                 transform.position + new Vector3(raycastCenter.x, raycastCenter.y, 0f),
-                positionData.Direction,
+                direction,
                 maxDistance,
                 interactionLayer.Mask
             );
@@ -67,6 +67,10 @@ namespace Player
                 throw new NullReferenceException(hit.collider.gameObject.name +
                                                  " doesn't have any actionable script.");
             _actionable = actionableComponent;
+        }
+        public void CheckInteract()
+        {
+            CheckInteract(positionData.Direction);
         }
 
         private void Interact(InputAction.CallbackContext callbackContext)

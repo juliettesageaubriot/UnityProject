@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: onStopMove.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8247923126071222145, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
+      propertyPath: onCantMove.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8247923126071222158, guid: 84f0feaa102b8446980925e31d0ea03d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

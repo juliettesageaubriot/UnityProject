@@ -803,6 +803,10 @@ PrefabInstance:
       propertyPath: m_InstanceId
       value: -175296
       objectReference: {fileID: 0}
+    - target: {fileID: 9185963240929175030, guid: 70fcae8903cc22c44a58c7f545abcdba, type: 3}
+      propertyPath: onCantMove.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9185963240929175032, guid: 70fcae8903cc22c44a58c7f545abcdba, type: 3}
       propertyPath: m_Name
       value: Proto Player
@@ -813,7 +817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9185963240929175033, guid: 70fcae8903cc22c44a58c7f545abcdba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 9185963240929175033, guid: 70fcae8903cc22c44a58c7f545abcdba, type: 3}
       propertyPath: m_LocalPosition.z
