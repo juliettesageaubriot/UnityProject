@@ -9,6 +9,10 @@ namespace UI
         [SerializeField] protected PopupBus bus;
         [SerializeField] protected PopupParameters popupParameters;
 
+        public void SendPopup(PopupParameters overrideParams)
+        {
+            bus.SendPopup(overrideParams);
+        }
         public void SendPopup()
         {
             bus.SendPopup(popupParameters);
