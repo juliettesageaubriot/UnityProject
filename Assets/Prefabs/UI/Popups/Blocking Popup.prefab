@@ -229,7 +229,7 @@ MonoBehaviour:
   delay: 0.03
   pointDelay: 0.3
   animateAtStart: 0
-  cleanAtStart: 0
+  cleanAtStart: 1
   useTMPText: 0
   animEndEvent:
     m_PersistentCalls:

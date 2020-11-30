@@ -103,7 +103,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - interval: 2.5
+  - interval: 1.5
     unityEvent:
       m_PersistentCalls:
         m_Calls:
