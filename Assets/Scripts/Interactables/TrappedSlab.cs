@@ -7,7 +7,7 @@ using Utils;
 
 namespace Interactables
 {
-    public class TrappedSlab : MonoBehaviour
+    public class TrappedSlab : PlayerKiller
     {
         [SerializeField] private SingleUnityLayer playerLayer;
         [SerializeField] private Sprite brokenSprite;
@@ -25,18 +25,13 @@ namespace Interactables
             _collider2D = GetComponent<Collider2D>();
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        protected override void OnKill()
         {
-            if (other.gameObject.layer != playerLayer.LayerIndex) return;
-            
             onSlabBreak.Invoke();
             
             _renderer.sprite = brokenSprite;
             gameObject.layer = brokenLayer.LayerIndex;
             _collider2D.isTrigger = false;
-            
-            other.GetComponent<PlayerController>().enabled = false;
-            other.GetComponent<PlayerDeath>().Kill();
         }
     }
 }
