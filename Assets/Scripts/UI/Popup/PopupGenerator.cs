@@ -20,16 +20,24 @@ namespace UI.Popup
 
         private void HandlePopup(PopupParameters popupParams)
         {
-            PopOutPrevious();
+            PopOutPrevious(popupParams);
             if (popupParams.waitForPreviousDisappear) StartCoroutine(WaitGenerate(popupParams));
             else Generate(popupParams);
         }
         
-        private void PopOutPrevious()
+        private void PopOutPrevious(PopupParameters newPopup)
         {
             foreach (var popupable in _popups)
-                if (popupable.Value.disappearBeforeNext == DisappearBeforeNext.Always && !popupable.Key.IsPopingOut)
+                if (ShouldDisappear(popupable.Value, newPopup) && !popupable.Key.IsPopingOut)
                     popupable.Key.PopOut();
+        }
+
+        private bool ShouldDisappear(PopupParameters popup, PopupParameters newPopup)
+        {
+            return popup.disappearBeforeNext == DisappearBeforeNext.Always
+                   || (
+                       popup.disappearBeforeNext == DisappearBeforeNext.DifferentName
+                       && popup.popupName != newPopup.popupName);
         }
         
 
@@ -37,7 +45,7 @@ namespace UI.Popup
         {
             while (_popups.Count(
                     kvp =>
-                        kvp.Value.disappearBeforeNext == DisappearBeforeNext.Always
+                        ShouldDisappear(kvp.Value, popupParams)
                         ) > 0
             ) {
                 yield return new WaitForSeconds(0.1f);

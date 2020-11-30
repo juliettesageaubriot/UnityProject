@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4102dcc0ea6e2e46a34923ad56e3274, type: 3}
   m_Name: FuelUIAnimator
   m_EditorClassIdentifier: 
-  fuelDestinationTransform: {fileID: 0}
+  sensesData: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}

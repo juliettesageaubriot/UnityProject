@@ -6,6 +6,7 @@ namespace UI.Popup
     public enum DisappearBeforeNext
     {
         Always,
+        DifferentName,
         Never
     }
     

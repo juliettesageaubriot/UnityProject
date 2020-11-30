@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6271567490371273014}
   - component: {fileID: 8214200130534282551}
   - component: {fileID: 1142492473679898681}
-  - component: {fileID: 4729624791171123493}
   - component: {fileID: 4544223496393893583}
+  - component: {fileID: 1652411317991446912}
   m_Layer: 5
   m_Name: Fuel Obtained Popup
   m_TagString: Untagged
@@ -107,21 +107,9 @@ MonoBehaviour:
     unityEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4729624791171123493}
+        - m_Target: {fileID: 1652411317991446912}
           m_TargetAssemblyTypeName: UI.Popup.PopupSequence, Assembly-CSharp
           m_MethodName: PopOut
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4729624791171123493}
-          m_TargetAssemblyTypeName: UI.Popup.PopupSequence, Assembly-CSharp
-          m_MethodName: DebugLog
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -182,7 +170,7 @@ MonoBehaviour:
     unityEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4729624791171123493}
+        - m_Target: {fileID: 1652411317991446912}
           m_TargetAssemblyTypeName: UI.Popup.PopupSequence, Assembly-CSharp
           m_MethodName: DestroyPopup
           m_Mode: 1
@@ -194,20 +182,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &4729624791171123493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3258090813059781907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d89bcabc8840f088fadde4ea3f516b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popInSequence: {fileID: 8214200130534282551}
-  popOutSequence: {fileID: 1142492473679898681}
 --- !u!225 &4544223496393893583
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -220,6 +194,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1652411317991446912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258090813059781907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060aadc12de294c42b84f6ac2229c9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popInSequence: {fileID: 8214200130534282551}
+  popOutSequence: {fileID: 1142492473679898681}
+  playerSensesData: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
 --- !u!1 &4847617731744433545
 GameObject:
   m_ObjectHideFlags: 0

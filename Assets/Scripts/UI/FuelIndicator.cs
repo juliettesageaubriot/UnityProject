@@ -47,7 +47,7 @@ namespace UI
                     RemoveOneIcon();
 
             if (_fuelIcons.Count > 0)
-                fuelAnimator.FuelDestinationTransform = (RectTransform)_fuelIcons.Last().transform;
+                fuelAnimator.FuelDestinationTransform = (RectTransform) _fuelIcons.First().transform;
         
             // Rebuild layout to force horizontal layout group to do his job
             LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
@@ -56,7 +56,7 @@ namespace UI
         private void EnableLastIcon()
         {
             if (_fuelIcons.Count > 0)
-                _fuelIcons.Last().GetComponent<UIFade>().FadeIn(0f);
+                _fuelIcons.First().GetComponent<UIFade>().FadeIn(0f);
         }
 
 

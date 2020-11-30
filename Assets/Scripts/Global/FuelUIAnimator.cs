@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using Player;
 using UnityEngine;
 
 namespace Global
@@ -7,6 +8,8 @@ namespace Global
     [CreateAssetMenu(fileName = "FuelUIAnimator", menuName = "ScriptableObjects/FuelUIAnimator", order = 30)]
     public class FuelUIAnimator : ScriptableObject
     {
+        [SerializeField] private PlayerSensesData sensesData;
+
         private Tweener[] _tweens = {};
         private bool _isAnimating;
         public bool IsAnimating => _isAnimating;
@@ -18,6 +21,18 @@ namespace Global
         public RectTransform FuelDestinationTransform
         {
             set => _fuelDestinationTransform = value;
+        }
+
+        private void OnEnable()
+        {
+            sensesData.SenseChangeEvent += InterruptAnim;
+            sensesData.FuelChangeEvent += InterruptAnim;
+        }
+
+        private void OnDisable()
+        {
+            sensesData.SenseChangeEvent -= InterruptAnim;
+            sensesData.FuelChangeEvent -= InterruptAnim;
         }
 
         public void AnimatedFuelToStock(GameObject fuelSprite, float duration)
@@ -42,10 +57,18 @@ namespace Global
             };
         }
 
+        public void InterruptAnim(SensesState _)
+        {
+            InterruptAnim();
+        }
+        public void InterruptAnim(int _)
+        {
+            InterruptAnim();
+        }
         public void InterruptAnim()
         {
             foreach (var tweener in _tweens)
-                tweener.Complete();
+                tweener.Kill();
             AnimationEndEvent?.Invoke();
             _isAnimating = false;
         }

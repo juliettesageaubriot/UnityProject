@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1482b85c1d8fa143b41515ebeabb9e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuelUiAnimator: {fileID: 11400000, guid: e26d408e8222fbc4992d2721728ba653, type: 2}
   playerInputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
   interactInput: {fileID: 11400000, guid: c71445556af260e478f9283c2cc308eb, type: 2}
   popOutSequence: {fileID: 4029470576984192357}
