@@ -155,9 +155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLayer:
     layerIndex: 9
+  inputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
+  playerLayer:
+    layerIndex: 9
   brokenSprite: {fileID: 21300000, guid: 4c84c26a20324f84797aed819d9b826d, type: 3}
-  brokenLayer:
-    layerIndex: 8
   onSlabBreak:
     m_PersistentCalls:
       m_Calls:

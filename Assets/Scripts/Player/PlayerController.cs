@@ -41,6 +41,11 @@ namespace Player
 		
 		private readonly Queue<Vector2> _inputsToProcess = new Queue<Vector2>();
 
+		public void AddMoveToQueue(Vector2 direction)
+		{
+			_inputsToProcess.Enqueue(direction);
+		}
+		
 		private void Awake()
 		{ playerPositionData.InitTransform(transform); }
 		
@@ -76,7 +81,7 @@ namespace Player
 			var direction = context.ReadValue<Vector2>();
 			// Discard diagonals inputs
 			if (!(Mathf.Abs(direction.x) > 0.9f || Mathf.Abs(direction.y) > 0.9f)) return;
-			_inputsToProcess.Enqueue(direction);
+			AddMoveToQueue(direction);
 			
 		}
 

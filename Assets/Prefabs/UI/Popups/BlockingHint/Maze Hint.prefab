@@ -106,5 +106,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maze Hint
       objectReference: {fileID: 0}
+    - target: {fileID: 8983273448364876008, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
