@@ -20,6 +20,7 @@ namespace UI.Popup
 
         public override void PopOut()
         {
+            Debug.Log(gameObject.name);
             _fade.FadeOut();
             StartCoroutine(WaitForDestroy());
             base.PopOut();

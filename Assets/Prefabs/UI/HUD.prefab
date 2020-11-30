@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputData: {fileID: 11400000, guid: b972ebd75fdb6a24392101917dc55b21, type: 2}
-  forceDisable: 1
+  forceDisable: 0
 --- !u!1001 &7189033610905044410
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -158,8 +158,9 @@ MonoBehaviour:
     popup: {fileID: 2377714507167556873, guid: 6e1962aafb3ecda469077f86f6176919, type: 3}
     autoRemove: 0
     autoRemoveDelay: 0
-    disappearBeforeNext: 1
+    disappearBeforeNext: 2
     waitForPreviousDisappear: 0
+    destroyImmediatePrevious: 1
   data: {fileID: 11400000, guid: 1e5179a0801a80848a67a124340bfa4e, type: 2}
   blindCamera: {fileID: 7851932036932083815}
   normalCamera: {fileID: 7851932037914898991}

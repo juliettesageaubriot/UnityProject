@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 7413774407438177969}
   - component: {fileID: 7650758866505400134}
   - component: {fileID: 3026680729902378105}
-  - component: {fileID: 8637242565449557163}
-  - component: {fileID: 4997896022959259909}
   - component: {fileID: 7685003711137139627}
   m_Layer: 5
   m_Name: Cinematic Popup
@@ -79,40 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!225 &8637242565449557163
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2377714507167556873}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &4997896022959259909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2377714507167556873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeDuration: 0
-  hideState:
-    opacity: 0
-    interactable: 0
-    blocksRaycasts: 0
-  visibleState:
-    opacity: 1
-    interactable: 0
-    blocksRaycasts: 1
-  startVisible: 0
 --- !u!114 &7685003711137139627
 MonoBehaviour:
   m_ObjectHideFlags: 0

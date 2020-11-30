@@ -5,7 +5,7 @@ using UnityEngine.Video;
 
 namespace UI.Popup
 {
-    public class CinematicPopup : FadePopup
+    public class CinematicPopup : AbstractPopup
     {
         [SerializeField] private PlayerSensesData playerSensesData;
         [SerializeField] private PlayerInputData playerInputData;
@@ -15,16 +15,21 @@ namespace UI.Popup
         
         public override void PopIn()
         {
-            base.PopIn();
             videoPlayer.clip = playerSensesData.State == SensesState.Blind ? toBlindClip : toSightedClip;
             videoPlayer.frame = 0;
             playerInputData.DisableAll();
             StartCoroutine(PlayVideoBeforePopOut());
         }
 
+        public override void PopOut()
+        {
+            base.PopOut();
+            DestroyPopup();
+        }
+
         private IEnumerator PlayVideoBeforePopOut()
         {
-            yield return new WaitForSeconds((float)videoPlayer.length);
+            yield return new WaitForSecondsRealtime((float)videoPlayer.length);
             playerInputData.EnableAll();
             PopOut();
         }

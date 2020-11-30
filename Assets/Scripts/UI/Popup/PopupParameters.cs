@@ -19,5 +19,6 @@ namespace UI.Popup
         public float autoRemoveDelay;
         public DisappearBeforeNext disappearBeforeNext;
         public bool waitForPreviousDisappear;
+        public bool destroyImmediatePrevious;
     }
 }

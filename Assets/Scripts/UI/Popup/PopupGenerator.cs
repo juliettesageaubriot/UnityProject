@@ -27,9 +27,17 @@ namespace UI.Popup
         
         private void PopOutPrevious(PopupParameters newPopup)
         {
+            var toRemoveImmediate = new List<AbstractPopup>();
             foreach (var popupable in _popups)
-                if (ShouldDisappear(popupable.Value, newPopup) && !popupable.Key.IsPopingOut)
+            {
+                if (!ShouldDisappear(popupable.Value, newPopup)) continue;
+                if (newPopup.destroyImmediatePrevious) toRemoveImmediate.Add(popupable.Key);
+                else if (!popupable.Key.IsPopingOut)
                     popupable.Key.PopOut();
+            }
+            
+            foreach (var abstractPopup in toRemoveImmediate) 
+                RemoveOneFromList(abstractPopup);
         }
 
         private bool ShouldDisappear(PopupParameters popup, PopupParameters newPopup)
