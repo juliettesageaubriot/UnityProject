@@ -12,10 +12,12 @@ namespace UI.Popup
         [SerializeField] private PlayerInputData playerInputData;
         [SerializeField] private InputData interactInput;
         [SerializeField] private EventSequence popOutSequence;
+        [SerializeField] private MultipleTexts multipleTexts;
         
         public override void PopIn()
         {
             playerInputData.DisableAll();
+            multipleTexts.PlayNextText();
         }
 
         public override void PopOut()
@@ -36,7 +38,15 @@ namespace UI.Popup
 
         private void HandleSkip(InputAction.CallbackContext callbackContext)
         {
-            PopOut();
+            if (multipleTexts.IsAnimating) multipleTexts.CompleteCurrentText();
+            else
+            {
+                if (multipleTexts.IsLastText())
+                    PopOut();
+                else
+                    multipleTexts.PlayNextText();
+            }
+                
         }
         
         public new void DestroyPopup()

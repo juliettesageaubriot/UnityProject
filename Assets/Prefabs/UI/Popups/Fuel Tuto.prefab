@@ -270,10 +270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1482b85c1d8fa143b41515ebeabb9e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelUiAnimator: {fileID: 11400000, guid: e26d408e8222fbc4992d2721728ba653, type: 2}
   playerInputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
   interactInput: {fileID: 11400000, guid: c71445556af260e478f9283c2cc308eb, type: 2}
   popOutSequence: {fileID: 4029470576984192357}
+  multipleTexts: {fileID: 4723822549316855308}
 --- !u!114 &4029470576984192357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,7 +452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: 0}
+  m_AnchoredPosition: {x: -40, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2358548155974160786
@@ -560,6 +560,7 @@ GameObject:
   - component: {fileID: 2358548156624280599}
   - component: {fileID: 2358548156624280598}
   - component: {fileID: 6823635569771656898}
+  - component: {fileID: 4723822549316855308}
   m_Layer: 5
   m_Name: 'Text '
   m_TagString: Untagged
@@ -614,8 +615,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cette \xE9trange substance \xE9mane des profondeurs du tombeau.\nElle
-    semble faire r\xE9agir la mal\xE9diction."
+  m_text: "Cette \xE9trange substance \xE9mane des profondeurs du tombeau.\r\nElle
+    permet d'inverser tes sens."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -691,13 +692,47 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2358548156624280596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21aaf645425466849bcb03be1d07956e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.01
-  animateAtStart: 1
+  delay: 0.03
+  pointDelay: 0.3
+  animateAtStart: 0
+  cleanAtStart: 0
+  useTMPText: 0
+  animEndEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4723822549316855308}
+        m_TargetAssemblyTypeName: MultipleTexts, Assembly-CSharp
+        m_MethodName: set_IsAnimating
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4723822549316855308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2358548156624280596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cbd51c15b27d84ab6a4b58ba699ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - "Cette \xE9trange substance \xE9mane des profondeurs du tombeau.\r\nElle permet
+    d'inverser tes sens."
+  - "Conserve la et utilise la \xE0 bon escient !"
 --- !u!1 &2358548156930193092
 GameObject:
   m_ObjectHideFlags: 0

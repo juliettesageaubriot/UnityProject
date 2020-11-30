@@ -168,7 +168,7 @@ MonoBehaviour:
     opacity: 1
     interactable: 1
     blocksRaycasts: 1
-  startVisible: 1
+  startVisible: 0
 --- !u!114 &8943144580761269053
 MonoBehaviour:
   m_ObjectHideFlags: 0

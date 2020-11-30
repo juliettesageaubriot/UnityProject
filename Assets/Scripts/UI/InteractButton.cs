@@ -8,16 +8,17 @@ namespace UI
         [SerializeField] private PlayerInteractData interactData;
 
         private bool _canInteract;
-
+        private bool _isFirstUpdate = true;
+        
         protected override void OnEnable()
         {
-            interactData.CanInteractChange += UpdateButtonInteractable;
+            interactData.CanInteractChange += HandleCanInteractChange;
             base.OnEnable();
         }
 
         protected override void OnDisable()
         { 
-            interactData.CanInteractChange -= UpdateButtonInteractable;
+            interactData.CanInteractChange -= HandleCanInteractChange;
             base.OnDisable();
         }
 
@@ -40,10 +41,11 @@ namespace UI
         private void UpdateButtonInteractable(bool canInteract, bool isInputEnable, float duration)
         {
             var isNowInteractable = canInteract && isInputEnable;
-            if (isNowInteractable != button.interactable)
+            if (isNowInteractable != button.interactable || _isFirstUpdate)
             {
-                if (isNowInteractable) fade.FadeIn(duration);
-                else fade.FadeOut(duration);
+                if (isNowInteractable) fade.FadeIn(_isFirstUpdate ? 0f : duration);
+                else fade.FadeOut(_isFirstUpdate ? 0f : duration);
+                _isFirstUpdate = false;
             }
             button.interactable = isNowInteractable;
         }
