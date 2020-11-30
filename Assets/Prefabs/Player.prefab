@@ -812,7 +812,8 @@ MonoBehaviour:
   raycastCenter: {x: 0.5, y: 0.5}
   maxDistance: 1
   interactionLayer:
-    layerIndex: 13
+    serializedVersion: 2
+    m_Bits: 10240
 --- !u!1 &8247923127104871230
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ namespace Player
         [SerializeField]
         private float maxDistance = 1f;
         [SerializeField] 
-        private SingleUnityLayer interactionLayer;
+        private LayerMask interactionLayer;
 
         private IActionable _actionable = null;
         private bool _lastCanInteract;
@@ -34,10 +34,10 @@ namespace Player
         }
 
         private void OnEnable()
-        { interactInput.InputEvent += Interact; }
+        { interactInput.InputEvent += Interact; interactData.CheckInteractEvent += CheckInteract; }
 
         private void OnDisable()
-        { interactInput.InputEvent -= Interact; }
+        { interactInput.InputEvent -= Interact; interactData.CheckInteractEvent -= CheckInteract; }
 
         private void Update()
         {
@@ -53,7 +53,7 @@ namespace Player
                 transform.position + new Vector3(raycastCenter.x, raycastCenter.y, 0f),
                 direction,
                 maxDistance,
-                interactionLayer.Mask
+                interactionLayer
             );
 
             if (hit.collider == null)

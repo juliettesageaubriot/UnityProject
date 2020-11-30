@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1486762405781832368, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
       propertyPath: m_InstanceId
-      value: -207778
+      value: -663182
       objectReference: {fileID: 0}
     - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
       propertyPath: closedState.sprite
@@ -74,6 +74,18 @@ PrefabInstance:
     - target: {fileID: 1486762405781832374, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220063523622223704, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: openPopup
+      value: 
+      objectReference: {fileID: 3533016220493585334, guid: 2dd128c907f1dac4798ddca8e787127d, type: 3}
+    - target: {fileID: 4220063523622223704, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: closedPopup
+      value: 
+      objectReference: {fileID: 3533016220493585334, guid: 5e279a9a04007ef43b7b6bd2dff3f6b5, type: 3}
+    - target: {fileID: 4220063523622223704, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
+      propertyPath: popupParameters.popupName
+      value: 'Deaf Door '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}

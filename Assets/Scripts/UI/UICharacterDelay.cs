@@ -12,6 +12,7 @@ namespace UI
         
         [SerializeField] private float delay = 0.03f; 
         [SerializeField] private float pointDelay = 0.3f; 
+        [SerializeField] private float commaDelay = 0.15f; 
         private TextMeshProUGUI _textMeshPro;
         [SerializeField] private bool animateAtStart;
         [SerializeField] private bool cleanAtStart = true;
@@ -76,6 +77,7 @@ namespace UI
                 if (char.IsLetter(character) || char.IsDigit(character)) yield return new WaitForSeconds(delay);
                 _textMeshPro.text += character;
                 if (Array.Exists(_pauseCharacters, c => c == character)) yield return new WaitForSeconds(pointDelay);
+                if (character == ',') yield return new WaitForSeconds(commaDelay);
             }
             animEndEvent.Invoke();
         }

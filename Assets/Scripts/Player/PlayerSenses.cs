@@ -17,7 +17,6 @@ namespace Player
 	[DefaultExecutionOrder(100)]
 	public class PlayerSenses : MonoBehaviour
 	{
-		[SerializeField][TagSelector] private string fuelTag = "SenseFuel";
 		[SerializeField] private PlayerSensesData data;
 		[SerializeField] private InputData switchInput;
 
@@ -40,11 +39,6 @@ namespace Player
 			switchInput.InputEvent -= Switch;
 		}
 		
-		private void OnTriggerEnter2D(Collider2D other)
-		{
-			if (other.CompareTag(fuelTag)) data.AddFuel();
-		}
-
 		private void Switch(InputAction.CallbackContext obj)
 		{
 			data.Switch();

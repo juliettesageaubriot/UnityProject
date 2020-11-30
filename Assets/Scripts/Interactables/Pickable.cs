@@ -20,11 +20,13 @@ namespace Interactables
         {
             if (other.gameObject.layer == playerLayer.LayerIndex)
             {
-                onPickupEvent.Invoke();
                 Pick();
             }
         }
 
-        protected abstract void Pick();
+        protected virtual void Pick()
+        {
+            onPickupEvent.Invoke();
+        }
     }
 }
