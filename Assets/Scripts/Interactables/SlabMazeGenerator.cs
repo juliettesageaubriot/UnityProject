@@ -6,6 +6,7 @@ namespace Interactables
 {
     public class SlabMazeGenerator : MonoBehaviour
     {
+        [SerializeField] private Color[] colorPalette;
         [SerializeField] private GameObject hollowSlabPrefab;
         [SerializeField] private GameObject solidSlabPrefab;
         [Space(10)]
@@ -39,6 +40,7 @@ namespace Interactables
         private readonly bool[,] _layoutArray = new bool[Width, Height];
         private readonly GameObject[,] _fragileSlabsArray = new GameObject[Width, Height];
         private readonly GameObject[,] _indicatorSlabsArray = new GameObject[Width, Height];
+        private readonly Color[,] _colorArray = new Color[Width, Height];
 
         public void DestroyTrapSlabs()
         {
@@ -72,6 +74,10 @@ namespace Interactables
 
         private void GenerateLayout()
         {
+            for (var x = 0; x < Width; x++)
+            for (var y = 0; y < Height; y++)
+                _colorArray[x, y] = colorPalette[Random.Range(0, colorPalette.Length - 1)];
+            
             // Fill first row
             var startCellX = Random.Range(0, Width);
             for (var i = 0; i < Width; i++)
@@ -110,6 +116,7 @@ namespace Interactables
                     Quaternion.identity,
                     groupTransform
                 );
+                slab.GetComponent<SpriteRenderer>().color = _colorArray[x, y];
                 slab.AddComponent(typeof(ScaleOnAwake));
                 slabArray[x, y] = slab;
             }
