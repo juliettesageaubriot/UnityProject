@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: FuelSkipSounds
   m_EditorClassIdentifier: 
   array:
-  - {fileID: 8300000, guid: 859f7f89613eed54aa1b85f6418c1e23, type: 3}
-  - {fileID: 8300000, guid: 5e5ad070a13ab2546a1fce89e5c04e85, type: 3}
+  - {fileID: 8300000, guid: 4651ab22e945145419d37de2f956f750, type: 3}

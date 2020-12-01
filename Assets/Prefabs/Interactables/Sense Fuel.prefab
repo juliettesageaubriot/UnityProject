@@ -43,9 +43,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4215038209011143800, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4651ab22e945145419d37de2f956f750, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -199,9 +199,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4215038209011143800, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2cf37954395fec2409151f4513091596, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f876440e9531ed149aedf0a71e261554, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -428,7 +428,7 @@ MonoBehaviour:
   - {x: 0.19603197, y: 0.5103321, z: 0}
   m_ShapePathHash: 1240532064
   m_Mesh: {fileID: 0}
-  m_InstanceId: 106986
+  m_InstanceId: 206656
 --- !u!50 &8687579338276369186
 Rigidbody2D:
   serializedVersion: 4
