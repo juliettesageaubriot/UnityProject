@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5109015249098919965}
   - component: {fileID: 4052896473864311724}
-  - component: {fileID: 7904754092500604832}
+  - component: {fileID: 6881919152758221124}
   m_Layer: 12
   m_Name: SlabSound
   m_TagString: Untagged
@@ -53,9 +53,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.5
-  MaxDistance: 4
+  MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -63,23 +63,50 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.05
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -20.007967
+      outSlope: -20.007967
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.5
+      inSlope: -5.0019917
+      outSlope: -5.0019917
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.2
+      value: 0.25
+      inSlope: -1.2504979
+      outSlope: -1.2504979
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.4
+      value: 0.125
+      inSlope: -0.31262448
+      outSlope: -0.31262448
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.05001994
+      outSlope: -0.05001994
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -128,7 +155,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7904754092500604832
+--- !u!114 &6881919152758221124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,10 +164,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 570669240822445165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 853c97f86c6cac045abd3766e26a8d08, type: 3}
+  m_Script: {fileID: 11500000, guid: 21ee925543578e542b69fc20d126a101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: {fileID: 11400000, guid: 767be01a3b5100244a9572decf99c1cd, type: 2}
+  audio: {fileID: 0}
+  pitchVariance: 0.2
+  shiftAtStart: 0
 --- !u!95 &4281933802465295782
 Animator:
   serializedVersion: 3
@@ -178,13 +207,13 @@ MonoBehaviour:
   onSlabBreak:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7904754092500604832}
-        m_TargetAssemblyTypeName: Audio.RandomSoundPlayer, Assembly-CSharp
-        m_MethodName: PlayRandomSound
-        m_Mode: 1
+      - m_Target: {fileID: 6881919152758221124}
+        m_TargetAssemblyTypeName: Audio.PitchShifter, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: dc9f88990af1ecc4287716acd64cdaa7, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -48,9 +49,15 @@ namespace Interactables
             {
                 if (o.TryGetComponent<TrappedSlab>(out var trappedSlab))
                 {
-                    trappedSlab.BreakSlab();
+                    StartCoroutine(RandomDelayBreak(trappedSlab));
                 }
             }
+        }
+
+        private IEnumerator RandomDelayBreak(TrappedSlab trappedSlab)
+        {
+            yield return new WaitForSeconds(Random.Range(0f, 0.5f));
+            trappedSlab.BreakSlab();
         }
     
         private void Start()
@@ -117,7 +124,6 @@ namespace Interactables
                     groupTransform
                 );
                 slab.GetComponent<SpriteRenderer>().color = _colorArray[x, y];
-                slab.AddComponent(typeof(ScaleOnAwake));
                 slabArray[x, y] = slab;
             }
         }

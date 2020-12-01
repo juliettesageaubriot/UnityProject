@@ -11,11 +11,13 @@ namespace Audio
         [SerializeField] [Range(0, 1)] private float outVolume = 0f;
         [SerializeField] private float fadeDuration = 0f;
         [SerializeField] private bool startIn = true;
+        [SerializeField] private bool useSourceVolumeAsInVolume = false;
 
         private AudioSource _audioSource;
         private void Start()
         {
             _audioSource = GetComponent<AudioSource>();
+            if (useSourceVolumeAsInVolume) inVolume = _audioSource.volume;
             if (startIn)
                 FadeIn(0f);
             else
