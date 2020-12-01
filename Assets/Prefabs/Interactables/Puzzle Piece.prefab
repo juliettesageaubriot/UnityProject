@@ -193,6 +193,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e409d84875ed32d49a70730f2c916a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bus: {fileID: 11400000, guid: 0cb1835d4e844f8488a153cb00d7c75b, type: 2}
+  popupParameters:
+    popupName: Cog Hint
+    popup: {fileID: 8321727785980684746, guid: 810be690c37eec34a947c549c24297c3, type: 3}
+    autoRemove: 0
+    autoRemoveDelay: 0
+    disappearBeforeNext: 0
+    skipIf: 1
+    waitForPreviousDisappear: 0
+    destroyImmediatePrevious: 0
   isActivated: 0
   onActivatedEvent:
     m_PersistentCalls:

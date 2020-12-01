@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Interactables
 {
-    public class OrderPuzzlePiece : MonoBehaviour, IActionable
+    public class OrderPuzzlePiece : PopupSender, IActionable
     {
         private SpriteRenderer _spriteRenderer;
         private OrderPuzzle _orderPuzzle;
@@ -33,14 +34,17 @@ namespace Interactables
 
         public void Action()
         {
-            if (IsActivated) return;
-            IsActivated = true;
-            _orderPuzzle.ActivatePuzzlePiece(this);
+            if (IsActivated) SendPopup();
+            else
+            {
+                IsActivated = true;
+                _orderPuzzle.ActivatePuzzlePiece(this);
+            }
         }
 
         public bool IsActionable()
         {
-            return !IsActivated;
+            return true;
         }
 
         private void TriggerEvent()
