@@ -141,6 +141,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds: {fileID: 11400000, guid: 767be01a3b5100244a9572decf99c1cd, type: 2}
+--- !u!95 &4281933802465295782
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065167627992074999}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0103126ea8021b94bb8aa5c4ebd86949, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &-4011750347683627658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,9 +175,6 @@ MonoBehaviour:
   playerLayer:
     layerIndex: 9
   inputData: {fileID: 11400000, guid: a349ca3ae94458645b5c8065dfea6176, type: 2}
-  playerLayer:
-    layerIndex: 9
-  brokenSprite: {fileID: 21300000, guid: 4c84c26a20324f84797aed819d9b826d, type: 3}
   onSlabBreak:
     m_PersistentCalls:
       m_Calls:
@@ -173,6 +189,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4281933802465295782}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1001 &2570384437498707012
 PrefabInstance:
@@ -228,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 658227793119934095, guid: d97b1debbba6db34ab6e6a21d9fd69ee, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 07a5c8dc4d5308d40abe4ea37ce0c72b, type: 3}
+      objectReference: {fileID: 21300000, guid: 18b61e04410eed54eb1190a9e0f8d555, type: 3}
     - target: {fileID: 658227793119934131, guid: d97b1debbba6db34ab6e6a21d9fd69ee, type: 3}
       propertyPath: m_Name
       value: TrappedSlab
