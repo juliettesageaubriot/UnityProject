@@ -17,7 +17,7 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -229,6 +229,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Tu as obtenu une essence !
       objectReference: {fileID: 0}
+    - target: {fileID: 618817913311001061, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3192171896102714366, guid: 1ac39664d4049ba4a891ede0823e282d, type: 2}
+    - target: {fileID: 618817913311001061, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
+      propertyPath: m_fontStyle
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: texts.Array.data[0]
       value: "Cette \xE9trange substance \xE9mane des profondeurs du tombeau.\nElle
@@ -238,6 +246,10 @@ PrefabInstance:
       propertyPath: texts.Array.data[1]
       value: "Conserve-la et utilise-la \xE0 bon escient !"
       objectReference: {fileID: 0}
+    - target: {fileID: 5170979778414893440, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8887540070095757277, guid: 345c1665419261d4fb5b0c22c15b4e72, type: 2}
     - target: {fileID: 5170979778720838480, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: m_Sprite
       value: 

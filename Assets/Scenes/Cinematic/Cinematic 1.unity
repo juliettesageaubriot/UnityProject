@@ -395,8 +395,8 @@ MonoBehaviour:
     y parvenir, tu devras apprendre \xE0 te servir diff\xE9remment de tes sens dans
     le but de d\xE9jouer les pi\xE8ges que tu rencontreras sur ton chemin."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: af9aff287dc35164b9f8a58017796926, type: 2}
-  m_sharedMaterial: {fileID: 4328962575367949080, guid: af9aff287dc35164b9f8a58017796926, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 345c1665419261d4fb5b0c22c15b4e72, type: 2}
+  m_sharedMaterial: {fileID: -8887540070095757277, guid: 345c1665419261d4fb5b0c22c15b4e72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -420,8 +420,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

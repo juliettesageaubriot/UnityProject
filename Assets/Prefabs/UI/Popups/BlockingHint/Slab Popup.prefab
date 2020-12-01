@@ -16,6 +16,18 @@ PrefabInstance:
       value: Tendez l'oreille sur le premier parterre de dalles avant d'aller plus
         loin.
       objectReference: {fileID: 0}
+    - target: {fileID: 5170979778720838483, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 52.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170979778720838483, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170979778720838483, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 5170979779223456196, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

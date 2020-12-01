@@ -12,8 +12,16 @@ namespace Player
     public class PlayerDeath : MonoBehaviour
     {
 
+        [SerializeField] private float waitBeforeReset = 2f;
         [SerializeField] private ScriptableSceneManager sceneManager;
         [SerializeField] private InputData resetInput;
+        [SerializeField] private UnityEvent onDeathEvent;
+
+        private void Start()
+        {
+            if (onDeathEvent == null)
+                onDeathEvent = new UnityEvent();
+        }
 
         private void OnEnable()
         {
@@ -33,11 +41,12 @@ namespace Player
         public void Kill()
         {
             StartCoroutine(WaitBeforeReset());
+            onDeathEvent.Invoke();
         }
 
         private IEnumerator WaitBeforeReset()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(waitBeforeReset);
             sceneManager.ResetCurrentLevel();
         }
     }
