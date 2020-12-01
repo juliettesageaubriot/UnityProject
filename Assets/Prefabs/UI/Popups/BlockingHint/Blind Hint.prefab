@@ -13,8 +13,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "L'ouie est alors ton ali\xE9 le plus pr\xE9cieux, t'indiquant les dangers
-        mais aussi parfois le chemin \xE0 suivre."
+      value: "L'ouie est alors ton alli\xE9 le plus pr\xE9cieux, t'indiquant les
+        dangers mais aussi parfois le chemin \xE0 suivre."
       objectReference: {fileID: 0}
     - target: {fileID: 5170979778414893440, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: m_text
