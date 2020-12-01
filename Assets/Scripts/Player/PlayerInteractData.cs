@@ -10,10 +10,18 @@ namespace Player
 
         public delegate void CheckInteractHandler();
         public event CheckInteractHandler CheckInteractEvent;
+        
+        public delegate void InteractHandler();
+        public event InteractHandler InteractEvent;
 
         public void ShouldCheckInteract()
         {
             CheckInteractEvent?.Invoke();
+        }
+        
+        public void ShouldInteract()
+        {
+            InteractEvent?.Invoke();
         }
         
         public void CanInteractHasChanged(bool canChange)

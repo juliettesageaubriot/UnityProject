@@ -34,10 +34,18 @@ namespace Player
         }
 
         private void OnEnable()
-        { interactInput.InputEvent += Interact; interactData.CheckInteractEvent += CheckInteract; }
+        {
+            interactInput.InputEvent += Interact;
+            interactData.CheckInteractEvent += CheckInteract;
+            interactData.InteractEvent += Interact;
+        }
 
         private void OnDisable()
-        { interactInput.InputEvent -= Interact; interactData.CheckInteractEvent -= CheckInteract; }
+        {
+            interactInput.InputEvent -= Interact;
+            interactData.CheckInteractEvent -= CheckInteract;
+            interactData.InteractEvent -= Interact;
+        }
 
         private void Update()
         {
@@ -73,9 +81,14 @@ namespace Player
             CheckInteract(positionData.Direction);
         }
 
-        private void Interact(InputAction.CallbackContext callbackContext)
+        private void Interact()
         {
             if (CanInteract) _actionable.Action();
+        }
+
+        private void Interact(InputAction.CallbackContext callbackContext)
+        {
+            Interact();
         }
         
     }
