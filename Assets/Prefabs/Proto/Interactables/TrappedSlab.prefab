@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4215038209011143800, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -233,7 +233,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrappedSlab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8204043461128705214, guid: d97b1debbba6db34ab6e6a21d9fd69ee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d97b1debbba6db34ab6e6a21d9fd69ee, type: 3}
 --- !u!1 &3065167627992074999 stripped
 GameObject:

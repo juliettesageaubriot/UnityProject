@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1486762405781832368, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
       propertyPath: m_InstanceId
-      value: -663182
+      value: -647950
       objectReference: {fileID: 0}
     - target: {fileID: 1486762405781832370, guid: 925400018cad05b4798c8a9613c2dce6, type: 3}
       propertyPath: closedState.sprite

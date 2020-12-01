@@ -826,7 +826,7 @@ MonoBehaviour:
   interactInput: {fileID: 11400000, guid: c71445556af260e478f9283c2cc308eb, type: 2}
   positionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
   raycastCenter: {x: 0.5, y: 0.5}
-  maxDistance: 1
+  cellSize: 1
   interactionLayer:
     serializedVersion: 2
     m_Bits: 10240
@@ -975,7 +975,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 34cc02b04e294294fbd510ddb8e7d10d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0

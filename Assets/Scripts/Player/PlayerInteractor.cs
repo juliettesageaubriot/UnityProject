@@ -19,7 +19,7 @@ namespace Player
         [SerializeField]
         private Vector2 raycastCenter = Vector2.zero;
         [SerializeField]
-        private float maxDistance = 1f;
+        private float cellSize = 1f;
         [SerializeField] 
         private LayerMask interactionLayer;
 
@@ -57,12 +57,12 @@ namespace Player
 
         public void CheckInteract(Vector2 direction)
         {
-            var hit = Physics2D.Raycast(
-                transform.position + new Vector3(raycastCenter.x, raycastCenter.y, 0f),
-                direction,
-                maxDistance,
-                interactionLayer
-            );
+            var hit = Physics2D.CircleCast(
+                (Vector2)transform.position + raycastCenter + direction,
+                cellSize / 4f,
+                Vector2.zero,
+                0f,
+                interactionLayer);
 
             if (hit.collider == null)
             {
