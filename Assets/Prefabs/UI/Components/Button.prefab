@@ -190,14 +190,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 388053eba7d57a14896d00a02d15a9a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6e1454c8380070458f0240c2dacf680, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 5
 --- !u!114 &376277002808622631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,11 +227,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.975096, g: 0.9019608, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.73471284, g: 0.58762014, b: 0.8962264, a: 1}
-    m_PressedColor: {r: 0.7811765, g: 0.72156864, b: 0.8, a: 1}
-    m_SelectedColor: {r: 0.73333335, g: 0.5882353, b: 0.8980393, a: 1}
-    m_DisabledColor: {r: 0.77647066, g: 0.72156864, b: 0.7960785, a: 0.5019608}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 0.78431374}
+    m_PressedColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 0.5882353}
+    m_SelectedColor: {r: 0.5686275, g: 0.5686275, b: 0.5686275, a: 0.78431374}
+    m_DisabledColor: {r: 0.5686275, g: 0.5686275, b: 0.5686275, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -386,8 +386,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: af9aff287dc35164b9f8a58017796926, type: 2}
-  m_sharedMaterial: {fileID: 4328962575367949080, guid: af9aff287dc35164b9f8a58017796926, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1ac39664d4049ba4a891ede0823e282d, type: 2}
+  m_sharedMaterial: {fileID: 3192171896102714366, guid: 1ac39664d4049ba4a891ede0823e282d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
