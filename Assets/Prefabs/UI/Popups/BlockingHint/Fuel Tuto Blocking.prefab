@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc9e969e01231f4cb4f3202adb6f501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 0.8
+  fadeDuration: 0.3
   hideState:
     opacity: 0
     interactable: 0
@@ -126,6 +126,10 @@ PrefabInstance:
       value: 4290522012
       objectReference: {fileID: 0}
     - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
+      propertyPath: texts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: texts.Array.data[0]
       value: "Cette \xE9trange substance \xE9mane des profondeurs du tombeau.\r\nBien
         qu'inquietantes, ces essences te seront d'une grande aide."
@@ -133,8 +137,11 @@ PrefabInstance:
     - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: texts.Array.data[1]
       value: "\rElle permettent de troubler la mal\xE9diction, de sacrifier la vue
-        pour l'ou\xEFe ou l'ou\xEFe pour la vue.\r\nConserve-les et utilise-les \xE0
-        bon escient !"
+        pour l'ou\xEFe ou l'ou\xEFe pour la vue.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "Conserve-les et utilise-les \xE0 bon escient !"
       objectReference: {fileID: 0}
     - target: {fileID: 5170979778414893440, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: m_sharedMaterial

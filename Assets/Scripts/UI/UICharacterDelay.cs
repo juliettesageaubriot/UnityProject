@@ -72,10 +72,30 @@ namespace UI
 
         private IEnumerator DOAnimate()
         {
+            var inSprite = false;
+            var nextInput = "";
             foreach (var character in _characters)
             {
+                switch (character)
+                {
+                    case '<':
+                        nextInput = character.ToString();
+                        inSprite = true;
+                        break;
+                    case '>':
+                        nextInput += character;
+                        inSprite = false;
+                        break;
+                    default:
+                        if (inSprite) nextInput += character;
+                        else nextInput = character.ToString();
+                        break;
+                }
+                
+                if (inSprite) continue;
+                
                 if (char.IsLetter(character) || char.IsDigit(character)) yield return new WaitForSeconds(delay);
-                _textMeshPro.text += character;
+                _textMeshPro.text += nextInput;
                 if (Array.Exists(_pauseCharacters, c => c == character)) yield return new WaitForSeconds(pointDelay);
                 if (character == ',') yield return new WaitForSeconds(commaDelay);
             }
