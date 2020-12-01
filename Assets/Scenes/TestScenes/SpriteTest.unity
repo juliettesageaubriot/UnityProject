@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!43 &448632359
+--- !u!43 &296421700
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -702,8 +702,8 @@ MonoBehaviour:
   - {x: 7.0086327, y: 0.9881654, z: 0}
   - {x: 4.1343007, y: 1.0047612, z: 0}
   m_ShapePathHash: 1993580566
-  m_Mesh: {fileID: 448632359}
-  m_InstanceId: -773170
+  m_Mesh: {fileID: 296421700}
+  m_InstanceId: 669528
 --- !u!61 &990361020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -812,7 +812,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!43 &1018000254
+--- !u!43 &1033608222
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1228,6 +1228,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410303015}
     m_Modifications:
+    - target: {fileID: 678433139280100234, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 387145319
+      objectReference: {fileID: 0}
+    - target: {fileID: 678433139280100234, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3855668018999535743, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
       value: 4
@@ -1317,6 +1325,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410303015}
     m_Modifications:
+    - target: {fileID: 678433139280100234, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 387145319
+      objectReference: {fileID: 0}
+    - target: {fileID: 678433139280100234, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3855668018999535743, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
       value: 4
@@ -1697,8 +1713,8 @@ MonoBehaviour:
   - {x: 2.8584943, y: 1.054462, z: 0}
   - {x: -0.0068603754, y: 1.0021896, z: 0}
   m_ShapePathHash: 2040605273
-  m_Mesh: {fileID: 1018000254}
-  m_InstanceId: -770214
+  m_Mesh: {fileID: 1033608222}
+  m_InstanceId: 669578
 --- !u!61 &2120684632
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,14 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 678433139280100234, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f12e4157000a9fe4b8f82fca0b7798c8, type: 3}
     - target: {fileID: 3855668018999535742, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0.228
       objectReference: {fileID: 0}
     - target: {fileID: 3855668019215407810, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e31a06a68fce64d41b0e98c9c1088645, type: 3}
+      objectReference: {fileID: 21300000, guid: f12e4157000a9fe4b8f82fca0b7798c8, type: 3}
     - target: {fileID: 3855668019215407820, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
       propertyPath: m_Name
       value: Left Torch
@@ -65,7 +69,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3855668019496246566, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0.228
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847504805570154272, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
+      propertyPath: torchDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189352854585621126, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
+      propertyPath: torchDirection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
