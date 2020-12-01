@@ -90,12 +90,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Cette \xE9trange substance \xE9mane des profondeurs du tombeau.\nElle
-        permet d'inverser tes sens."
+      value: "Cette \xE9trange substance \xE9mane des profondeurs du tombeau.\r\nBien
+        qu'inquietantes, ces essences te seront d'une grande aide."
       objectReference: {fileID: 0}
     - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "Conserve-la et utilise-la \xE0 bon escient !"
+      value: "\rElle permettent de troubler la mal\xE9diction, de sacrifier la vue
+        pour l'ou\xEFe ou l'ou\xEFe pour la vue.\r\nConserve-les et utilise-les \xE0
+        bon escient !"
       objectReference: {fileID: 0}
     - target: {fileID: 5170979778414893440, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: m_sharedMaterial
@@ -304,10 +306,6 @@ PrefabInstance:
     - target: {fileID: 5170979779223456199, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: m_Name
       value: Fuel Tuto Blocking
-      objectReference: {fileID: 0}
-    - target: {fileID: 5170979779332390427, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
-      propertyPath: m_Alpha
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5806181841201017075, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: sequence.Array.data[0].unityEvent.m_PersistentCalls.m_Calls.Array.size
