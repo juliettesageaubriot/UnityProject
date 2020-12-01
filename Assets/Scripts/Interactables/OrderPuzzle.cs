@@ -1,14 +1,21 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Interactables
 {
     public class OrderPuzzle : MonoBehaviour
     {
         [SerializeField] private OrderPuzzlePiece[] orderPuzzlePieces;
+        [SerializeField] private UnityEvent onCompleteEvent;
+        [SerializeField] private UnityEvent onFailedEvent;
 
         private void Start()
         {
+            if (onCompleteEvent == null)
+                onCompleteEvent = new UnityEvent();
+            if (onFailedEvent == null)
+                onFailedEvent = new UnityEvent();
             foreach (var orderPuzzlePiece in orderPuzzlePieces)
                 orderPuzzlePiece.SetPuzzle(this);
         }
@@ -30,12 +37,12 @@ namespace Interactables
 
         private void Completed()
         {
-            Debug.Log("Complete");
+            onCompleteEvent.Invoke();
         }
 
         private void Failed()
         {
-            Debug.Log("Failed");
+            onFailedEvent.Invoke();
             foreach (var orderPuzzlePiece in orderPuzzlePieces)
                 orderPuzzlePiece.Desactivate();
         }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Interactables
 {
@@ -6,18 +7,17 @@ namespace Interactables
     {
         private SpriteRenderer _spriteRenderer;
         private OrderPuzzle _orderPuzzle;
-    
-        [SerializeField] private Color activatedColor;
-        [SerializeField] private Color desactivatedColor;
-    
+
         [SerializeField] private bool isActivated;
+        [SerializeField] private UnityEvent onActivatedEvent;
+        [SerializeField] private UnityEvent onDesactivatedEvent;
 
         public bool IsActivated
         {
             get => isActivated;
             private set {
                 isActivated = value;
-                VisualUpdate();
+                TriggerEvent();
             }
         }
 
@@ -43,20 +43,21 @@ namespace Interactables
             return !IsActivated;
         }
 
-        private void VisualUpdate()
+        private void TriggerEvent()
         {
-            _spriteRenderer.color = IsActivated ? activatedColor : desactivatedColor;
+            if (isActivated)
+                onActivatedEvent.Invoke();
+            else
+                onDesactivatedEvent.Invoke();
         }
-    
-        private void Awake()
-        {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-
+        
         private void Start()
         {
-            VisualUpdate();
             if (IsActivated) _orderPuzzle.ActivatePuzzlePiece(this);
+            if (onActivatedEvent == null)
+                onActivatedEvent = new UnityEvent();
+            if (onDesactivatedEvent == null)
+                onDesactivatedEvent = new UnityEvent();
         }
     }
 }
