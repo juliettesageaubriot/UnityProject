@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8865005876807832659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2840144132036093186, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_InstanceId
+      value: -958762
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614701358332227000, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_InstanceId
+      value: -958754
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641864650570761724, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b60480cf3aa974046a056fd5e81f06d0, type: 3}
+    - target: {fileID: 5018188947848842455, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: popupParameters.popupName
+      value: 'Deaf Door '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018188947848842455, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: openPopup
+      value: 
+      objectReference: {fileID: 3533016220493585334, guid: 2dd128c907f1dac4798ddca8e787127d, type: 3}
+    - target: {fileID: 5018188947848842455, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: closedPopup
+      value: 
+      objectReference: {fileID: 3533016220493585334, guid: 5e279a9a04007ef43b7b6bd2dff3f6b5, type: 3}
+    - target: {fileID: 7325636508711790122, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_InstanceId
+      value: -958756
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938234, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_Name
+      value: DeafDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938237, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: openSenseState
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 84da0f66df17341438977d7495a128f5, type: 3}

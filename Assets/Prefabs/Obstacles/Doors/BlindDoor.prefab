@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2216791353168821183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2840144132036093186, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840144132036093186, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_InstanceId
+      value: -955736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614701358332227000, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614701358332227000, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_InstanceId
+      value: -955728
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018188947848842455, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: popupParameters.popupName
+      value: Blind Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018188947848842455, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: openPopup
+      value: 
+      objectReference: {fileID: 511434477518216406, guid: 16842754630b16040b8a26252cff7a1c, type: 3}
+    - target: {fileID: 5018188947848842455, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: closedPopup
+      value: 
+      objectReference: {fileID: 1984053983972194620, guid: 136f859c49fc7cd4a9b9afec02cf30fb, type: 3}
+    - target: {fileID: 7325636508711790122, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325636508711790122, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_InstanceId
+      value: -955730
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938233, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752550587065938234, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_Name
+      value: BlindDoor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 84da0f66df17341438977d7495a128f5, type: 3}
