@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using Player;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Interactables
 {
@@ -15,6 +17,8 @@ namespace Interactables
 		[Space(10)]
 		[SerializeField] protected PlayerSensesData data;
 		[SerializeField] protected DoorSenseEnum openSenseState;
+		[SerializeField] protected float switchDelay = 1.8f;
+		[SerializeField] protected float delayVariance = 0.2f;
 
 
 		private void OnEnable()
@@ -36,7 +40,12 @@ namespace Interactables
 		
 		private void OnSenseChange(SensesState newSense)
 		{
-			
+			StartCoroutine(WaitAfterSwitch(newSense));
+		}
+
+		private IEnumerator WaitAfterSwitch(SensesState newSense)
+		{
+			yield return new WaitForSeconds(switchDelay + delayVariance * Random.Range(-1f, 1f));
 			if ((SensesState)openSenseState == newSense)
 				Open();
 			else

@@ -41,7 +41,6 @@ namespace Player
 
         public void Kill()
         {
-            throw new SyntaxErrorException("test");
             StartCoroutine(WaitBeforeReset());
             onDeathEvent.Invoke();
         }

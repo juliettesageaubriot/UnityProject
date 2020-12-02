@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2005084064203190822}
   - component: {fileID: 7603577344791854413}
+  - component: {fileID: 5681261722935748504}
   m_Layer: 11
   m_Name: Fuel Glow
   m_TagString: Untagged
@@ -72,6 +73,29 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &5681261722935748504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678885818429289983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210113f0fe5701a44bd21d8b56ef68b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionDuration: 0.3
+  hideState:
+    intensity: 0
+    innerRadius: 0.12
+    outerRadius: 1.8
+  visibleState:
+    intensity: 1
+    innerRadius: 0
+    outerRadius: 5
+  startVisible: 1
+  currentStateAsVisible: 1
 --- !u!1 &891473629062540164
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630830905831721016}
   - component: {fileID: 7605506170962038733}
+  - component: {fileID: 210533876318721936}
   m_Layer: 11
   m_Name: Fuel Light
   m_TagString: Untagged
@@ -444,6 +469,29 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &210533876318721936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4080922624955318999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210113f0fe5701a44bd21d8b56ef68b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionDuration: 0.3
+  hideState:
+    intensity: 0
+    innerRadius: 0
+    outerRadius: 5
+  visibleState:
+    intensity: 1
+    innerRadius: 0
+    outerRadius: 5
+  startVisible: 1
+  currentStateAsVisible: 1
 --- !u!1 &8687579338276369192
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +702,30 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: b6a64cecb7f770b45a37b6338108c9df, type: 2}
         m_TargetAssemblyTypeName: Player.PlayerInteractData, Assembly-CSharp
         m_MethodName: ShouldCheckInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5681261722935748504}
+        m_TargetAssemblyTypeName: Graphics.LightFade, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 210533876318721936}
+        m_TargetAssemblyTypeName: Graphics.LightFade, Assembly-CSharp
+        m_MethodName: FadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
