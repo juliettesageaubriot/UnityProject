@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Data;
 using Global;
 using Global.Input;
 using UnityEngine;
@@ -40,6 +41,7 @@ namespace Player
 
         public void Kill()
         {
+            throw new SyntaxErrorException("test");
             StartCoroutine(WaitBeforeReset());
             onDeathEvent.Invoke();
         }

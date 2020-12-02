@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: SceneManager
   m_EditorClassIdentifier: 
   gameSceneQueueList:
+  - Onboarding Level
   - Cinematic 1
-  - Level 1
-  - Level 2
-  - Level 3
-  - Level Maze Blind
+  - Monkey Level
+  - Fuel Onboarding
+  - Door Level
+  - Deaf Monkey Level
   mainMenuSceneName: Main Menu
   endSceneName: End
   scriptableResetCounter: {fileID: 11400000, guid: 9bb9af2dfab2a4854adf945c3db83f23, type: 2}
