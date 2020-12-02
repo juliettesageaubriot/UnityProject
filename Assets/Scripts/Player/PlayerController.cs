@@ -17,6 +17,8 @@ namespace Player
 	public class PlayerController : MonoBehaviour
 	{
 		[SerializeField]
+		private ObstacleMap obstacleMap;
+		[SerializeField]
 		private InputData moveInput;
 		[SerializeField]
 		private PlayerPositionData playerPositionData;
@@ -112,7 +114,7 @@ namespace Player
 			tween.OnComplete(() =>
 			{
 				onStopMove.Invoke();
-				_isMoving = false; 
+				_isMoving = false;
 			});
 		}
 

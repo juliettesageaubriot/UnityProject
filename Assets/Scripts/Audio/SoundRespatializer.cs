@@ -23,6 +23,13 @@ namespace Audio
             playerFromPosition.y = player.Direction.y > 0 ? Mathf.Floor(playerFromPosition.y) : Mathf.Ceil(playerFromPosition.y);
             var (direction, distance) = GetSoundDirection(playerFromPosition);
             float finalDistance = distance;
+            
+            
+            if (direction.magnitude < 1f && ((Vector2)transform.position - player.Position).magnitude > 1f)
+            {
+                direction += (Vector2) transform.position - player.Position;
+                direction = direction.normalized;
+            }
 
             if (player.IsMoving)
             {
@@ -33,6 +40,13 @@ namespace Audio
                 var nextCellPosition = playerFromPosition + player.Direction * pathfinder.DistanceMap.CellSize;
                 
                 var (nextDirection, nextDistance) = GetSoundDirection(nextCellPosition);
+                
+                if (nextDirection.magnitude < 1f && ((Vector2)transform.position - player.Position).magnitude > 1f)
+                {
+                    nextDirection += (Vector2) transform.position - player.Position;
+                    nextDirection = nextDirection.normalized;
+                }
+
                 direction = Vector2.Lerp(nextDirection, direction, 1f - progression);
                 finalDistance = Mathf.Lerp(nextDistance, distance, 1f - progression);
             }
@@ -43,12 +57,12 @@ namespace Audio
         private (Vector2, int) GetSoundDirection(Vector2 pos)
         {
             var hereDistance = pathfinder.DistanceMap.Get(player.Position);
-            if (hereDistance == 0) return (Vector2.zero, 0);
+                if (hereDistance == 0) return (Vector2.zero, 0);
             var (neighbours, distance) = pathfinder.GetClosestNeigbours(pos);
             var direction = Vector2.zero;
             foreach (var neighbour in neighbours)
                 direction += neighbour - pos;
-
+            
             return (direction.normalized, distance);
         }
     }

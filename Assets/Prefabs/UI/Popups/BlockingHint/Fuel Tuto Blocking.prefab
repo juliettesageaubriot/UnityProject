@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "\rElle permettent de troubler la mal\xE9diction, de sacrifier la vue
+      value: "\rElles permettent de troubler la mal\xE9diction, de sacrifier la vue
         pour l'ou\xEFe ou l'ou\xEFe pour la vue.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2807534977663181722, guid: dbf3701bd5ed062418597be300e8e4c4, type: 3}

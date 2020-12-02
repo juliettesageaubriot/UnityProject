@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: closedPopup
       value: 
       objectReference: {fileID: 3533016220493585334, guid: 5e279a9a04007ef43b7b6bd2dff3f6b5, type: 3}
+    - target: {fileID: 6160257322940404244, guid: 84da0f66df17341438977d7495a128f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7325636508711790122, guid: 84da0f66df17341438977d7495a128f5, type: 3}
       propertyPath: m_InstanceId
       value: -958756
