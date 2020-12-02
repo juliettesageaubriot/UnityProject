@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: SceneManager
   m_EditorClassIdentifier: 
   gameSceneQueueList:
-  - Onboarding Level
   - Cinematic 1
+  - Onboarding Level
+  - Cinematic 2
   - Monkey Level
   - Fuel Onboarding
   - Door Level
