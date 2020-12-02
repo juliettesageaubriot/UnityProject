@@ -6,11 +6,15 @@ namespace Audio
 {
     public class SetVolume : MonoBehaviour
     {
-        [SerializeField] private AudioMixer mixer;
+        private SnapshotManager _snapshotManager;
+        private void Start()
+        {
+            if (SnapshotManager.IsReady) _snapshotManager = SnapshotManager.Instance;;
+        }
 
         public void SetLevel(float sliderValue)
         {
-            mixer.SetFloat("Volume", Mathf.Log10(sliderValue) * 20);
+            _snapshotManager.UpdateVolume(sliderValue);
         }
 
     }
