@@ -15,11 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Proto/Main Menu.unity
     guid: 31dc46c6e3b1730428e7a0a1549dd5a0
   - enabled: 1
+    path: Assets/Scenes/Cinematic/Cinematic 1.unity
+    guid: 583e180b2fddf4758b320e4da9dc8227
+  - enabled: 1
     path: Assets/Scenes/Levels/Onboarding Level.unity
     guid: a653fe87cfe4d4505a5e0a9ba52da033
   - enabled: 1
-    path: Assets/Scenes/Cinematic/Cinematic 1.unity
-    guid: 583e180b2fddf4758b320e4da9dc8227
+    path: Assets/Scenes/Cinematic/Cinematic 2.unity
+    guid: f6768b134f55e44e9903272f6ab0c5a6
   - enabled: 1
     path: Assets/Scenes/Levels/Monkey Level.unity
     guid: 1a221dbfa42514ed6ae33237cb9a3847

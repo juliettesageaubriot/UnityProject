@@ -200,6 +200,8 @@ MonoBehaviour:
   clearSnapshot: {fileID: -7443884203738373294, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   pauseSnapshot: {fileID: 1819621461746417035, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   transitionDuration: 0.8
+  volume: 1
+  volumeFactor: 200
 --- !u!114 &636668889
 MonoBehaviour:
   m_ObjectHideFlags: 0

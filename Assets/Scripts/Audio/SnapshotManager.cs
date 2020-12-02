@@ -18,14 +18,30 @@ namespace Audio
         [SerializeField] private AudioMixerSnapshot pauseSnapshot;
 
         [Range(0f, 2f)] [SerializeField] private float transitionDuration = .8f;
+        [SerializeField] private float volume = 1f;
 
         private AudioMixerSnapshot[] SnapshotArray => new[] {muffleSnapshot, clearSnapshot, pauseSnapshot};
 
+        public void UpdateVolume(float newVolume)
+        {
+            volume = newVolume;
+            UpdateVolume();
+        }
+        public void UpdateVolume()
+        {
+            mixer.SetFloat("Volume", 3f + Mathf.Log10(volume) * 20);
+        }
+        
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
             IsReady = true;
+        }
+
+        private void Update()
+        {
+            UpdateVolume();
         }
 
         private void OnDestroy() { IsReady = false; }
