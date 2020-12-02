@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3855668018999535742}
   - component: {fileID: 3855668018999535743}
+  - component: {fileID: 7273639536448468143}
   m_Layer: 0
   m_Name: Torch Light
   m_TagString: Untagged
@@ -72,6 +73,22 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &7273639536448468143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855668018999535737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26d0484a02cb1f4cbd52ba9bb6cd92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionAmplitude: 0.01
+  intensityAmplitude: 0.25
+  outerRadiusAmplitude: 0.3
+  speed: 0.5
 --- !u!1 &3855668019215407820
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3855668019496246566}
   - component: {fileID: 3855668019496246567}
+  - component: {fileID: 915431521005769241}
   m_Layer: 0
   m_Name: Torch Glow
   m_TagString: Untagged
@@ -242,6 +260,22 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &915431521005769241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855668019496246561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26d0484a02cb1f4cbd52ba9bb6cd92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionAmplitude: 0.01
+  intensityAmplitude: 0.7
+  outerRadiusAmplitude: 0.05
+  speed: 0.8
 --- !u!1 &4888820136502606410
 GameObject:
   m_ObjectHideFlags: 0

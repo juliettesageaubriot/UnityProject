@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3855668019215407820, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
       propertyPath: m_Name
-      value: Torch
+      value: Front Torch
       objectReference: {fileID: 0}
     - target: {fileID: 3855668019215407821, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
       propertyPath: m_LocalPosition.x
