@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Global;
 using UnityEngine;
 
 namespace Utils
 {
+    [DefaultExecutionOrder(10)]
     public class ObstacleMapInitializer : MonoBehaviour
     {
         [SerializeField] private ObstacleMap obstacleMap;
@@ -12,15 +14,16 @@ namespace Utils
         [SerializeField] private Vector2 originPoint = Vector2.zero;
         [SerializeField] private Vector2 gridSize = new Vector2(10, 10);
     
-        void Awake()
+        private void Start()
         {
             obstacleMap.InitParams(originPoint, gridSize, cellSize);
+            obstacleMap.CleanArray();
             StartCoroutine(WaitBeforeInit());
         }
 
         private IEnumerator WaitBeforeInit()
         {
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForSeconds(0.1f);
             obstacleMap.CleanArray();
         }
     }
