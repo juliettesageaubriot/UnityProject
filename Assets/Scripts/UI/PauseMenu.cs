@@ -45,13 +45,13 @@ namespace UI
 
         private void OnEnable()
         {
-            sceneManager.BeforeSceneChangeEvent += Resume;
+            sceneManager.SceneChangeEvent += Resume;
             pauseInput.InputEvent += RegisterInput;
         }
 
         private void OnDisable()
         {
-            sceneManager.BeforeSceneChangeEvent -= Resume;
+            sceneManager.SceneChangeEvent -= Resume;
             pauseInput.InputEvent -= RegisterInput;
         }
         

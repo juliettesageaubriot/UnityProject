@@ -41,9 +41,9 @@ namespace Player
         }
 
         private void OnEnable()
-        { sceneManager.BeforeSceneChangeEvent += EnableAll; }
+        { sceneManager.SceneChangeEvent += EnableAll; }
 
         private void OnDisable()
-        { sceneManager.BeforeSceneChangeEvent -= EnableAll; }
+        { sceneManager.SceneChangeEvent -= EnableAll; }
     }
 }
