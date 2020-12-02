@@ -15,6 +15,7 @@ namespace Interactables
 
 		private bool _isPlayerOnDoor;
 		private GameObject _playerGameObject;
+		[SerializeField] private bool initAtStart = true;
 		
 		[SerializeField] public UnityEvent onOpenEvent;
 		[SerializeField] public UnityEvent onCloseEvent;
@@ -49,6 +50,7 @@ namespace Interactables
 				onInitState = new UnityEvent<bool>();
 
 			isOpen = startOpen;
+			if (initAtStart) InitState();
 		}
 
 		protected void InitState()

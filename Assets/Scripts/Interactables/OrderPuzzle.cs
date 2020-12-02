@@ -10,7 +10,7 @@ namespace Interactables
         [SerializeField] private UnityEvent onCompleteEvent;
         [SerializeField] private UnityEvent onFailedEvent;
 
-        private void Start()
+        private void Awake()
         {
             if (onCompleteEvent == null)
                 onCompleteEvent = new UnityEvent();

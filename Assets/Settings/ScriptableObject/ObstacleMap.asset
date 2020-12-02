@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ObstacleMap
   m_EditorClassIdentifier: 
   cellSize: 1
-  originPoint: {x: -6, y: -6}
-  gridSize: {x: 13, y: 13}
+  originPoint: {x: 0, y: 0}
+  gridSize: {x: 10, y: 16}
   obstacleLayer:
     layerIndex: 8
   raycastOffset: {x: 0.5, y: 0.5}

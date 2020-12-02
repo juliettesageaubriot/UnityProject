@@ -17,8 +17,6 @@ namespace Player
 	public class PlayerController : MonoBehaviour
 	{
 		[SerializeField]
-		private ObstacleMap obstacleMap;
-		[SerializeField]
 		private InputData moveInput;
 		[SerializeField]
 		private PlayerPositionData playerPositionData;

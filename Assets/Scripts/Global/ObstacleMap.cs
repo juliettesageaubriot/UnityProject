@@ -54,10 +54,11 @@ namespace Global
             if (getUnknown || obstacle != ObstacleEnum.Unknown) return obstacle;
             var hit = Physics2D.CircleCast(
                 position + raycastOffset,
-                cellSize / 4f,
+                0.1f,
                 Vector2.zero,
                 0f,
                 obstacleLayer.Mask);
+            
             
             var newObstacle = hit.collider == null ? ObstacleEnum.NotObstacle : ObstacleEnum.Obstacle;
             _obstacleArray.Set(position, newObstacle);
