@@ -24,7 +24,6 @@ namespace Utils
         private void Start()
         {
             if (afterCompute == null) afterCompute = new UnityEvent();
-            if (autoCompute) ComputeDistanceMap();
         }
         private void OnEnable()
         { if (autoCompute) obstacleMap.OnCleanArray += ComputeDistanceMap; }

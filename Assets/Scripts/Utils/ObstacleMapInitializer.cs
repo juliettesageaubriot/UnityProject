@@ -1,4 +1,5 @@
-﻿using Global;
+﻿using System.Collections;
+using Global;
 using UnityEngine;
 
 namespace Utils
@@ -13,7 +14,14 @@ namespace Utils
     
         void Awake()
         {
-            obstacleMap.Init(originPoint, gridSize, cellSize);
+            obstacleMap.InitParams(originPoint, gridSize, cellSize);
+            StartCoroutine(WaitBeforeInit());
+        }
+
+        private IEnumerator WaitBeforeInit()
+        {
+            yield return new WaitForFixedUpdate();
+            obstacleMap.CleanArray();
         }
     }
 }
