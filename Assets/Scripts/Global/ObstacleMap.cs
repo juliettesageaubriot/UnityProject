@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using Utils;
@@ -33,12 +34,11 @@ namespace Global
         public delegate void CleanArrayHandler();
         public event CleanArrayHandler OnCleanArray;
 
-        public void Init(Vector2 newOriginPoint, Vector2 newGridSize, float newCellSize)
+        public void InitParams(Vector2 newOriginPoint, Vector2 newGridSize, float newCellSize)
         {
             originPoint = newOriginPoint;
             gridSize = newGridSize;
             cellSize = newCellSize;
-            InitArray();
         }
         
         public void CleanArray()
@@ -63,11 +63,6 @@ namespace Global
             var newObstacle = hit.collider == null ? ObstacleEnum.NotObstacle : ObstacleEnum.Obstacle;
             _obstacleArray.Set(position, newObstacle);
             return newObstacle;
-        }
-        
-        private void Awake()
-        {
-            InitArray();
         }
 
         private void InitArray()
