@@ -1491,6 +1491,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Global.ScriptableSceneManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 376277002808622631, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 376277002808622633, guid: dcb4871d4f6018c47bf6a426db3781b2, type: 3}
       propertyPath: m_Name
       value: Menu Button

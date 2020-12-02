@@ -36,6 +36,7 @@ namespace Player
         
         private void HandleResetInput(InputAction.CallbackContext context)
         {
+            resetInput.Disable();
             sceneManager.ResetCurrentLevel();
         }
 
