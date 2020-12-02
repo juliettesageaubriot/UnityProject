@@ -1,4 +1,5 @@
-﻿using Global;
+﻿using DG.Tweening;
+using Global;
 using Player;
 using UnityEngine;
 using Utils;
@@ -23,6 +24,7 @@ namespace Proto
             playerInputData.DisableAll();
             foreach (var direction in directions)
                 controller.AddMoveToQueue(direction);
+            player.transform.Find("PlayerSprite").GetComponent<SpriteRenderer>().DOColor(Color.black, 0.4f);
         }
     }
 }
