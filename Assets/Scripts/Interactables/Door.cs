@@ -56,8 +56,11 @@ namespace Interactables
 		protected void InitState()
 		{
 			onInitState.Invoke(isOpen);
-			if (isOpen) doorAnimator.OpenImmediate();
-			else doorAnimator.CloseImmediate();
+			if (doorAnimator)
+			{
+				if (isOpen) doorAnimator.OpenImmediate();
+				else doorAnimator.CloseImmediate();
+			}
 			shadowCaster.castsShadows = !isOpen;
 			gameObject.layer = isOpen ? openLayer.LayerIndex : closedLayer.LayerIndex;
 			doorFloor.sortingLayerName = isOpen ? openSortingLayer : closedSortingLayer;
@@ -67,7 +70,7 @@ namespace Interactables
 		{
 			isOpen = true;
 			shadowCaster.castsShadows = !isOpen;
-			doorAnimator.Open();
+			if (doorAnimator) doorAnimator.Open();
 			gameObject.layer = openLayer.LayerIndex;
 			doorFloor.sortingLayerName = openSortingLayer;
 			
@@ -80,7 +83,7 @@ namespace Interactables
 		{
 			isOpen = false;
 			shadowCaster.castsShadows = !isOpen;
-			doorAnimator.Close();
+			if (doorAnimator) doorAnimator.Close();
 			gameObject.layer = closedLayer.LayerIndex;
 			doorFloor.sortingLayerName = closedSortingLayer;
 			

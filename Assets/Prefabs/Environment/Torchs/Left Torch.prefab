@@ -75,6 +75,14 @@ PrefabInstance:
       propertyPath: torchDirection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5250608255893892940, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250608255893892940, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9189352854585621126, guid: b5ed62403571a4b319c12b8c8ee0a4a7, type: 3}
       propertyPath: torchDirection
       value: 1

@@ -20,6 +20,8 @@ MonoBehaviour:
   - Fuel Onboarding
   - Door Level
   - Deaf Monkey Level
+  - Blind Level
+  - Tomb Level
   mainMenuSceneName: Main Menu
   endSceneName: End
   scriptableResetCounter: {fileID: 11400000, guid: 9bb9af2dfab2a4854adf945c3db83f23, type: 2}

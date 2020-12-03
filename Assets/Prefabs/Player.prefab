@@ -431,7 +431,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4215038209011143800, guid: b53c85ba1413e492fa1c0b5e4bf1c706, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -674,7 +674,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveInput: {fileID: 11400000, guid: 5a7195eebbbd40743b280305e87a7dd1, type: 2}
-  obstacleMap: {fileID: 11400000, guid: 8637b4c5470d4ea438cfab61a67fb66e, type: 2}
   playerPositionData: {fileID: 11400000, guid: 79aa13c6b0492b644942df8eacb3071a, type: 2}
   movementDuration: 0.2
   movementDistance: 1
