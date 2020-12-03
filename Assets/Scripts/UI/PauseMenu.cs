@@ -36,7 +36,7 @@ namespace UI
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
             gameIsPaused = true;
-            eventSystem.SetSelectedGameObject(firstButtonUI);
+            //eventSystem.SetSelectedGameObject(firstButtonUI);
             foreach (var input in inputsToDisable) input.Disable();
 
             if (data.State == SensesState.Deaf) return;

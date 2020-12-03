@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255d1fa331f0a47d985c32fbdc5e834b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitBeforeReset: 2
+  waitBeforeReset: 1
   sceneManager: {fileID: 11400000, guid: 7e61bc17c617fbd498b3a0eed5ef4d15, type: 2}
   resetInput: {fileID: 11400000, guid: b972ebd75fdb6a24392101917dc55b21, type: 2}
   onDeathEvent:
