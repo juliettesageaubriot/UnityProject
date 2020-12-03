@@ -101,12 +101,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7638348163072406427, guid: 95346edb30fa6794da237c9a79f35930, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Par les pouvoir qui me sont conf\xE9r\xE9s ! Tu sera prisonnier pour
+      value: "Par les pouvoirs qui me sont conf\xE9r\xE9s ! Tu seras prisonnier pour
         l'\xE9ternit\xE9 !\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7638348163072406427, guid: 95346edb30fa6794da237c9a79f35930, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "Le tombeau du ma\xEEtre tu servira \xE0 jamais ! Ton \xE2me et ton
+      value: "Le tombeau du ma\xEEtre tu serviras \xE0 jamais ! Ton \xE2me et ton
         corps y resteront enferm\xE9s !"
       objectReference: {fileID: 0}
     m_RemovedComponents: []

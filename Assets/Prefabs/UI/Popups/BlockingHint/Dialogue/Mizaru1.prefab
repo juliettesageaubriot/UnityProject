@@ -18,8 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4589573384424888381, guid: 0debfaf301f4ca645b38afd987486c83, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "Vois tu il y \xE0 tr\xE8s longtemps, c'\xE9tait un aventurier, comme
-        toi."
+      value: "Vois-tu il y a tr\xE8s longtemps, c'\xE9tait un aventurier, comme toi."
       objectReference: {fileID: 0}
     - target: {fileID: 6810617140730999392, guid: 0debfaf301f4ca645b38afd987486c83, type: 3}
       propertyPath: m_Name

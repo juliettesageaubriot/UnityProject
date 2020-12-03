@@ -17,8 +17,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 200313945441521433, guid: a35ff4c6055eafa4e913e0284a0f040c, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "Tu est le prochain tu vas remplacer l'\xE2me d'Iwazaru et tu restera
-        pi\xE9g\xE9 ici jusqu'a la fin des temps !"
+      value: "Tu es le prochain tu vas remplacer l'\xE2me d'Iwazaru et tu resteras
+        pi\xE9g\xE9 ici jusqu'\xE0 la fin des temps !"
       objectReference: {fileID: 0}
     - target: {fileID: 200313945441521433, guid: a35ff4c6055eafa4e913e0284a0f040c, type: 3}
       propertyPath: texts.Array.data[2]
